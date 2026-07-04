@@ -78,39 +78,101 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 .chip{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:500;color:var(--ink-soft);background:var(--white);border:1px solid rgba(22,34,47,.09);border-radius:99px;padding:7px 14px;box-shadow:0 2px 8px rgba(22,34,47,.05)}
 .chip svg{width:15px;height:15px;flex:none}
 
-/* hero visual: la luz que nunca se apaga */
-.beacon{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px}
-.ring{position:absolute;border-radius:50%;border:1.5px dashed rgba(255,122,26,.35);animation:spin 40s linear infinite}
-.ring.r1{width:300px;height:300px}
-.ring.r2{width:390px;height:390px;animation-duration:70s;animation-direction:reverse;border-color:rgba(255,181,46,.28)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.glow-core{position:relative;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 60%,#fff3d6,var(--glow) 40%,var(--ember) 70%,var(--flame));box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25);display:flex;align-items:center;justify-content:center;animation:vigil 9s ease-in-out infinite}
-.glow-core svg{width:92px;height:92px;filter:drop-shadow(0 4px 10px rgba(180,60,0,.4))}
-/* la luz se apaga poco a poco... pero la batería la reenciende antes de morir */
-@keyframes vigil{
-  0%,38%{opacity:1;box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25)}
-  60%{opacity:.28;box-shadow:0 0 14px rgba(255,150,40,.12),0 0 30px rgba(255,122,26,.06)}
-  63%{opacity:.22;box-shadow:0 0 10px rgba(255,150,40,.10),0 0 20px rgba(255,122,26,.05)}
-  68%,100%{opacity:1;box-shadow:0 0 90px rgba(255,150,40,.6),0 0 170px rgba(255,122,26,.3)}
-}
-.bolt-flash{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:zap 9s ease-in-out infinite;pointer-events:none}
-.bolt-flash svg{width:120px;height:120px}
-@keyframes zap{0%,62%{opacity:0;transform:scale(.6)}64%{opacity:1;transform:scale(1.15)}67%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
-.rescue{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:var(--white);border:1.5px solid rgba(255,122,26,.35);border-radius:14px;padding:10px 16px;font-size:.82rem;font-weight:700;box-shadow:var(--shadow);display:flex;align-items:center;gap:9px;white-space:nowrap;animation:rescue-pulse 9s ease-in-out infinite}
-.rescue svg{width:20px;height:20px;flex:none}
-@keyframes rescue-pulse{
-  0%,58%{transform:translateX(-50%) scale(1);box-shadow:var(--shadow)}
-  63%{transform:translateX(-50%) scale(1.14);box-shadow:0 0 0 6px rgba(255,181,46,.25),0 10px 30px rgba(255,122,26,.4);border-color:var(--flame)}
-  70%,100%{transform:translateX(-50%) scale(1);box-shadow:var(--shadow)}
-}
-.orbit-chip{position:absolute;background:var(--white);border:1px solid rgba(22,34,47,.08);border-radius:14px;padding:10px 15px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;animation:float 5s ease-in-out infinite}
-.orbit-chip svg{width:18px;height:18px;flex:none}
-.oc1{top:8%;left:0;animation-delay:0s}
-.oc2{top:22%;right:-2%;animation-delay:1.2s}
-.oc3{bottom:10%;left:6%;animation-delay:2.1s}
-.oc4{bottom:20%;right:2%;animation-delay:.6s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.beacon{min-height:360px;margin-top:10px}}
+/* hero visual: sistema de energía vivo (baterías que se descargan y recargan) */
+.energy-col{display:flex;flex-direction:column;align-items:center;gap:18px}
+.energy{position:relative;width:min(430px,100%);aspect-ratio:43/40}
+.energy .flows{position:absolute;inset:0;width:100%;height:100%}
+.flow{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:3 11;opacity:.12;transition:opacity .5s}
+.flow.chg{stroke:var(--ember)}
+.flow.dis{stroke:var(--flame)}
+.energy.charging .flow.chg{opacity:1;animation:flowdash 1s linear infinite}
+.energy.discharging .flow.dis{opacity:1;animation:flowdash .8s linear infinite}
+@keyframes flowdash{to{stroke-dashoffset:-28}}
+.node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:.76rem;font-weight:600;color:var(--ink-soft);text-align:center}
+.node svg{width:52px;height:52px}
+.node.sun{top:1%;left:3%}
+.node.gridp{top:1%;right:3%}
+.node.factory{bottom:0;left:50%;transform:translateX(-50%)}
+.bat-cabinet{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);background:var(--white);border:2px solid rgba(22,34,47,.12);border-radius:18px;padding:16px 20px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:2}
+.cells{display:flex;gap:9px}
+.cell{width:27px;height:76px;border:2px solid rgba(22,34,47,.28);border-radius:7px;position:relative;overflow:hidden;background:#f3eee3}
+.cell .fill{position:absolute;bottom:0;left:0;right:0;height:100%;background:linear-gradient(180deg,var(--ember),var(--flame))}
+.energy.low .cell .fill{background:linear-gradient(180deg,#ff8c4d,#e04b00)}
+.bat-pct{font-family:var(--font-head);font-weight:800;font-size:1.08rem;letter-spacing:-.01em}
+.energy-status{background:var(--white);border:1.5px solid rgba(255,122,26,.3);border-radius:14px;padding:10px 18px;font-size:.85rem;font-weight:700;box-shadow:var(--shadow);text-align:center}
+.energy-status .st{display:none}
+.energy-status.is-dis .st-dis{display:inline}
+.energy-status.is-chg .st-chg{display:inline}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.energy-col{margin-top:10px}}
+
+/* ---------- INTRO: enchufa tu negocio ---------- */
+#intro{position:fixed;inset:0;z-index:200;background:radial-gradient(1100px 700px at 50% 32%,#0e1c2b,#04080d);display:flex;align-items:center;justify-content:center;color:#e8ecf1;transition:opacity .8s ease}
+#intro.off{opacity:0;pointer-events:none}
+#intro[hidden]{display:none}
+#intro::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 45%,rgba(255,181,46,.9),rgba(255,122,26,.5) 45%,transparent 75%);opacity:0;transition:opacity .5s ease;pointer-events:none}
+#intro.on::after{opacity:1}
+.intro-inner{position:relative;text-align:center;padding:24px;max-width:780px;width:100%}
+.intro-inner h2{font-size:clamp(1.5rem,4.5vw,2.5rem);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
+.intro-inner .hint{color:#8fa1b3;font-size:1rem;margin-bottom:44px}
+.intro-inner .hint strong{color:var(--ember)}
+.intro-stage{position:relative;display:flex;justify-content:space-between;align-items:center;max-width:620px;margin:0 auto;min-height:230px;padding:0 8px}
+.intro-node{display:flex;flex-direction:column;align-items:center;gap:12px;width:150px}
+.intro-node .lbl{font-size:.84rem;font-weight:600;color:#b9c6d4}
+.intro-node svg{filter:drop-shadow(0 0 18px rgba(255,181,46,.15))}
+.cable-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.cable-path{fill:none;stroke:#2d4257;stroke-width:7;stroke-linecap:round}
+.cable-core{fill:none;stroke:#4a6379;stroke-width:3;stroke-linecap:round}
+#intro.on .cable-path{stroke:#b35408}
+#intro.on .cable-core{stroke:var(--ember)}
+#plug{position:absolute;width:72px;height:56px;cursor:grab;touch-action:none;z-index:6;filter:drop-shadow(0 8px 18px rgba(255,181,46,.4));animation:plugpulse 1.7s ease-in-out infinite}
+#plug:active{cursor:grabbing}
+#plug:focus-visible{outline:3px solid var(--ember);outline-offset:5px;border-radius:10px}
+#plug.in,#intro.on #plug{animation:none;cursor:default}
+@keyframes plugpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.socket-hole{transition:filter .3s}
+.near .socket-hole{filter:drop-shadow(0 0 10px var(--ember))}
+.spark-burst{position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;opacity:0;pointer-events:none;z-index:7}
+.spark-burst.go{animation:sparkgo .5s ease-out forwards}
+@keyframes sparkgo{0%{opacity:1;box-shadow:0 0 0 0 rgba(255,217,138,.95),0 0 0 0 rgba(255,122,26,.8)}100%{opacity:0;box-shadow:0 0 60px 50px rgba(255,217,138,0),0 0 120px 90px rgba(255,122,26,0)}}
+.intro-skip{margin-top:46px;background:none;border:1.5px solid rgba(255,255,255,.22);color:#b9c6d4;border-radius:99px;padding:10px 24px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;transition:border-color .2s,color .2s}
+.intro-skip:hover{border-color:var(--ember);color:#fff}
+@media(max-width:560px){.intro-stage{min-height:200px}.intro-node{width:110px}.intro-node svg{width:74px;height:auto}}
+
+/* ---------- GRÁFICA INTERACTIVA DE CONSUMO ---------- */
+.chart-card{background:var(--white);border:1px solid rgba(22,34,47,.07);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 32px 26px;margin-top:44px}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:8px}
+.chart-head h3{font-size:1.3rem;letter-spacing:-.01em;margin-bottom:6px}
+.chart-head p{color:var(--ink-soft);font-size:.93rem;max-width:34rem}
+.bat-switch{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;background:var(--cream);border:1.5px solid rgba(255,122,26,.3);border-radius:99px;padding:10px 18px;font-weight:700;font-size:.95rem;flex:none}
+.bat-switch input{position:absolute;opacity:0;pointer-events:none}
+.bat-switch .track{width:46px;height:26px;border-radius:99px;background:rgba(22,34,47,.18);position:relative;transition:background .25s;flex:none}
+.bat-switch .track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:left .25s}
+.bat-switch input:checked + .track{background:linear-gradient(135deg,var(--flame),var(--ember))}
+.bat-switch input:checked + .track::after{left:23px}
+.bat-switch input:focus-visible + .track{outline:3px solid var(--ember);outline-offset:3px}
+.chart-legend{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 6px;font-size:.86rem;font-weight:600;color:var(--ink-soft)}
+.chart-legend .key{display:inline-flex;align-items:center;gap:8px;transition:opacity .3s}
+.chart-legend .key .swatch{width:20px;height:0;border-top:3px solid;border-radius:2px;flex:none}
+.chart-legend .key.dim{opacity:.35}
+.chart-box{position:relative}
+.chart-box svg{width:100%;height:auto;display:block;touch-action:pan-y}
+.chart-box svg:focus-visible{outline:3px solid var(--ember);outline-offset:4px;border-radius:8px}
+.chart-tip{position:absolute;background:var(--navy);color:#fff;border-radius:12px;padding:10px 14px;font-size:.82rem;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 8px 24px rgba(0,0,0,.3);white-space:nowrap;z-index:3;transform:translate(-50%,-108%)}
+.chart-tip .tip-h{color:#8fa1b3;font-weight:600;margin-bottom:4px}
+.chart-tip .row{display:flex;align-items:center;gap:8px}
+.chart-tip .row .k{width:14px;height:0;border-top:3px solid;border-radius:2px;flex:none}
+.chart-tip .row .v{font-weight:800;font-size:.92rem}
+.chart-tip .row .n{color:#b9c6d4}
+.chart-foot{margin-top:14px;font-size:.85rem;color:var(--ink-soft)}
+.chart-foot strong{color:#b35408}
+.chart-disclaimer{margin-top:8px;font-size:.78rem;color:#8b97a5}
+.chart-table{margin-top:14px;font-size:.85rem}
+.chart-table summary{cursor:pointer;font-weight:600;color:var(--ink-soft)}
+.chart-table .tbl-scroll{overflow-x:auto;margin-top:10px}
+.chart-table table{border-collapse:collapse;min-width:420px}
+.chart-table th,.chart-table td{padding:4px 12px;text-align:right;border-bottom:1px solid rgba(22,34,47,.08)}
+.chart-table th{font-weight:700;color:var(--ink)}
+@media(max-width:640px){.chart-card{padding:24px 18px 20px}}
 
 /* ---------- MYTH STRIP ---------- */
 .myth{background:var(--navy);color:#f4ede0;padding:56px 0}
@@ -220,12 +282,62 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
-  .ring,.glow-core,.orbit-chip,.bolt-flash,.rescue{animation:none}
-  .bolt-flash{opacity:0}
+  .flow,#plug,.spark-burst{animation:none !important}
 }
 </style>
 </head>
 <body>
+
+<!-- ================= INTRO: enchufa tu negocio ================= -->
+<div id="intro" role="dialog" aria-modal="true" aria-label="Enciende la página conectando las baterías">
+  <svg class="cable-svg" aria-hidden="true">
+    <path class="cable-path" id="cablePath" d=""/>
+    <path class="cable-core" id="cableCore" d=""/>
+  </svg>
+  <div class="intro-inner">
+    <h2><span lang="es">Tu negocio está a oscuras.</span><span lang="ca">El teu negoci és a les fosques.</span></h2>
+    <p class="hint"><span lang="es"><strong>Arrastra el enchufe</strong> hasta la toma de tu negocio para encenderlo todo.</span><span lang="ca"><strong>Arrossega l'endoll</strong> fins a la presa del teu negoci per encendre-ho tot.</span></p>
+    <div class="intro-stage" id="introStage">
+      <div class="intro-node" id="batNode">
+        <svg width="104" height="112" viewBox="0 0 104 112" aria-hidden="true">
+          <rect x="8" y="8" width="88" height="96" rx="12" fill="#0f1e2d" stroke="#3a5268" stroke-width="2.5"/>
+          <rect x="22" y="22" width="16" height="66" rx="5" fill="none" stroke="#4a6379" stroke-width="2"/>
+          <rect x="24" y="42" width="12" height="44" rx="3" fill="#ffb52e"/>
+          <rect x="44" y="22" width="16" height="66" rx="5" fill="none" stroke="#4a6379" stroke-width="2"/>
+          <rect x="46" y="34" width="12" height="52" rx="3" fill="#ffb52e"/>
+          <rect x="66" y="22" width="16" height="66" rx="5" fill="none" stroke="#4a6379" stroke-width="2"/>
+          <rect x="68" y="50" width="12" height="36" rx="3" fill="#ffb52e"/>
+          <circle cx="96" cy="56" r="6" fill="#4a6379" id="batPort"/>
+        </svg>
+        <span class="lbl"><span lang="es">Sistema de baterías</span><span lang="ca">Sistema de bateries</span></span>
+      </div>
+      <div class="intro-node" id="sockNode">
+        <svg width="104" height="112" viewBox="0 0 104 112" aria-hidden="true">
+          <path d="M18 46V26l14-12h40l14 12v20" fill="none" stroke="#3a5268" stroke-width="2.5"/>
+          <rect x="12" y="46" width="80" height="58" rx="10" fill="#0f1e2d" stroke="#3a5268" stroke-width="2.5"/>
+          <circle class="socket-hole" id="sockHole" cx="52" cy="75" r="17" fill="#050a10" stroke="#4a6379" stroke-width="2.5"/>
+          <circle cx="45" cy="75" r="3" fill="#4a6379"/>
+          <circle cx="59" cy="75" r="3" fill="#4a6379"/>
+        </svg>
+        <span class="lbl"><span lang="es">Tu negocio</span><span lang="ca">El teu negoci</span></span>
+      </div>
+      <div id="plug" tabindex="0" role="button" aria-label="Enchufe: arrástralo a la toma o pulsa Enter para conectar">
+        <svg viewBox="0 0 72 56" aria-hidden="true">
+          <rect x="4" y="14" width="40" height="28" rx="10" fill="#ffb52e" stroke="#b35408" stroke-width="2.5"/>
+          <rect x="0" y="22" width="10" height="12" rx="4" fill="#b35408"/>
+          <rect x="44" y="20" width="14" height="4.5" rx="2" fill="#d8dee5"/>
+          <rect x="44" y="31.5" width="14" height="4.5" rx="2" fill="#d8dee5"/>
+        </svg>
+      </div>
+      <div class="spark-burst" id="sparkBurst"></div>
+    </div>
+    <button class="intro-skip" id="introSkip" type="button"><span lang="es">O pulsa aquí para encender ⚡</span><span lang="ca">O prem aquí per encendre ⚡</span></button>
+  </div>
+</div>
+<script>
+/* si ya se encendió en esta sesión, no repetir el ritual */
+try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro').hidden=true;}}catch(e){}
+</script>
 
 <!-- ================= NAV ================= -->
 <nav>
@@ -252,7 +364,7 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">⚡ <span lang="es">Energía para pymes de Barcelona y Cataluña</span><span lang="ca">Energia per a pimes de Barcelona i Catalunya</span></span>
+      <span class="eyebrow">⚡ <span lang="es">Soluciones energéticas para la industria</span><span lang="ca">Solucions energètiques per a la indústria</span></span>
       <h1>
         <span lang="es">Que la energía de tu negocio <span class="spark">nunca se acabe</span>.</span>
         <span lang="ca">Que l'energia del teu negoci <span class="spark">no s'acabi mai</span>.</span>
@@ -271,18 +383,38 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Acompañamiento local, en tu idioma</span><span lang="ca">Acompanyament local, en la teva llengua</span></span>
       </div>
     </div>
-    <div class="beacon" aria-hidden="true">
-      <div class="ring r1"></div>
-      <div class="ring r2"></div>
-      <div class="glow-core">
-        <svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="#fff" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="#fff" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#ffb52e" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
-        <div class="bolt-flash"><svg viewBox="0 0 24 24" fill="#fff"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
+    <div class="energy-col">
+      <div class="energy" id="energySys" aria-hidden="true">
+        <svg class="flows" viewBox="0 0 430 400" preserveAspectRatio="xMidYMid meet">
+          <path class="flow chg" d="M96 96 C 130 140, 155 155, 182 168"/>
+          <path class="flow chg" d="M334 96 C 300 140, 275 155, 248 168"/>
+          <path class="flow dis" d="M215 248 L 215 316"/>
+        </svg>
+        <div class="node sun">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="1.7" stroke-linecap="round"><circle cx="17.5" cy="5.5" r="2.2"/><path d="M17.5 1.5v1.2M17.5 8.3v1.2M13.5 5.5h1.2M20.3 5.5h1.2"/><path d="M4.5 19 7 11h11l2.5 8z"/><path d="M6 16.3h13.5M9.5 11l-1.2 8M14.5 11l1.2 8"/></svg>
+          <span><span lang="es">Solar</span><span lang="ca">Solar</span></span>
+        </div>
+        <div class="node gridp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="1.7" stroke-linecap="round"><path d="M6.5 22 11 2h2l4.5 20"/><path d="M4 8.5h16M6 14.5h12"/><path d="M8 8.5l8 6M16 8.5l-8 6"/></svg>
+          <span><span lang="es">Red (horas valle)</span><span lang="ca">Xarxa (hores vall)</span></span>
+        </div>
+        <div class="bat-cabinet">
+          <div class="cells">
+            <div class="cell"><div class="fill"></div></div>
+            <div class="cell"><div class="fill"></div></div>
+            <div class="cell"><div class="fill"></div></div>
+          </div>
+          <div class="bat-pct" id="batPct">100%</div>
+        </div>
+        <div class="node factory">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#16222f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l5 3v-3l5 3V7h5v14z"/><path d="M2 21h20M15.5 11h1.5M15.5 14.5h1.5M15.5 18h1.5"/></svg>
+          <span><span lang="es">Tu negocio</span><span lang="ca">El teu negoci</span></span>
+        </div>
       </div>
-      <div class="rescue"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><path fill="#ff7a1a" stroke="none" d="M11.5 8.5 7.5 13.5h2.5l-1 3.5 4-5h-2.5l1-3.5z"/></svg><span lang="es">Batería de guardia 24/7</span><span lang="ca">Bateria de guàrdia 24/7</span></div>
-      <div class="orbit-chip oc1"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.9.7 1.5 1.7 1.5 2.6h4c0-.9.6-1.9 1.5-2.6A6 6 0 0 0 12 3z"/></svg><span lang="es">Luz siempre encendida</span><span lang="ca">Llum sempre encesa</span></div>
-      <div class="orbit-chip oc2"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span lang="es">Sol aprovechado</span><span lang="ca">Sol aprofitat</span></div>
-      <div class="orbit-chip oc3"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><span lang="es">Pico recortado</span><span lang="ca">Pic retallat</span></div>
-      <div class="orbit-chip oc4"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 3"/></svg><span lang="es">Decidiendo 24/7</span><span lang="ca">Decidint 24/7</span></div>
+      <div class="energy-status is-dis" id="energyStatus">
+        <span class="st st-dis">⚡ <span lang="es">Descargando: alimentando tu negocio</span><span lang="ca">Descarregant: alimentant el teu negoci</span></span>
+        <span class="st st-chg">🌙 <span lang="es">Recargando con sol y red en horas baratas</span><span lang="ca">Recarregant amb sol i xarxa en hores barates</span></span>
+      </div>
     </div>
   </div>
 </header>
@@ -327,6 +459,37 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
         <h3><span lang="es">Cargadores que la red no soporta</span><span lang="ca">Carregadors que la xarxa no suporta</span></h3>
         <p><span lang="es">Quieres electrificar tu flota, pero reforzar la acometida puede costar decenas de miles de euros y más de un año de espera. Hay otro camino.</span><span lang="ca">Vols electrificar la teva flota, però reforçar l'escomesa pot costar desenes de milers d'euros i més d'un any d'espera. Hi ha un altre camí.</span></p>
       </div>
+    </div>
+
+    <div class="chart-card reveal">
+      <div class="chart-head">
+        <div>
+          <h3><span lang="es">Un día en la vida de tu contador</span><span lang="ca">Un dia a la vida del teu comptador</span></h3>
+          <p><span lang="es">Así se ve la potencia que una empresa típica compra a la red a lo largo del día. Activa las baterías y mira lo que pasa con el pico de la tarde y con las horas baratas de la noche.</span><span lang="ca">Així es veu la potència que una empresa típica compra a la xarxa al llarg del dia. Activa les bateries i mira què passa amb el pic de la tarda i amb les hores barates de la nit.</span></p>
+        </div>
+        <label class="bat-switch">
+          <input type="checkbox" id="batToggle">
+          <span class="track"></span>
+          <span><span lang="es">Añadir baterías ⚡</span><span lang="ca">Afegir bateries ⚡</span></span>
+        </label>
+      </div>
+      <div class="chart-legend">
+        <span class="key"><span class="swatch" style="border-color:#2e6bb0"></span><span lang="es">Sin baterías</span><span lang="ca">Sense bateries</span></span>
+        <span class="key" id="keyBat"><span class="swatch" style="border-color:#e05e00"></span><span lang="es">Con baterías</span><span lang="ca">Amb bateries</span></span>
+      </div>
+      <div class="chart-box">
+        <svg id="loadChart" viewBox="0 0 720 330" tabindex="0" role="img" aria-label="Curva de potencia consumida de la red por hora del día, con y sin baterías"></svg>
+        <div class="chart-tip" id="chartTip"></div>
+      </div>
+      <p class="chart-foot">
+        <span lang="es">Fíjate en dos cosas: de madrugada la batería <strong>se carga cuando la energía es barata</strong> (banda valle) y, en las horas caras (banda punta), <strong>recorta el pico</strong> que dispara el término de potencia de tu factura. Eso es el peak shaving y el arbitraje de precios trabajando para ti.</span>
+        <span lang="ca">Fixa't en dues coses: de matinada la bateria <strong>es carrega quan l'energia és barata</strong> (banda vall) i, a les hores cares (banda punta), <strong>retalla el pic</strong> que dispara el terme de potència de la teva factura. Això és el peak shaving i l'arbitratge de preus treballant per a tu.</span>
+      </p>
+      <p class="chart-disclaimer"><span lang="es">Curva ilustrativa con datos simulados. La tuya la calculamos con tus datos reales de Datadis en el estudio gratuito.</span><span lang="ca">Corba il·lustrativa amb dades simulades. La teva la calculem amb les teves dades reals de Datadis a l'estudi gratuït.</span></p>
+      <details class="chart-table">
+        <summary><span lang="es">Ver los datos en tabla</span><span lang="ca">Veure les dades en taula</span></summary>
+        <div class="tbl-scroll"><table id="chartTable"></table></div>
+      </details>
     </div>
   </div>
 </section>
@@ -548,6 +711,327 @@ var obs = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+/* ============ INTRO: enchufa tu negocio ============ */
+(function(){
+  var intro = document.getElementById('intro');
+  if(!intro || intro.hidden) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){ intro.hidden = true; return; }
+  document.body.style.overflow = 'hidden';
+
+  var plug = document.getElementById('plug');
+  var stage = document.getElementById('introStage');
+  var sockNode = document.getElementById('sockNode');
+  var sockHole = document.getElementById('sockHole');
+  var batPort = document.getElementById('batPort');
+  var cablePath = document.getElementById('cablePath');
+  var cableCore = document.getElementById('cableCore');
+  var spark = document.getElementById('sparkBurst');
+  var connected = false;
+
+  function stageRect(){ return stage.getBoundingClientRect(); }
+  function holeCenter(){
+    var r = sockHole.getBoundingClientRect(), s = stageRect();
+    return {x:r.left + r.width/2 - s.left, y:r.top + r.height/2 - s.top};
+  }
+  function portPoint(){
+    var r = batPort.getBoundingClientRect(), s = stageRect();
+    return {x:r.left + r.width/2 - s.left, y:r.top + r.height/2 - s.top};
+  }
+  function setPlug(x, y){
+    plug.style.left = (x - 36) + 'px';
+    plug.style.top = (y - 28) + 'px';
+    drawCable(x, y);
+  }
+  function drawCable(px, py){
+    var p = portPoint();
+    var introR = intro.getBoundingClientRect(), s = stageRect();
+    var ox = s.left - introR.left, oy = s.top - introR.top;
+    var sag = 46 + Math.max(0, 120 - Math.abs(px - p.x)) * .3;
+    var d = 'M' + (p.x+ox) + ' ' + (p.y+oy) +
+      ' C ' + (p.x+ox+30) + ' ' + (p.y+oy+sag) + ', ' + (px+ox-40) + ' ' + (py+oy+sag) + ', ' + (px+ox-34) + ' ' + (py+oy);
+    cablePath.setAttribute('d', d);
+    cableCore.setAttribute('d', d);
+  }
+  function initPos(){
+    var p = portPoint();
+    setPlug(p.x + 84, p.y + 62);
+  }
+
+  var dragging = false;
+  plug.addEventListener('pointerdown', function(ev){
+    if(connected) return;
+    dragging = true;
+    plug.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  plug.addEventListener('pointermove', function(ev){
+    if(!dragging || connected) return;
+    var s = stageRect();
+    var x = Math.max(0, Math.min(s.width, ev.clientX - s.left));
+    var y = Math.max(-30, Math.min(s.height + 30, ev.clientY - s.top));
+    setPlug(x, y);
+    var h = holeCenter();
+    var near = Math.hypot(x - h.x, y - h.y) < 60;
+    sockNode.classList.toggle('near', near);
+    if(near) connect();
+  });
+  plug.addEventListener('pointerup', function(){ dragging = false; });
+  plug.addEventListener('keydown', function(ev){
+    if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); connect(); }
+  });
+  document.getElementById('introSkip').addEventListener('click', connect);
+
+  function connect(){
+    if(connected) return;
+    connected = true; dragging = false;
+    var h = holeCenter();
+    setPlug(h.x + 2, h.y);
+    plug.classList.add('in');
+    spark.style.left = (h.x - 8) + 'px';
+    spark.style.top = (h.y - 8) + 'px';
+    spark.classList.add('go');
+    setTimeout(function(){ intro.classList.add('on'); }, 250);
+    setTimeout(function(){
+      intro.classList.add('off');
+      document.body.style.overflow = '';
+      try{ sessionStorage.setItem('vesta-on','1'); }catch(e){}
+    }, 950);
+    setTimeout(function(){ intro.hidden = true; }, 1900);
+  }
+
+  initPos();
+  window.addEventListener('resize', function(){ if(!connected) initPos(); });
+})();
+
+/* ============ HERO: baterías que se descargan y recargan ============ */
+(function(){
+  var sys = document.getElementById('energySys');
+  if(!sys) return;
+  var fills = sys.querySelectorAll('.cell .fill');
+  var pct = document.getElementById('batPct');
+  var status = document.getElementById('energyStatus');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){
+    fills.forEach ? fills.forEach(function(f){ f.style.height = '100%'; }) : null;
+    pct.textContent = '100%';
+    return;
+  }
+  var CYCLE = 14000, lastState = '';
+  function frame(ts){
+    var t = (ts % CYCLE) / CYCLE, lvl, chg;
+    if(t < 0.55){ lvl = 100 - (t / 0.55) * 75; chg = false; }
+    else { lvl = 25 + ((t - 0.55) / 0.45) * 75; chg = true; }
+    for(var i = 0; i < fills.length; i++){
+      var offset = (i - 1) * 4;
+      fills[i].style.height = Math.max(4, Math.min(100, lvl + offset)) + '%';
+    }
+    pct.textContent = Math.round(lvl) + '%';
+    var state = chg ? 'charging' : 'discharging';
+    if(state !== lastState){
+      lastState = state;
+      sys.classList.toggle('charging', chg);
+      sys.classList.toggle('discharging', !chg);
+      status.classList.toggle('is-chg', chg);
+      status.classList.toggle('is-dis', !chg);
+    }
+    sys.classList.toggle('low', lvl < 35);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+
+/* ============ GRÁFICA: peak shaving y arbitraje ============ */
+(function(){
+  var svg = document.getElementById('loadChart');
+  if(!svg) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 720, H = 330, L = 46, R = 12, T = 30, B = 34;
+  var plotW = W - L - R, plotH = H - T - B, YMAX = 180;
+  var COL_BASE = '#2e6bb0', COL_BAT = '#e05e00';
+
+  var base = [40,38,36,36,38,42,55,75,100,125,150,160,155,150,140,130,125,135,150,140,110,80,60,45];
+  var bat = base.map(function(v, h){
+    if(h <= 5) return v + 38;
+    if(h === 6) return v + 18;
+    return Math.min(v, 100);
+  });
+
+  function x(h){ return L + (h / 23) * plotW; }
+  function y(v){ return T + (1 - v / YMAX) * plotH; }
+  function el(tag, attrs, parent){
+    var e = document.createElementNS(NS, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(e);
+    return e;
+  }
+  function smoothPath(data){
+    var pts = data.map(function(v, h){ return [x(h), y(v)]; });
+    var d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+    for(var i = 0; i < pts.length - 1; i++){
+      var p0 = pts[Math.max(0, i-1)], p1 = pts[i], p2 = pts[i+1], p3 = pts[Math.min(pts.length-1, i+2)];
+      var c1x = p1[0] + (p2[0]-p0[0])/6, c1y = p1[1] + (p2[1]-p0[1])/6;
+      var c2x = p2[0] - (p3[0]-p1[0])/6, c2y = p2[1] - (p3[1]-p1[1])/6;
+      d += ' C' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ',' + c2x.toFixed(1) + ' ' + c2y.toFixed(1) + ',' + p2[0].toFixed(1) + ' ' + p2[1].toFixed(1);
+    }
+    return d;
+  }
+
+  /* bandas tarifarias de fondo (simplificadas) */
+  var bands = [
+    {a:0, b:8, fill:'rgba(46,107,176,.07)', es:'Valle · barata', ca:'Vall · barata'},
+    {a:10, b:14, fill:'rgba(224,94,0,.08)', es:'Punta · cara', ca:'Punta · cara'},
+    {a:18, b:22, fill:'rgba(224,94,0,.08)', es:'Punta · cara', ca:'Punta · cara'}
+  ];
+  bands.forEach(function(bd){
+    el('rect', {x:x(bd.a), y:T, width:x(bd.b)-x(bd.a), height:plotH, fill:bd.fill});
+    ['es','ca'].forEach(function(lg){
+      var t = el('text', {x:(x(bd.a)+x(bd.b))/2, y:T-8, 'text-anchor':'middle',
+        'font-size':'10.5', 'font-weight':'600', fill:'#8b97a5', 'font-family':'inherit'});
+      t.setAttribute('lang', lg);
+      t.textContent = bd[lg];
+    });
+  });
+
+  /* rejilla y ejes, discretos */
+  [0,50,100,150].forEach(function(v){
+    el('line', {x1:L, y1:y(v), x2:W-R, y2:y(v), stroke:'rgba(22,34,47,.08)', 'stroke-width':1});
+    var t = el('text', {x:L-8, y:y(v)+3.5, 'text-anchor':'end', 'font-size':'10.5', fill:'#8b97a5', 'font-family':'inherit'});
+    t.textContent = v;
+  });
+  var kw = el('text', {x:L-8, y:T-10, 'text-anchor':'end', 'font-size':'10.5', 'font-weight':'600', fill:'#8b97a5', 'font-family':'inherit'});
+  kw.textContent = 'kW';
+  [0,6,12,18,23].forEach(function(h){
+    var t = el('text', {x:x(h), y:H-10, 'text-anchor':'middle', 'font-size':'10.5', fill:'#8b97a5', 'font-family':'inherit'});
+    t.textContent = h + 'h';
+  });
+  el('line', {x1:L, y1:y(0), x2:W-R, y2:y(0), stroke:'rgba(22,34,47,.25)', 'stroke-width':1});
+
+  /* series */
+  var basePath = el('path', {d:smoothPath(base), fill:'none', stroke:COL_BASE, 'stroke-width':2.5, 'stroke-linecap':'round'});
+  var batPath = el('path', {d:smoothPath(base), fill:'none', stroke:COL_BAT, 'stroke-width':2.5, 'stroke-linecap':'round', opacity:0});
+
+  /* anotaciones (solo con baterías activas) */
+  var annG = el('g', {opacity:0, style:'transition:opacity .4s'});
+  function ann(px, py, es, ca){
+    ['es','ca'].forEach(function(lg){
+      var t = el('text', {x:px, y:py, 'text-anchor':'middle', 'font-size':'11.5', 'font-weight':'700',
+        fill:'#b35408', stroke:'#ffffff', 'stroke-width':4, 'paint-order':'stroke', 'font-family':'inherit'}, annG);
+      t.setAttribute('lang', lg);
+      t.textContent = lg === 'es' ? es : ca;
+    });
+  }
+  ann(x(11.4), y(160)+16, '✂ Pico recortado', '✂ Pic retallat');
+  ann(x(3.2), y(80)-12, '🌙 Cargando barato', '🌙 Carregant barat');
+
+  /* crosshair + tooltip */
+  var cross = el('line', {x1:0, y1:T, x2:0, y2:T+plotH, stroke:'rgba(22,34,47,.35)', 'stroke-width':1, 'stroke-dasharray':'3 3', opacity:0});
+  var dotBase = el('circle', {r:4.5, fill:COL_BASE, stroke:'#fff', 'stroke-width':2, opacity:0});
+  var dotBat = el('circle', {r:4.5, fill:COL_BAT, stroke:'#fff', 'stroke-width':2, opacity:0});
+  var tip = document.getElementById('chartTip');
+  var toggle = document.getElementById('batToggle');
+  var keyBat = document.getElementById('keyBat');
+  var batOn = false, animF = 0;
+
+  function lang(){ return document.documentElement.dataset.lang === 'ca' ? 'ca' : 'es'; }
+  var TXT = {
+    es:{none:'Sin baterías', with:'Con baterías'},
+    ca:{none:'Sense bateries', with:'Amb bateries'}
+  };
+
+  function showTip(h){
+    var lg = lang(), px = x(h);
+    cross.setAttribute('x1', px); cross.setAttribute('x2', px);
+    cross.setAttribute('opacity', 1);
+    dotBase.setAttribute('cx', px); dotBase.setAttribute('cy', y(base[h])); dotBase.setAttribute('opacity', 1);
+    if(batOn){ dotBat.setAttribute('cx', px); dotBat.setAttribute('cy', y(bat[h])); dotBat.setAttribute('opacity', 1); }
+    else dotBat.setAttribute('opacity', 0);
+
+    while(tip.firstChild) tip.removeChild(tip.firstChild);
+    var head = document.createElement('div');
+    head.className = 'tip-h';
+    head.textContent = (h < 10 ? '0' + h : h) + ':00';
+    tip.appendChild(head);
+    var rows = [[COL_BASE, base[h], TXT[lg].none]];
+    if(batOn) rows.push([COL_BAT, bat[h], TXT[lg].with]);
+    rows.forEach(function(r){
+      var d = document.createElement('div'); d.className = 'row';
+      var k = document.createElement('span'); k.className = 'k'; k.style.borderColor = r[0];
+      var v = document.createElement('span'); v.className = 'v'; v.textContent = r[1] + ' kW';
+      var n = document.createElement('span'); n.className = 'n'; n.textContent = r[2];
+      d.appendChild(k); d.appendChild(v); d.appendChild(n);
+      tip.appendChild(d);
+    });
+    var box = svg.getBoundingClientRect(), scale = box.width / W;
+    tip.style.left = (px * scale) + 'px';
+    tip.style.top = (Math.min(y(base[h]), batOn ? y(bat[h]) : 999) * scale) + 'px';
+    tip.style.opacity = 1;
+  }
+  function hideTip(){
+    tip.style.opacity = 0;
+    cross.setAttribute('opacity', 0);
+    dotBase.setAttribute('opacity', 0);
+    dotBat.setAttribute('opacity', 0);
+  }
+  function hourFromEvent(ev){
+    var box = svg.getBoundingClientRect();
+    var mx = (ev.clientX - box.left) * (W / box.width);
+    return Math.max(0, Math.min(23, Math.round((mx - L) / plotW * 23)));
+  }
+  svg.addEventListener('pointermove', function(ev){ showTip(hourFromEvent(ev)); });
+  svg.addEventListener('pointerleave', hideTip);
+  var focusHour = 12;
+  svg.addEventListener('keydown', function(ev){
+    if(ev.key === 'ArrowRight'){ focusHour = Math.min(23, focusHour + 1); showTip(focusHour); ev.preventDefault(); }
+    if(ev.key === 'ArrowLeft'){ focusHour = Math.max(0, focusHour - 1); showTip(focusHour); ev.preventDefault(); }
+  });
+  svg.addEventListener('blur', hideTip);
+
+  /* toggle con animación de interpolación */
+  var animId = null;
+  function animate(target){
+    if(animId) cancelAnimationFrame(animId);
+    var from = animF, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min(1, (ts - start) / 450);
+      var e = p < .5 ? 2*p*p : 1 - Math.pow(-2*p+2, 2)/2;
+      animF = from + (target - from) * e;
+      var interp = base.map(function(v, i){ return v + (bat[i] - v) * animF; });
+      batPath.setAttribute('d', smoothPath(interp));
+      batPath.setAttribute('opacity', Math.min(1, animF * 2));
+      annG.setAttribute('opacity', animF > .75 ? 1 : 0);
+      if(p < 1) animId = requestAnimationFrame(step);
+    }
+    animId = requestAnimationFrame(step);
+  }
+  toggle.addEventListener('change', function(){
+    batOn = toggle.checked;
+    keyBat.classList.toggle('dim', !batOn);
+    animate(batOn ? 1 : 0);
+  });
+  keyBat.classList.add('dim');
+
+  /* tabla accesible */
+  var table = document.getElementById('chartTable');
+  var thead = document.createElement('tr');
+  [['Hora','Hora'],['Sin baterías (kW)','Sense bateries (kW)'],['Con baterías (kW)','Amb bateries (kW)']].forEach(function(hcell){
+    var th = document.createElement('th');
+    var s1 = document.createElement('span'); s1.setAttribute('lang','es'); s1.textContent = hcell[0];
+    var s2 = document.createElement('span'); s2.setAttribute('lang','ca'); s2.textContent = hcell[1];
+    th.appendChild(s1); th.appendChild(s2);
+    thead.appendChild(th);
+  });
+  table.appendChild(thead);
+  base.forEach(function(v, h){
+    var tr = document.createElement('tr');
+    [h + ':00', v, bat[h]].forEach(function(c){
+      var td = document.createElement('td'); td.textContent = c; tr.appendChild(td);
+    });
+    table.appendChild(tr);
+  });
+})();
 </script>
 </body>
 </html>
