@@ -8,7 +8,7 @@
 <meta property="og:title" content="Vesta Energia — Custodiamos la energía de tu negocio">
 <meta property="og:description" content="Baterías inteligentes, energía solar y gestión con IA para pymes catalanas. Sin inversión inicial. Estudio de viabilidad gratuito.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23ff7a1a'/%3E%3Cstop offset='1' stop-color='%23ffb52e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23ff7a1a'/%3E%3Cstop offset='1' stop-color='%23ffb52e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z'/%3E%3Crect fill='url(%23g)' x='39' y='76' width='22' height='7' rx='3.5'/%3E%3Crect fill='url(%23g)' x='42' y='88' width='16' height='7' rx='3.5'/%3E%3Cpath fill='%23fff' d='M55 20 40 44h9l-5 20 16-26h-9l4-18z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,22 +71,38 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid rgba(255,122,26,.25);color:#b35408;font-weight:600;font-size:.82rem;padding:7px 16px;border-radius:99px;margin-bottom:22px}
 .hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:22px}
-.hero h1 .fire{background:linear-gradient(120deg,var(--flame),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .spark{background:linear-gradient(120deg,var(--flame),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{font-size:1.13rem;color:var(--ink-soft);max-width:34rem;margin-bottom:32px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
 .chips{display:flex;gap:10px;flex-wrap:wrap}
 .chip{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:500;color:var(--ink-soft);background:var(--white);border:1px solid rgba(22,34,47,.09);border-radius:99px;padding:7px 14px;box-shadow:0 2px 8px rgba(22,34,47,.05)}
 .chip svg{width:15px;height:15px;flex:none}
 
-/* hero visual: hearth */
-.hearth{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+/* hero visual: la luz que nunca se apaga */
+.beacon{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px}
 .ring{position:absolute;border-radius:50%;border:1.5px dashed rgba(255,122,26,.35);animation:spin 40s linear infinite}
 .ring.r1{width:300px;height:300px}
 .ring.r2{width:390px;height:390px;animation-duration:70s;animation-direction:reverse;border-color:rgba(255,181,46,.28)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.flame-core{position:relative;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 60%,#fff3d6,var(--glow) 40%,var(--ember) 70%,var(--flame));box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25);display:flex;align-items:center;justify-content:center;animation:breathe 4s ease-in-out infinite}
-@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.flame-core svg{width:92px;height:92px;filter:drop-shadow(0 4px 10px rgba(180,60,0,.4))}
+.glow-core{position:relative;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 60%,#fff3d6,var(--glow) 40%,var(--ember) 70%,var(--flame));box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25);display:flex;align-items:center;justify-content:center;animation:vigil 9s ease-in-out infinite}
+.glow-core svg{width:92px;height:92px;filter:drop-shadow(0 4px 10px rgba(180,60,0,.4))}
+/* la luz se apaga poco a poco... pero la batería la reenciende antes de morir */
+@keyframes vigil{
+  0%,38%{opacity:1;box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25)}
+  60%{opacity:.28;box-shadow:0 0 14px rgba(255,150,40,.12),0 0 30px rgba(255,122,26,.06)}
+  63%{opacity:.22;box-shadow:0 0 10px rgba(255,150,40,.10),0 0 20px rgba(255,122,26,.05)}
+  68%,100%{opacity:1;box-shadow:0 0 90px rgba(255,150,40,.6),0 0 170px rgba(255,122,26,.3)}
+}
+.bolt-flash{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:zap 9s ease-in-out infinite;pointer-events:none}
+.bolt-flash svg{width:120px;height:120px}
+@keyframes zap{0%,62%{opacity:0;transform:scale(.6)}64%{opacity:1;transform:scale(1.15)}67%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
+.rescue{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:var(--white);border:1.5px solid rgba(255,122,26,.35);border-radius:14px;padding:10px 16px;font-size:.82rem;font-weight:700;box-shadow:var(--shadow);display:flex;align-items:center;gap:9px;white-space:nowrap;animation:rescue-pulse 9s ease-in-out infinite}
+.rescue svg{width:20px;height:20px;flex:none}
+@keyframes rescue-pulse{
+  0%,58%{transform:translateX(-50%) scale(1);box-shadow:var(--shadow)}
+  63%{transform:translateX(-50%) scale(1.14);box-shadow:0 0 0 6px rgba(255,181,46,.25),0 10px 30px rgba(255,122,26,.4);border-color:var(--flame)}
+  70%,100%{transform:translateX(-50%) scale(1);box-shadow:var(--shadow)}
+}
 .orbit-chip{position:absolute;background:var(--white);border:1px solid rgba(22,34,47,.08);border-radius:14px;padding:10px 15px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;animation:float 5s ease-in-out infinite}
 .orbit-chip svg{width:18px;height:18px;flex:none}
 .oc1{top:8%;left:0;animation-delay:0s}
@@ -94,7 +110,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 .oc3{bottom:10%;left:6%;animation-delay:2.1s}
 .oc4{bottom:20%;right:2%;animation-delay:.6s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hearth{min-height:340px;margin-top:10px}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.beacon{min-height:360px;margin-top:10px}}
 
 /* ---------- MYTH STRIP ---------- */
 .myth{background:var(--navy);color:#f4ede0;padding:56px 0}
@@ -132,7 +148,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 .pillar p{font-size:.95rem;color:var(--ink-soft)}
 .eaas{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#f4ede0;border-radius:26px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;box-shadow:0 20px 50px rgba(16,28,41,.35)}
 .eaas h3{font-size:1.6rem;margin-bottom:16px;color:#fff}
-.eaas h3 .fire{color:var(--ember)}
+.eaas h3 .spark{color:var(--ember)}
 .eaas p{color:#cdd8e4;font-size:1rem;margin-bottom:14px}
 .eaas-points{list-style:none;display:grid;gap:12px}
 .eaas-points li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:13px 16px}
@@ -204,7 +220,8 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
-  .ring,.flame-core,.orbit-chip{animation:none}
+  .ring,.glow-core,.orbit-chip,.bolt-flash,.rescue{animation:none}
+  .bolt-flash{opacity:0}
 }
 </style>
 </head>
@@ -214,7 +231,7 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 <nav>
   <div class="wrap nav-inner">
     <a class="logo" href="#top">
-      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg)" d="M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z"/></svg>
+      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg)" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="url(#lg)" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="url(#lg)" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#fff" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
       Vesta<span style="color:var(--flame)">.</span>
     </a>
     <div class="nav-links">
@@ -237,8 +254,8 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
     <div>
       <span class="eyebrow">⚡ <span lang="es">Energía para pymes de Barcelona y Cataluña</span><span lang="ca">Energia per a pimes de Barcelona i Catalunya</span></span>
       <h1>
-        <span lang="es">Que la luz no te <span class="fire">queme</span> el negocio.</span>
-        <span lang="ca">Que la llum no et <span class="fire">cremi</span> el negoci.</span>
+        <span lang="es">Que la energía de tu negocio <span class="spark">nunca se acabe</span>.</span>
+        <span lang="ca">Que l'energia del teu negoci <span class="spark">no s'acabi mai</span>.</span>
       </h1>
       <p class="lead">
         <span lang="es">Baterías inteligentes, energía solar y un cerebro con IA que decide cada minuto la opción más barata para tu empresa. Y lo mejor: sin comprar equipos ni inversión inicial, pagando solo por el desempeño energético.</span>
@@ -254,13 +271,15 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Acompañamiento local, en tu idioma</span><span lang="ca">Acompanyament local, en la teva llengua</span></span>
       </div>
     </div>
-    <div class="hearth" aria-hidden="true">
+    <div class="beacon" aria-hidden="true">
       <div class="ring r1"></div>
       <div class="ring r2"></div>
-      <div class="flame-core">
-        <svg viewBox="0 0 100 100"><path fill="#fff" d="M50 12C50 12 27 36 27 58a23 23 0 0 0 46 0C73 36 50 12 50 12Zm0 60a12 12 0 0 1-12-12c0-9 12-22 12-22s12 13 12 22a12 12 0 0 1-12 12Z"/></svg>
+      <div class="glow-core">
+        <svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="#fff" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="#fff" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#ffb52e" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
+        <div class="bolt-flash"><svg viewBox="0 0 24 24" fill="#fff"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
       </div>
-      <div class="orbit-chip oc1"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2M7 10v4M11 10v4"/></svg><span lang="es">Batería cargada</span><span lang="ca">Bateria carregada</span></div>
+      <div class="rescue"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2"/><path fill="#ff7a1a" stroke="none" d="M11.5 8.5 7.5 13.5h2.5l-1 3.5 4-5h-2.5l1-3.5z"/></svg><span lang="es">Batería de guardia 24/7</span><span lang="ca">Bateria de guàrdia 24/7</span></div>
+      <div class="orbit-chip oc1"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.9.7 1.5 1.7 1.5 2.6h4c0-.9.6-1.9 1.5-2.6A6 6 0 0 0 12 3z"/></svg><span lang="es">Luz siempre encendida</span><span lang="ca">Llum sempre encesa</span></div>
       <div class="orbit-chip oc2"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span lang="es">Sol aprovechado</span><span lang="ca">Sol aprofitat</span></div>
       <div class="orbit-chip oc3"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><span lang="es">Pico recortado</span><span lang="ca">Pic retallat</span></div>
       <div class="orbit-chip oc4"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 3"/></svg><span lang="es">Decidiendo 24/7</span><span lang="ca">Decidint 24/7</span></div>
@@ -271,10 +290,10 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 <!-- ================= MYTH ================= -->
 <div class="myth">
   <div class="wrap">
-    <div class="myth-icon"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 12C50 12 27 36 27 58a23 23 0 0 0 46 0C73 36 50 12 50 12Zm0 60a12 12 0 0 1-12-12c0-9 12-22 12-22s12 13 12 22a12 12 0 0 1-12 12Z"/></svg></div>
+    <div class="myth-icon"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="#fff" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="#fff" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#ff7a1a" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg></div>
     <p>
-      <span lang="es"><strong>¿Por qué Vesta?</strong> En Roma, la diosa Vesta custodiaba el fuego sagrado que nunca debía apagarse. Nosotros hacemos lo mismo con la energía de tu negocio: que nunca falle y que nunca te salga cara de más.</span>
-      <span lang="ca"><strong>Per què Vesta?</strong> A Roma, la deessa Vesta custodiava el foc sagrat que mai no s'havia d'apagar. Nosaltres fem el mateix amb l'energia del teu negoci: que mai no falli i que mai no et surti cara de més.</span>
+      <span lang="es"><strong>¿Por qué Vesta?</strong> En Roma, la diosa Vesta custodiaba la luz eterna de la ciudad: no podía apagarse jamás. Nosotros seguimos su ejemplo con tecnología del siglo XXI: <strong>custodiamos la energía de tu negocio con baterías inteligentes</strong>, para que nunca se acabe y nunca te salga cara de más.</span>
+      <span lang="ca"><strong>Per què Vesta?</strong> A Roma, la deessa Vesta custodiava la llum eterna de la ciutat: no es podia apagar mai. Nosaltres seguim el seu exemple amb tecnologia del segle XXI: <strong>custodiem l'energia del teu negoci amb bateries intel·ligents</strong>, perquè no s'acabi mai i mai no et surti cara de més.</span>
     </p>
   </div>
 </div>
@@ -339,7 +358,7 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
     </div>
     <div class="eaas reveal">
       <div>
-        <h3><span lang="es">Y todo esto, <span class="fire">como servicio</span>. Sin comprar nada.</span><span lang="ca">I tot això, <span class="fire">com a servei</span>. Sense comprar res.</span></h3>
+        <h3><span lang="es">Y todo esto, <span class="spark">como servicio</span>. Sin comprar nada.</span><span lang="ca">I tot això, <span class="spark">com a servei</span>. Sense comprar res.</span></h3>
         <p><span lang="es">Se llama energía como servicio (EaaS): nuestro partner tecnológico internacional diseña, financia, instala, opera y mantiene la instalación. Tú no compras equipos ni pides un préstamo: pagas una cuota predecible por el desempeño energético, pensada para situarse por debajo de tu ahorro estimado.</span><span lang="ca">Es diu energia com a servei (EaaS): el nostre partner tecnològic internacional dissenya, finança, instal·la, opera i manté la instal·lació. Tu no compres equips ni demanes un préstec: pagues una quota predictible pel rendiment energètic, pensada per situar-se per sota del teu estalvi estimat.</span></p>
         <p><span lang="es">Y Vesta está aquí, en Barcelona, acompañándote en cada paso: de tú a tú, en tu idioma y sin tecnicismos innecesarios.</span><span lang="ca">I Vesta és aquí, a Barcelona, acompanyant-te a cada pas: de tu a tu, en la teva llengua i sense tecnicismes innecessaris.</span></p>
       </div>
@@ -501,12 +520,12 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 <footer>
   <div class="wrap foot-inner">
     <div class="foot-logo">
-      <svg viewBox="0 0 100 100"><path fill="#ffb52e" d="M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z"/></svg>
+      <svg viewBox="0 0 100 100"><path fill="#ffb52e" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="#ffb52e" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="#ffb52e" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#0b141d" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
       Vesta Energia
     </div>
     <div>
-      <span lang="es">Barcelona · Custodiamos el fuego de tu negocio · Los datos que nos envíes se usan solo para responderte (RGPD)</span>
-      <span lang="ca">Barcelona · Custodiem el foc del teu negoci · Les dades que ens enviïs s'usen només per respondre't (RGPD)</span>
+      <span lang="es">Barcelona · Custodiamos la energía de tu negocio · Los datos que nos envíes se usan solo para responderte (RGPD)</span>
+      <span lang="ca">Barcelona · Custodiem l'energia del teu negoci · Les dades que ens enviïs s'usen només per respondre't (RGPD)</span>
     </div>
     <div>© 2026 Vesta Energia</div>
   </div>
