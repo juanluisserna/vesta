@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vesta Energia — Baterías, solar y gestión inteligente para tu negocio, sin inversión inicial</title>
+<meta name="description" content="Vesta Energia ayuda a pymes de Barcelona y Cataluña a reducir su factura eléctrica con baterías, solar y gestión inteligente con IA, bajo un modelo de energía como servicio sin inversión inicial. Estudio de viabilidad gratuito.">
+<meta property="og:title" content="Vesta Energia — Custodiamos la energía de tu negocio">
+<meta property="og:description" content="Baterías inteligentes, energía solar y gestión con IA para pymes catalanas. Sin inversión inicial. Estudio de viabilidad gratuito.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0' stop-color='%23ff7a1a'/%3E%3Cstop offset='1' stop-color='%23ffb52e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222f;
+  --ink-soft:#44566b;
+  --paper:#fffcf5;
+  --cream:#fff6e6;
+  --flame:#ff7a1a;
+  --ember:#ffb52e;
+  --glow:#ffd98a;
+  --navy:#101c29;
+  --navy-2:#1a2b3d;
+  --white:#ffffff;
+  --radius:20px;
+  --shadow:0 10px 30px rgba(22,34,47,.10);
+  --font-head:'Sora',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-head);line-height:1.15}
+img,svg{max-width:100%}
+a{color:inherit}
+
+/* language toggle */
+html[data-lang="es"] [lang="ca"]{display:none !important}
+html[data-lang="ca"] [lang="es"]{display:none !important}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(22,34,47,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.02em}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:.94rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.nav-links a:hover{color:var(--flame)}
+.lang-switch{display:flex;border:1.5px solid rgba(22,34,47,.15);border-radius:99px;overflow:hidden;font-size:.8rem;font-weight:600}
+.lang-switch button{border:0;background:transparent;padding:5px 12px;cursor:pointer;font:inherit;color:var(--ink-soft)}
+.lang-switch button.active{background:var(--ink);color:var(--paper)}
+.btn{display:inline-block;padding:13px 26px;border-radius:99px;font-weight:600;text-decoration:none;font-size:.98rem;transition:transform .15s,box-shadow .15s;cursor:pointer}
+.btn-flame{background:linear-gradient(135deg,var(--flame),var(--ember));color:#fff;box-shadow:0 6px 20px rgba(255,122,26,.35)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,122,26,.45)}
+.btn-ghost{border:2px solid rgba(22,34,47,.18);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--flame);color:var(--flame)}
+.btn-sm{padding:9px 20px;font-size:.88rem}
+.nav-cta{display:inline-block}
+@media(max-width:820px){.nav-links a.nav-item{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:96px 0 110px;background:
+  radial-gradient(900px 500px at 85% -10%, rgba(255,181,46,.22), transparent 60%),
+  radial-gradient(700px 500px at -10% 110%, rgba(255,122,26,.14), transparent 60%),
+  var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid rgba(255,122,26,.25);color:#b35408;font-weight:600;font-size:.82rem;padding:7px 16px;border-radius:99px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:22px}
+.hero h1 .fire{background:linear-gradient(120deg,var(--flame),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.13rem;color:var(--ink-soft);max-width:34rem;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:500;color:var(--ink-soft);background:var(--white);border:1px solid rgba(22,34,47,.09);border-radius:99px;padding:7px 14px;box-shadow:0 2px 8px rgba(22,34,47,.05)}
+.chip svg{width:15px;height:15px;flex:none}
+
+/* hero visual: hearth */
+.hearth{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+.ring{position:absolute;border-radius:50%;border:1.5px dashed rgba(255,122,26,.35);animation:spin 40s linear infinite}
+.ring.r1{width:300px;height:300px}
+.ring.r2{width:390px;height:390px;animation-duration:70s;animation-direction:reverse;border-color:rgba(255,181,46,.28)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.flame-core{position:relative;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 50% 60%,#fff3d6,var(--glow) 40%,var(--ember) 70%,var(--flame));box-shadow:0 0 80px rgba(255,150,40,.55),0 0 160px rgba(255,122,26,.25);display:flex;align-items:center;justify-content:center;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.flame-core svg{width:92px;height:92px;filter:drop-shadow(0 4px 10px rgba(180,60,0,.4))}
+.orbit-chip{position:absolute;background:var(--white);border:1px solid rgba(22,34,47,.08);border-radius:14px;padding:10px 15px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;animation:float 5s ease-in-out infinite}
+.orbit-chip svg{width:18px;height:18px;flex:none}
+.oc1{top:8%;left:0;animation-delay:0s}
+.oc2{top:22%;right:-2%;animation-delay:1.2s}
+.oc3{bottom:10%;left:6%;animation-delay:2.1s}
+.oc4{bottom:20%;right:2%;animation-delay:.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hearth{min-height:340px;margin-top:10px}}
+
+/* ---------- MYTH STRIP ---------- */
+.myth{background:var(--navy);color:#f4ede0;padding:56px 0}
+.myth .wrap{display:flex;gap:28px;align-items:center}
+.myth-icon{flex:none;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--flame),var(--ember));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(255,122,26,.4)}
+.myth-icon svg{width:32px;height:32px}
+.myth p{font-size:1.08rem;max-width:56rem}
+.myth strong{color:var(--ember)}
+@media(max-width:700px){.myth .wrap{flex-direction:column;text-align:center}}
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-head{max-width:44rem;margin-bottom:52px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.kicker{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--flame);margin-bottom:12px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.sec-head p{color:var(--ink-soft);font-size:1.05rem}
+
+/* ---------- PAINS ---------- */
+.pains{background:var(--cream)}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.pain{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid rgba(22,34,47,.06);box-shadow:var(--shadow);transition:transform .2s}
+.pain:hover{transform:translateY(-5px)}
+.pain .emoji{font-size:1.9rem;display:block;margin-bottom:12px}
+.pain h3{font-size:1.06rem;margin-bottom:8px}
+.pain p{font-size:.92rem;color:var(--ink-soft)}
+
+/* ---------- SOLUTION ---------- */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:36px}
+.pillar{background:var(--white);border-radius:var(--radius);padding:34px 28px;border:1px solid rgba(22,34,47,.07);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .2s}
+.pillar:hover{transform:translateY(-5px)}
+.pillar::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--flame),var(--ember))}
+.pillar .p-icon{width:54px;height:54px;border-radius:16px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.pillar .p-icon svg{width:28px;height:28px}
+.pillar h3{font-size:1.15rem;margin-bottom:10px}
+.pillar p{font-size:.95rem;color:var(--ink-soft)}
+.eaas{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#f4ede0;border-radius:26px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;box-shadow:0 20px 50px rgba(16,28,41,.35)}
+.eaas h3{font-size:1.6rem;margin-bottom:16px;color:#fff}
+.eaas h3 .fire{color:var(--ember)}
+.eaas p{color:#cdd8e4;font-size:1rem;margin-bottom:14px}
+.eaas-points{list-style:none;display:grid;gap:12px}
+.eaas-points li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:13px 16px}
+.eaas-points li svg{width:20px;height:20px;flex:none;margin-top:2px}
+@media(max-width:860px){.eaas{grid-template-columns:1fr;padding:36px 28px}}
+
+/* ---------- STEPS ---------- */
+.steps-sec{background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;counter-reset:step}
+.step{background:var(--white);border-radius:var(--radius);padding:30px 26px;border:1px solid rgba(22,34,47,.06);box-shadow:var(--shadow);position:relative}
+.step .num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--flame),var(--ember));color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 5px 14px rgba(255,122,26,.35)}
+.step h3{font-size:1.04rem;margin-bottom:8px}
+.step p{font-size:.9rem;color:var(--ink-soft)}
+.step .tag{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;color:#b35408;background:var(--cream);border-radius:99px;padding:4px 12px}
+
+/* ---------- SECTORS ---------- */
+.sector-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px}
+.sector{background:var(--white);border:1px solid rgba(22,34,47,.07);border-radius:16px;padding:22px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 4px 14px rgba(22,34,47,.06);transition:transform .18s,border-color .18s}
+.sector:hover{transform:translateY(-4px);border-color:rgba(255,122,26,.4)}
+.sector .emoji{font-size:1.6rem}
+.sector span.name{font-weight:600;font-size:.95rem}
+.sector.star{grid-column:span 2;background:linear-gradient(135deg,#fff6e6,#ffedd0);border:1.5px solid rgba(255,122,26,.35)}
+.sector.star .badge{margin-left:auto;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--flame);color:#fff;padding:4px 10px;border-radius:99px}
+@media(max-width:520px){.sector.star{grid-column:span 1}}
+.rule-band{background:var(--white);border:2px dashed rgba(255,122,26,.45);border-radius:var(--radius);padding:28px 32px;font-size:1.05rem;text-align:center;max-width:46rem;margin:0 auto}
+.rule-band strong{color:var(--flame)}
+
+/* ---------- WHY ---------- */
+.why{background:var(--navy);color:#f4ede0}
+.why .kicker{color:var(--ember)}
+.why .sec-head h2{color:#fff}
+.why .sec-head p{color:#b9c6d4}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:30px 26px}
+.why-card .w-icon{width:46px;height:46px;border-radius:13px;background:rgba(255,181,46,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-card .w-icon svg{width:24px;height:24px}
+.why-card h3{font-size:1.05rem;margin-bottom:8px;color:#fff}
+.why-card p{font-size:.9rem;color:#b9c6d4}
+
+/* ---------- FAQ ---------- */
+details{background:var(--white);border:1px solid rgba(22,34,47,.08);border-radius:16px;margin-bottom:12px;box-shadow:0 3px 10px rgba(22,34,47,.05);overflow:hidden}
+summary{cursor:pointer;padding:20px 24px;font-weight:600;font-family:var(--font-head);font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;color:var(--flame);font-weight:400;transition:transform .2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details .answer{padding:0 24px 22px;color:var(--ink-soft);font-size:.95rem}
+.faq-wrap{max-width:46rem;margin:0 auto}
+
+/* ---------- CTA ---------- */
+.final-cta{background:
+  radial-gradient(700px 400px at 50% 120%, rgba(255,122,26,.25), transparent 65%),
+  var(--navy);color:#fff;text-align:center;padding:100px 0}
+.final-cta h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.final-cta p{color:#c3cfdc;max-width:36rem;margin:0 auto 36px;font-size:1.08rem}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-linkedin{background:#fff;color:var(--navy);display:inline-flex;align-items:center;gap:9px}
+.btn-linkedin:hover{transform:translateY(-2px)}
+.btn-linkedin svg{width:18px;height:18px}
+.mini-note{margin-top:26px;font-size:.85rem;color:#8fa1b3}
+
+/* ---------- FOOTER ---------- */
+footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
+.foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.foot-logo{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-weight:700;color:#e8ecf1}
+.foot-logo svg{width:20px;height:20px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .ring,.flame-core,.orbit-chip{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg)" d="M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z"/></svg>
+      Vesta<span style="color:var(--flame)">.</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-item" href="#solucion"><span lang="es">Solución</span><span lang="ca">Solució</span></a>
+      <a class="nav-item" href="#como"><span lang="es">Cómo funciona</span><span lang="ca">Com funciona</span></a>
+      <a class="nav-item" href="#sectores"><span lang="es">Sectores</span><span lang="ca">Sectors</span></a>
+      <a class="nav-item" href="#faq">FAQ</a>
+      <div class="lang-switch" role="group" aria-label="Idioma">
+        <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+        <button id="btn-ca" onclick="setLang('ca')">CA</button>
+      </div>
+      <a class="btn btn-flame btn-sm nav-cta" href="#contacto"><span lang="es">Estudio gratuito</span><span lang="ca">Estudi gratuït</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">⚡ <span lang="es">Energía para pymes de Barcelona y Cataluña</span><span lang="ca">Energia per a pimes de Barcelona i Catalunya</span></span>
+      <h1>
+        <span lang="es">Que la luz no te <span class="fire">queme</span> el negocio.</span>
+        <span lang="ca">Que la llum no et <span class="fire">cremi</span> el negoci.</span>
+      </h1>
+      <p class="lead">
+        <span lang="es">Baterías inteligentes, energía solar y un cerebro con IA que decide cada minuto la opción más barata para tu empresa. Y lo mejor: sin comprar equipos ni inversión inicial, pagando solo por el desempeño energético.</span>
+        <span lang="ca">Bateries intel·ligents, energia solar i un cervell amb IA que decideix cada minut l'opció més barata per a la teva empresa. I el millor: sense comprar equips ni inversió inicial, pagant només pel rendiment energètic.</span>
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-flame" href="#contacto"><span lang="es">Pide tu estudio gratuito</span><span lang="ca">Demana el teu estudi gratuït</span></a>
+        <a class="btn btn-ghost" href="#como"><span lang="es">¿Cómo funciona?</span><span lang="ca">Com funciona?</span></a>
+      </div>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Estudio de viabilidad sin coste</span><span lang="ca">Estudi de viabilitat sense cost</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Cero inversión inicial</span><span lang="ca">Zero inversió inicial</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Acompañamiento local, en tu idioma</span><span lang="ca">Acompanyament local, en la teva llengua</span></span>
+      </div>
+    </div>
+    <div class="hearth" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="flame-core">
+        <svg viewBox="0 0 100 100"><path fill="#fff" d="M50 12C50 12 27 36 27 58a23 23 0 0 0 46 0C73 36 50 12 50 12Zm0 60a12 12 0 0 1-12-12c0-9 12-22 12-22s12 13 12 22a12 12 0 0 1-12 12Z"/></svg>
+      </div>
+      <div class="orbit-chip oc1"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2M7 10v4M11 10v4"/></svg><span lang="es">Batería cargada</span><span lang="ca">Bateria carregada</span></div>
+      <div class="orbit-chip oc2"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span lang="es">Sol aprovechado</span><span lang="ca">Sol aprofitat</span></div>
+      <div class="orbit-chip oc3"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><span lang="es">Pico recortado</span><span lang="ca">Pic retallat</span></div>
+      <div class="orbit-chip oc4"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 3"/></svg><span lang="es">Decidiendo 24/7</span><span lang="ca">Decidint 24/7</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MYTH ================= -->
+<div class="myth">
+  <div class="wrap">
+    <div class="myth-icon"><svg viewBox="0 0 100 100"><path fill="#fff" d="M50 12C50 12 27 36 27 58a23 23 0 0 0 46 0C73 36 50 12 50 12Zm0 60a12 12 0 0 1-12-12c0-9 12-22 12-22s12 13 12 22a12 12 0 0 1-12 12Z"/></svg></div>
+    <p>
+      <span lang="es"><strong>¿Por qué Vesta?</strong> En Roma, la diosa Vesta custodiaba el fuego sagrado que nunca debía apagarse. Nosotros hacemos lo mismo con la energía de tu negocio: que nunca falle y que nunca te salga cara de más.</span>
+      <span lang="ca"><strong>Per què Vesta?</strong> A Roma, la deessa Vesta custodiava el foc sagrat que mai no s'havia d'apagar. Nosaltres fem el mateix amb l'energia del teu negoci: que mai no falli i que mai no et surti cara de més.</span>
+    </p>
+  </div>
+</div>
+
+<!-- ================= PAINS ================= -->
+<section class="pains">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span lang="es">¿Te suena?</span><span lang="ca">Et sona?</span></span>
+      <h2><span lang="es">Tu factura eléctrica no debería darte sustos</span><span lang="ca">La teva factura elèctrica no t'hauria de fer patir</span></h2>
+      <p><span lang="es">Si tu negocio consume energía sin parar, seguramente conoces alguno de estos clásicos.</span><span lang="ca">Si el teu negoci consumeix energia sense parar, segurament coneixes algun d'aquests clàssics.</span></p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain reveal">
+        <span class="emoji">🎢</span>
+        <h3><span lang="es">Precios en montaña rusa</span><span lang="ca">Preus en muntanya russa</span></h3>
+        <p><span lang="es">Cada mes la factura es una sorpresa, y casi nunca de las buenas. Planificar costes así es imposible.</span><span lang="ca">Cada mes la factura és una sorpresa, i gairebé mai de les bones. Planificar costos així és impossible.</span></p>
+      </div>
+      <div class="pain reveal">
+        <span class="emoji">📈</span>
+        <h3><span lang="es">Penalizaciones por picos</span><span lang="ca">Penalitzacions per pics</span></h3>
+        <p><span lang="es">Unos minutos de demanda alta y pagas potencia de más todo el mes. Los picos se pueden recortar.</span><span lang="ca">Uns minuts de demanda alta i pagues potència de més tot el mes. Els pics es poden retallar.</span></p>
+      </div>
+      <div class="pain reveal">
+        <span class="emoji">🕯️</span>
+        <h3><span lang="es">Un corte = caja perdida</span><span lang="ca">Un tall = caixa perduda</span></h3>
+        <p><span lang="es">Neveras, quirófanos, servidores, clases: hay negocios donde quedarse sin luz no es una anécdota, es un problema serio.</span><span lang="ca">Neveres, quiròfans, servidors, classes: hi ha negocis on quedar-se sense llum no és una anècdota, és un problema seriós.</span></p>
+      </div>
+      <div class="pain reveal">
+        <span class="emoji">🔌</span>
+        <h3><span lang="es">Cargadores que la red no soporta</span><span lang="ca">Carregadors que la xarxa no suporta</span></h3>
+        <p><span lang="es">Quieres electrificar tu flota, pero reforzar la acometida puede costar decenas de miles de euros y más de un año de espera. Hay otro camino.</span><span lang="ca">Vols electrificar la teva flota, però reforçar l'escomesa pot costar desenes de milers d'euros i més d'un any d'espera. Hi ha un altre camí.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLUTION ================= -->
+<section id="solucion">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><span lang="es">La solución</span><span lang="ca">La solució</span></span>
+      <h2><span lang="es">Tres piezas que trabajan juntas para tu negocio</span><span lang="ca">Tres peces que treballen juntes per al teu negoci</span></h2>
+      <p><span lang="es">No vendemos cajas: diseñamos una solución integral que combina almacenamiento, generación y cerebro. Cada pieza suma, juntas multiplican.</span><span lang="ca">No venem caixes: dissenyem una solució integral que combina emmagatzematge, generació i cervell. Cada peça suma, juntes multipliquen.</span></p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="1.8"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 11v2M6 10v4M10 10v4M14 10v4"/></svg></div>
+        <h3><span lang="es">Baterías inteligentes (BESS)</span><span lang="ca">Bateries intel·ligents (BESS)</span></h3>
+        <p><span lang="es">Recortan los picos de demanda, desplazan tu consumo a las horas más baratas y respaldan tu operación si la red falla. La navaja suiza de la energía.</span><span lang="ca">Retallen els pics de demanda, desplacen el teu consum a les hores més barates i donen suport a la teva operació si la xarxa falla. La navalla suïssa de l'energia.</span></p>
+      </div>
+      <div class="pillar reveal">
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
+        <h3><span lang="es">Energía solar</span><span lang="ca">Energia solar</span></h3>
+        <p><span lang="es">Genera tu propia energía y exprímela al máximo: combinada con baterías, el sol que no usas al mediodía lo aprovechas por la noche.</span><span lang="ca">Genera la teva pròpia energia i aprofita-la al màxim: combinada amb bateries, el sol que no fas servir al migdia l'aprofites a la nit.</span></p>
+      </div>
+      <div class="pillar reveal">
+        <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a5 5 0 0 0-5 5c0 1.5.6 2.8 1.5 3.8L7 22l5-3 5 3-1.5-11.2A5.5 5.5 0 0 0 17 7a5 5 0 0 0-5-5z"/></svg></div>
+        <h3><span lang="es">Un cerebro con IA (EMS)</span><span lang="ca">Un cervell amb IA (EMS)</span></h3>
+        <p><span lang="es">Un sistema de gestión energética que aprende de tu consumo y decide cada minuto qué es más barato: usar el sol, la batería o la red. Sin que tú muevas un dedo.</span><span lang="ca">Un sistema de gestió energètica que aprèn del teu consum i decideix cada minut què és més barat: fer servir el sol, la bateria o la xarxa. Sense que tu moguis un dit.</span></p>
+      </div>
+    </div>
+    <div class="eaas reveal">
+      <div>
+        <h3><span lang="es">Y todo esto, <span class="fire">como servicio</span>. Sin comprar nada.</span><span lang="ca">I tot això, <span class="fire">com a servei</span>. Sense comprar res.</span></h3>
+        <p><span lang="es">Se llama energía como servicio (EaaS): nuestro partner tecnológico internacional diseña, financia, instala, opera y mantiene la instalación. Tú no compras equipos ni pides un préstamo: pagas una cuota predecible por el desempeño energético, pensada para situarse por debajo de tu ahorro estimado.</span><span lang="ca">Es diu energia com a servei (EaaS): el nostre partner tecnològic internacional dissenya, finança, instal·la, opera i manté la instal·lació. Tu no compres equips ni demanes un préstec: pagues una quota predictible pel rendiment energètic, pensada per situar-se per sota del teu estalvi estimat.</span></p>
+        <p><span lang="es">Y Vesta está aquí, en Barcelona, acompañándote en cada paso: de tú a tú, en tu idioma y sin tecnicismos innecesarios.</span><span lang="ca">I Vesta és aquí, a Barcelona, acompanyant-te a cada pas: de tu a tu, en la teva llengua i sense tecnicismes innecessaris.</span></p>
+      </div>
+      <ul class="eaas-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Cero inversión inicial: el activo lo financia el operador</span><span lang="ca">Zero inversió inicial: l'actiu el finança l'operador</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Cuota mensual predecible, sin sorpresas</span><span lang="ca">Quota mensual predictible, sense sorpreses</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Mantenimiento y monitorización 24/7 incluidos</span><span lang="ca">Manteniment i monitoratge 24/7 inclosos</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="2.2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span lang="es">Tecnología de un fabricante internacional premiado</span><span lang="ca">Tecnologia d'un fabricant internacional premiat</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STEPS ================= -->
+<section class="steps-sec" id="como">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span lang="es">Cómo funciona</span><span lang="ca">Com funciona</span></span>
+      <h2><span lang="es">De la curiosidad al ahorro, en cuatro pasos</span><span lang="ca">De la curiositat a l'estalvi, en quatre passos</span></h2>
+      <p><span lang="es">Sin compromiso hasta que los números te convenzan. Así de simple.</span><span lang="ca">Sense compromís fins que els números et convencin. Així de simple.</span></p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3><span lang="es">Hablamos</span><span lang="ca">Parlem</span></h3>
+        <p><span lang="es">Nos cuentas tu situación y, con tu autorización, obtenemos tu curva de consumo real de los últimos meses a través de Datadis, la plataforma oficial de datos eléctricos.</span><span lang="ca">Ens expliques la teva situació i, amb la teva autorització, obtenim la teva corba de consum real dels últims mesos a través de Datadis, la plataforma oficial de dades elèctriques.</span></p>
+        <span class="tag"><span lang="es">Coste: 0 €</span><span lang="ca">Cost: 0 €</span></span>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <h3><span lang="es">Estudio de viabilidad</span><span lang="ca">Estudi de viabilitat</span></h3>
+        <p><span lang="es">Ingeniería analiza tus datos reales y dimensiona la solución óptima para tu caso. En aproximadamente una semana sabrás si el proyecto tiene sentido para ti.</span><span lang="ca">Enginyeria analitza les teves dades reals i dimensiona la solució òptima per al teu cas. En aproximadament una setmana sabràs si el projecte té sentit per a tu.</span></p>
+        <span class="tag"><span lang="es">También 0 €</span><span lang="ca">També 0 €</span></span>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <h3><span lang="es">Propuesta clara</span><span lang="ca">Proposta clara</span></h3>
+        <p><span lang="es">Números sobre la mesa: cuota, ahorro estimado, plazos y condiciones. Lo revisamos juntos, resolvemos dudas y decides con calma. Si no te convence, aquí no ha pasado nada.</span><span lang="ca">Números sobre la taula: quota, estalvi estimat, terminis i condicions. Ho revisem junts, resolem dubtes i decideixes amb calma. Si no et convenç, aquí no ha passat res.</span></p>
+        <span class="tag"><span lang="es">Tú decides</span><span lang="ca">Tu decideixes</span></span>
+      </div>
+      <div class="step reveal">
+        <div class="num">4</div>
+        <h3><span lang="es">Instalación y despegue</span><span lang="ca">Instal·lació i enlairament</span></h3>
+        <p><span lang="es">Nuestro partner instala y opera el sistema con instaladores certificados locales. Tú sigues a lo tuyo; nosotros seguimos cerca, monitorizando que todo rinda como debe.</span><span lang="ca">El nostre partner instal·la i opera el sistema amb instal·ladors certificats locals. Tu segueixes amb la teva feina; nosaltres seguim a prop, monitorant que tot rendeixi com cal.</span></p>
+        <span class="tag"><span lang="es">A ahorrar</span><span lang="ca">A estalviar</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTORS ================= -->
+<section id="sectores">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker"><span lang="es">¿Para quién?</span><span lang="ca">Per a qui?</span></span>
+      <h2><span lang="es">Negocios que no pueden parar</span><span lang="ca">Negocis que no poden parar</span></h2>
+      <p><span lang="es">Trabajamos con empresas cuya operación es continua y cuya factura eléctrica pesa de verdad.</span><span lang="ca">Treballem amb empreses amb operació contínua i una factura elèctrica que pesa de debò.</span></p>
+    </div>
+    <div class="sector-grid">
+      <div class="sector reveal"><span class="emoji">🏨</span><span class="name"><span lang="es">Hoteles</span><span lang="ca">Hotels</span></span></div>
+      <div class="sector reveal"><span class="emoji">🏥</span><span class="name"><span lang="es">Clínicas y salud</span><span lang="ca">Clíniques i salut</span></span></div>
+      <div class="sector reveal"><span class="emoji">🧊</span><span class="name"><span lang="es">Logística y frío</span><span lang="ca">Logística i fred</span></span></div>
+      <div class="sector reveal"><span class="emoji">🛒</span><span class="name"><span lang="es">Supermercados</span><span lang="ca">Supermercats</span></span></div>
+      <div class="sector reveal"><span class="emoji">🏋️</span><span class="name"><span lang="es">Gimnasios</span><span lang="ca">Gimnasos</span></span></div>
+      <div class="sector reveal"><span class="emoji">🎓</span><span class="name"><span lang="es">Colegios</span><span lang="ca">Escoles</span></span></div>
+      <div class="sector reveal"><span class="emoji">🖥️</span><span class="name"><span lang="es">Centros de datos</span><span lang="ca">Centres de dades</span></span></div>
+      <div class="sector reveal"><span class="emoji">🏭</span><span class="name"><span lang="es">Industria</span><span lang="ca">Indústria</span></span></div>
+      <div class="sector star reveal"><span class="emoji">🚚</span><span class="name"><span lang="es">Flotas eléctricas: carga tu flota sin obras faraónicas de red</span><span lang="ca">Flotes elèctriques: carrega la teva flota sense obres faraòniques de xarxa</span></span><span class="badge"><span lang="es">El caso estrella</span><span lang="ca">El cas estrella</span></span></div>
+    </div>
+    <div class="rule-band reveal">
+      <span lang="es">¿La regla rápida? Si tu factura eléctrica <strong>te duele cada mes</strong> y tu operación <strong>no se detiene</strong>, probablemente podamos ayudarte. Y si el estudio dice que no, te lo diremos igual de claro.</span>
+      <span lang="ca">La regla ràpida? Si la factura elèctrica <strong>et fa mal cada mes</strong> i la teva operació <strong>no s'atura</strong>, probablement et podem ajudar. I si l'estudi diu que no, t'ho direm igual de clar.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><span lang="es">Por qué Vesta</span><span lang="ca">Per què Vesta</span></span>
+      <h2><span lang="es">Cercanos como un vecino, serios como un ingeniero</span><span lang="ca">Propers com un veí, seriosos com un enginyer</span></h2>
+      <p><span lang="es">Lo mejor de dos mundos: tecnología internacional probada y alguien de aquí que te la explica sin humo.</span><span lang="ca">El millor de dos mons: tecnologia internacional provada i algú d'aquí que te l'explica sense fum.</span></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3><span lang="es">Proximidad de verdad</span><span lang="ca">Proximitat de debò</span></h3>
+        <p><span lang="es">Estamos en Barcelona. Te visitamos, te escuchamos y te acompañamos durante todo el proyecto, no solo hasta la firma.</span><span lang="ca">Som a Barcelona. Et visitem, t'escoltem i t'acompanyem durant tot el projecte, no només fins a la signatura.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg></div>
+        <h3><span lang="es">Tecnología premiada</span><span lang="ca">Tecnologia premiada</span></h3>
+        <p><span lang="es">Nuestro partner tecnológico acumula más de una década de proyectos energéticos para empresas multinacionales y reconocimientos internacionales del sector.</span><span lang="ca">El nostre partner tecnològic acumula més d'una dècada de projectes energètics per a empreses multinacionals i reconeixements internacionals del sector.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3><span lang="es">Datos, no humo</span><span lang="ca">Dades, no fum</span></h3>
+        <p><span lang="es">Trabajamos con tu curva de consumo real, no con promesas genéricas. Cada propuesta se dimensiona con tus datos oficiales de Datadis.</span><span lang="ca">Treballem amb la teva corba de consum real, no amb promeses genèriques. Cada proposta es dimensiona amb les teves dades oficials de Datadis.</span></p>
+      </div>
+      <div class="why-card reveal">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3><span lang="es">Sinceridad radical</span><span lang="ca">Sinceritat radical</span></h3>
+        <p><span lang="es">No todo negocio encaja en este modelo, y preferimos decírtelo pronto. Si el estudio no sale a tu favor, lo sabrás sin rodeos y sin haber gastado un euro.</span><span lang="ca">No tot negoci encaixa en aquest model, i preferim dir-t'ho aviat. Si l'estudi no surt a favor teu, ho sabràs sense embuts i sense haver gastat ni un euro.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">FAQ</span>
+      <h2><span lang="es">Preguntas que nos hacen siempre</span><span lang="ca">Preguntes que ens fan sempre</span></h2>
+    </div>
+    <div class="faq-wrap">
+      <details class="reveal">
+        <summary><span lang="es">¿De verdad no tengo que invertir nada?</span><span lang="ca">De debò no he d'invertir res?</span></summary>
+        <div class="answer"><span lang="es">De verdad. En el modelo de energía como servicio, el activo lo financia y lo posee el operador del proyecto. No es un préstamo ni un renting: tú pagas una cuota por el desempeño energético del sistema, y esa cuota se diseña para situarse por debajo de tu ahorro estimado. Tu única "inversión" es una conversación y tus datos de consumo.</span><span lang="ca">De debò. En el model d'energia com a servei, l'actiu el finança i el posseeix l'operador del projecte. No és un préstec ni un rènting: tu pagues una quota pel rendiment energètic del sistema, i aquesta quota es dissenya per situar-se per sota del teu estalvi estimat. La teva única "inversió" és una conversa i les teves dades de consum.</span></div>
+      </details>
+      <details class="reveal">
+        <summary><span lang="es">¿Cuánto voy a ahorrar?</span><span lang="ca">Quant estalviaré?</span></summary>
+        <div class="answer"><span lang="es">La respuesta honesta: depende de tu consumo, tu tarifa y tu operación. Por eso el primer paso es siempre un estudio de viabilidad gratuito con tus datos reales. No vendemos cifras mágicas: te damos una estimación seria, con números que puedes cuestionar, y la decisión es tuya.</span><span lang="ca">La resposta honesta: depèn del teu consum, la teva tarifa i la teva operació. Per això el primer pas és sempre un estudi de viabilitat gratuït amb les teves dades reals. No venem xifres màgiques: et donem una estimació seriosa, amb números que pots qüestionar, i la decisió és teva.</span></div>
+      </details>
+      <details class="reveal">
+        <summary><span lang="es">¿Qué necesitáis de mí para el estudio?</span><span lang="ca">Què necessiteu de mi per a l'estudi?</span></summary>
+        <div class="answer"><span lang="es">Muy poco: tu autorización para consultar tus datos de consumo en Datadis (la plataforma oficial de las distribuidoras españolas), idealmente unos 12 meses de historial, y una conversación sobre cómo funciona tu negocio. Con eso, ingeniería puede dimensionar la solución.</span><span lang="ca">Molt poc: la teva autorització per consultar les teves dades de consum a Datadis (la plataforma oficial de les distribuïdores espanyoles), idealment uns 12 mesos d'historial, i una conversa sobre com funciona el teu negoci. Amb això, enginyeria pot dimensionar la solució.</span></div>
+      </details>
+      <details class="reveal">
+        <summary><span lang="es">¿Y si mi empresa no encaja en el modelo?</span><span lang="ca">I si la meva empresa no encaixa en el model?</span></summary>
+        <div class="answer"><span lang="es">Te lo diremos claro y pronto. No todos los proyectos son estructurables bajo este modelo, y forzar uno que no encaja es malo para todos. Si no es tu momento, te explicaremos por qué y qué tendría que cambiar para que lo fuera.</span><span lang="ca">T'ho direm clar i aviat. No tots els projectes es poden estructurar sota aquest model, i forçar-ne un que no encaixa és dolent per a tothom. Si no és el teu moment, t'explicarem per què i què hauria de canviar perquè ho fos.</span></div>
+      </details>
+      <details class="reveal">
+        <summary><span lang="es">¿Quién instala y quién mantiene el sistema?</span><span lang="ca">Qui instal·la i qui manté el sistema?</span></summary>
+        <div class="answer"><span lang="es">La instalación la ejecutan instaladores certificados locales bajo la ingeniería de nuestro partner tecnológico, que además opera y mantiene el sistema durante toda la vida del contrato, con monitorización continua y mantenimiento predictivo. Vesta es tu punto de contacto local durante todo el proceso.</span><span lang="ca">La instal·lació l'executen instal·ladors certificats locals sota l'enginyeria del nostre partner tecnològic, que a més opera i manté el sistema durant tota la vida del contracte, amb monitoratge continu i manteniment predictiu. Vesta és el teu punt de contacte local durant tot el procés.</span></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta" id="contacto">
+  <div class="wrap">
+    <h2><span lang="es">¿Le damos una vuelta a tu factura?</span><span lang="ca">Li donem una volta a la teva factura?</span></h2>
+    <p><span lang="es">Cuéntanos tu caso en un correo. Te respondemos rápido, te decimos con franqueza si tiene sentido y, si lo tiene, arrancamos el estudio gratuito.</span><span lang="ca">Explica'ns el teu cas en un correu. Et responem ràpid, et diem amb franquesa si té sentit i, si en té, engeguem l'estudi gratuït.</span></p>
+    <div class="cta-buttons">
+      <a class="btn btn-flame" href="mailto:jlsernag@gmail.com?subject=Estudio%20de%20viabilidad%20gratuito%20%E2%80%94%20Vesta%20Energia"><span lang="es">✉️ Escríbenos: jlsernag@gmail.com</span><span lang="ca">✉️ Escriu-nos: jlsernag@gmail.com</span></a>
+      <a class="btn btn-linkedin" href="https://www.linkedin.com/in/juan-luis-serna-garc%C3%ADa-15474b148/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <p class="mini-note"><span lang="es">Sin compromiso, sin spam y sin llamadas pesadas. Prometido.</span><span lang="ca">Sense compromís, sense spam i sense trucades pesades. Promès.</span></p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-logo">
+      <svg viewBox="0 0 100 100"><path fill="#ffb52e" d="M50 6C50 6 22 34 22 60a28 28 0 0 0 56 0C78 34 50 6 50 6Zm0 74a14 14 0 0 1-14-14c0-11 14-26 14-26s14 15 14 26a14 14 0 0 1-14 14Z"/></svg>
+      Vesta Energia
+    </div>
+    <div>
+      <span lang="es">Barcelona · Custodiamos el fuego de tu negocio · Los datos que nos envíes se usan solo para responderte (RGPD)</span>
+      <span lang="ca">Barcelona · Custodiem el foc del teu negoci · Les dades que ens enviïs s'usen només per respondre't (RGPD)</span>
+    </div>
+    <div>© 2026 Vesta Energia</div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-es').classList.toggle('active', l==='es');
+  document.getElementById('btn-ca').classList.toggle('active', l==='ca');
+  try{localStorage.setItem('vesta-lang', l);}catch(e){}
+}
+try{
+  var saved = localStorage.getItem('vesta-lang');
+  if(saved==='ca') setLang('ca');
+}catch(e){}
+
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+</script>
+</body>
+</html>
