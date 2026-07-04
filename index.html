@@ -106,14 +106,15 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.energy-col{margin-top:10px}}
 
 /* ---------- INTRO: enchufa tu negocio ---------- */
-#intro{position:fixed;inset:0;z-index:200;background:radial-gradient(1100px 700px at 50% 32%,#0e1c2b,#04080d);display:flex;align-items:center;justify-content:center;color:#e8ecf1;transition:opacity .8s ease}
-#intro.off{opacity:0;pointer-events:none}
+#intro{position:fixed;inset:0;z-index:200;background:radial-gradient(1100px 700px at 50% 32%,rgba(10,20,31,.87),rgba(3,7,12,.94));display:flex;align-items:center;justify-content:center;color:#e8ecf1;transition:opacity 1.1s ease;pointer-events:none}
+#intro .intro-stage,#intro .intro-skip{pointer-events:auto}
+#intro.off{opacity:0}
 #intro[hidden]{display:none}
 #intro::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 50% 45%,rgba(255,181,46,.9),rgba(255,122,26,.5) 45%,transparent 75%);opacity:0;transition:opacity .5s ease;pointer-events:none}
 #intro.on::after{opacity:1}
 .intro-inner{position:relative;text-align:center;padding:24px;max-width:780px;width:100%}
-.intro-inner h2{font-size:clamp(1.5rem,4.5vw,2.5rem);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
-.intro-inner .hint{color:#8fa1b3;font-size:1rem;margin-bottom:44px}
+.intro-inner h2{font-size:clamp(1.5rem,4.5vw,2.5rem);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.02em;text-shadow:0 2px 26px rgba(0,0,0,.9)}
+.intro-inner .hint{color:#a7b7c6;font-size:1rem;margin-bottom:44px;text-shadow:0 1px 16px rgba(0,0,0,.9)}
 .intro-inner .hint strong{color:var(--ember)}
 .intro-stage{position:relative;display:flex;justify-content:space-between;align-items:center;max-width:620px;margin:0 auto;min-height:230px;padding:0 8px}
 .intro-node{display:flex;flex-direction:column;align-items:center;gap:12px;width:150px}
@@ -289,7 +290,7 @@ footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 <body>
 
 <!-- ================= INTRO: enchufa tu negocio ================= -->
-<div id="intro" role="dialog" aria-modal="true" aria-label="Enciende la página conectando las baterías">
+<div id="intro" role="region" aria-label="La página está a oscuras: conecta el enchufe para iluminarla">
   <svg class="cable-svg" aria-hidden="true">
     <path class="cable-path" id="cablePath" d=""/>
     <path class="cable-core" id="cableCore" d=""/>
@@ -718,7 +719,6 @@ document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
   if(!intro || intro.hidden) return;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduced){ intro.hidden = true; return; }
-  document.body.style.overflow = 'hidden';
 
   var plug = document.getElementById('plug');
   var stage = document.getElementById('introStage');
@@ -795,7 +795,6 @@ document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
     setTimeout(function(){ intro.classList.add('on'); }, 250);
     setTimeout(function(){
       intro.classList.add('off');
-      document.body.style.overflow = '';
       try{ sessionStorage.setItem('vesta-on','1'); }catch(e){}
     }, 950);
     setTimeout(function(){ intro.hidden = true; }, 1900);
