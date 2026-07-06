@@ -802,7 +802,8 @@ if(cform){
     btn.innerHTML = '<span lang="es">Enviando…</span><span lang="ca">Enviant…</span>';
     fetch(cform.action, {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(cform)})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(){
+      .then(function(data){
+        if(String(data.success) !== 'true') throw new Error('rejected');
         st.className = 'form-status ok';
         st.innerHTML = '<span lang="es">¡Recibido! Te responderemos muy pronto.</span><span lang="ca">Rebut! Et respondrem molt aviat.</span>';
         cform.reset();
