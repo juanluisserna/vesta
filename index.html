@@ -322,6 +322,18 @@ details .answer{padding:0 24px 22px;color:var(--ink-soft);font-size:.95rem}
 .alt-contact{margin:0 0 18px;color:#8fa1b3;font-size:.95rem}
 .honey{position:absolute;left:-5000px;opacity:0}
 
+/* ---------- PARTNER ---------- */
+.partner-band{background:var(--navy-2);color:#f4ede0;padding:64px 0;border-top:1px solid rgba(255,255,255,.07)}
+.partner-inner{display:flex;gap:48px;align-items:center}
+.partner-logo{flex:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:30px 34px}
+.partner-logo img{width:230px;height:auto;display:block}
+.partner-text .kicker{margin-bottom:10px}
+.partner-text h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:12px}
+.partner-text p{color:#c3cfdc;max-width:46rem;margin-bottom:18px}
+.partner-link{display:inline-flex;align-items:center;gap:8px;color:var(--ember);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,181,46,.4);transition:border-color .15s}
+.partner-link:hover{border-bottom-color:var(--ember)}
+@media(max-width:760px){.partner-inner{flex-direction:column;text-align:center}.partner-text p{margin-left:auto;margin-right:auto}}
+
 /* ---------- FOOTER ---------- */
 footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
 .foot-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
@@ -573,7 +585,7 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
     <div class="eaas reveal">
       <div>
         <h3><span lang="es">Y todo esto, <span class="spark">como servicio</span>. Sin comprar nada.</span><span lang="ca">I tot això, <span class="spark">com a servei</span>. Sense comprar res.</span></h3>
-        <p><span lang="es">Se llama energía como servicio (EaaS): nuestro partner tecnológico internacional diseña, financia, instala, opera y mantiene la instalación. Tú no compras equipos ni pides un préstamo: pagas una cuota predecible por el desempeño energético, pensada para situarse por debajo de tu ahorro estimado.</span><span lang="ca">Es diu energia com a servei (EaaS): el nostre partner tecnològic internacional dissenya, finança, instal·la, opera i manté la instal·lació. Tu no compres equips ni demanes un préstec: pagues una quota predictible pel rendiment energètic, pensada per situar-se per sota del teu estalvi estimat.</span></p>
+        <p><span lang="es">Se llama energía como servicio (EaaS): BioEsol, nuestro partner tecnológico internacional, diseña, financia, instala, opera y mantiene la instalación. Tú no compras equipos ni pides un préstamo: pagas una cuota predecible por el desempeño energético, pensada para situarse por debajo de tu ahorro estimado.</span><span lang="ca">Es diu energia com a servei (EaaS): BioEsol, el nostre partner tecnològic internacional, dissenya, finança, instal·la, opera i manté la instal·lació. Tu no compres equips ni demanes un préstec: pagues una quota predictible pel rendiment energètic, pensada per situar-se per sota del teu estalvi estimat.</span></p>
         <p><span lang="es">Y Vesta está aquí, en Barcelona, acompañándote en cada paso: de tú a tú, en tu idioma y sin tecnicismos innecesarios.</span><span lang="ca">I Vesta és aquí, a Barcelona, acompanyant-te a cada pas: de tu a tu, en la teva llengua i sense tecnicismes innecessaris.</span></p>
       </div>
       <ul class="eaas-points">
@@ -666,7 +678,7 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
       <div class="why-card reveal">
         <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><path d="M8.2 13.9 7 23l5-3 5 3-1.2-9.1"/></svg></div>
         <h3><span lang="es">Tecnología premiada</span><span lang="ca">Tecnologia premiada</span></h3>
-        <p><span lang="es">Nuestro partner tecnológico acumula más de una década de proyectos energéticos para empresas multinacionales y reconocimientos internacionales del sector.</span><span lang="ca">El nostre partner tecnològic acumula més d'una dècada de projectes energètics per a empreses multinacionals i reconeixements internacionals del sector.</span></p>
+        <p><span lang="es">Nuestro partner tecnológico, BioEsol, acumula más de una década de proyectos energéticos para empresas multinacionales y reconocimientos internacionales del sector.</span><span lang="ca">El nostre partner tecnològic, BioEsol, acumula més d'una dècada de projectes energètics per a empreses multinacionals i reconeixements internacionals del sector.</span></p>
       </div>
       <div class="why-card reveal">
         <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb52e" stroke-width="1.8" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
@@ -678,6 +690,19 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
         <h3><span lang="es">Sinceridad radical</span><span lang="ca">Sinceritat radical</span></h3>
         <p><span lang="es">No todo negocio encaja en este modelo, y preferimos decírtelo pronto. Si la auditoría no sale a tu favor, lo sabrás sin rodeos y sin haber gastado un euro.</span><span lang="ca">No tot negoci encaixa en aquest model, i preferim dir-t'ho aviat. Si l'auditoria no surt a favor teu, ho sabràs sense embuts i sense haver gastat ni un euro.</span></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNER ================= -->
+<section class="partner-band" id="partner">
+  <div class="wrap partner-inner">
+    <div class="partner-logo reveal"><img src="bioesol-logo.webp" alt="BioEsol" width="300" height="118"></div>
+    <div class="partner-text reveal">
+      <span class="kicker"><span lang="es">Partner tecnológico oficial</span><span lang="ca">Partner tecnològic oficial</span></span>
+      <h2><span lang="es">La tecnología detrás de Vesta: BioEsol</span><span lang="ca">La tecnologia darrere de Vesta: BioEsol</span></h2>
+      <p><span lang="es">Con una trayectoria que arranca en 2010 y más de 35 proyectos energéticos, BioEsol diseña y opera los sistemas de almacenamiento BioGrid para industria, comercio e infraestructura crítica. Ha trabajado con marcas como Audi, Volvo, KFC o Cinépolis, mantiene alianzas tecnológicas con Enel X, BYD y HyperStrong, y su tecnología ha sido reconocida internacionalmente: Empresa Mexicana del Año 2023 según el Latin American Quality Institute, primer puesto del Heineken Green Challenge y primer lugar en innovación en almacenamiento según KPMG.</span><span lang="ca">Amb una trajectòria que arrenca el 2010 i més de 35 projectes energètics, BioEsol dissenya i opera els sistemes d'emmagatzematge BioGrid per a indústria, comerç i infraestructura crítica. Ha treballat amb marques com Audi, Volvo, KFC o Cinépolis, manté aliances tecnològiques amb Enel X, BYD i HyperStrong, i la seva tecnologia ha estat reconeguda internacionalment: Empresa Mexicana de l'Any 2023 segons el Latin American Quality Institute, primer lloc del Heineken Green Challenge i primer lloc en innovació en emmagatzematge segons KPMG.</span></p>
+      <a class="partner-link" href="https://bioesol.com" target="_blank" rel="noopener"><span lang="es">Conoce más en bioesol.com</span><span lang="ca">Coneix més a bioesol.com</span> →</a>
     </div>
   </div>
 </section>
@@ -708,7 +733,7 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
       </details>
       <details class="reveal">
         <summary><span lang="es">¿Quién instala y quién mantiene el sistema?</span><span lang="ca">Qui instal·la i qui manté el sistema?</span></summary>
-        <div class="answer"><span lang="es">La instalación la ejecutan instaladores certificados locales bajo la ingeniería de nuestro partner tecnológico, que además opera y mantiene el sistema durante toda la vida del contrato, con monitorización continua y mantenimiento predictivo. Vesta es tu punto de contacto local durante todo el proceso.</span><span lang="ca">La instal·lació l'executen instal·ladors certificats locals sota l'enginyeria del nostre partner tecnològic, que a més opera i manté el sistema durant tota la vida del contracte, amb monitoratge continu i manteniment predictiu. Vesta és el teu punt de contacte local durant tot el procés.</span></div>
+        <div class="answer"><span lang="es">La instalación la ejecutan instaladores certificados locales bajo la ingeniería de BioEsol, nuestro partner tecnológico oficial, que además opera y mantiene el sistema durante toda la vida del contrato, con monitorización continua y mantenimiento predictivo. Vesta es tu punto de contacto local durante todo el proceso.</span><span lang="ca">La instal·lació l'executen instal·ladors certificats locals sota l'enginyeria de BioEsol, el nostre partner tecnològic oficial, que a més opera i manté el sistema durant tota la vida del contracte, amb monitoratge continu i manteniment predictiu. Vesta és el teu punt de contacte local durant tot el procés.</span></div>
       </details>
     </div>
   </div>
