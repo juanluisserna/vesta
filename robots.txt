@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juanluisserna.github.io/vesta/sitemap.xml
