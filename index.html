@@ -31,7 +31,7 @@
   "url": "https://juanluisserna.github.io/vesta/",
   "image": "https://juanluisserna.github.io/vesta/og-image.png",
   "description": "Baterías inteligentes, energía solar y gestión energética con IA para empresas e industrias de Barcelona y Cataluña, bajo un modelo de energía como servicio sin inversión inicial. Auditoría energética gratuita.",
-  "email": "jlsernag@gmail.com",
+  "email": "vestaenergias@gmail.com",
   "areaServed": [
     {"@type": "AdministrativeArea", "name": "Barcelona"},
     {"@type": "AdministrativeArea", "name": "Cataluña"}
@@ -303,6 +303,24 @@ details .answer{padding:0 24px 22px;color:var(--ink-soft);font-size:.95rem}
 .btn-linkedin:hover{transform:translateY(-2px)}
 .btn-linkedin svg{width:18px;height:18px}
 .mini-note{margin-top:26px;font-size:.85rem;color:#8fa1b3}
+
+/* ---------- CONTACT FORM ---------- */
+.contact-form{max-width:640px;margin:0 auto 30px;text-align:left;display:grid;gap:14px}
+.form-row{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:560px){.form-row{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.82rem;font-weight:600;color:#c3cfdc;letter-spacing:.02em}
+.field input,.field textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;color:#fff;font-family:var(--font-body);font-size:.95rem;transition:border-color .15s,background .15s}
+.field input::placeholder,.field textarea::placeholder{color:#7d8fa1}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ember);background:rgba(255,255,255,.11)}
+.field textarea{min-height:120px;resize:vertical}
+.contact-form .btn{justify-self:center;border:none;font-family:var(--font-body);margin-top:4px}
+.contact-form .btn[disabled]{opacity:.6;cursor:wait;transform:none;box-shadow:none}
+.form-status{display:none;border-radius:12px;padding:12px 16px;font-size:.92rem;text-align:center}
+.form-status.ok{display:block;background:rgba(46,196,120,.15);border:1px solid rgba(46,196,120,.5);color:#9ff0c5}
+.form-status.err{display:block;background:rgba(255,92,92,.12);border:1px solid rgba(255,92,92,.5);color:#ffb3b3}
+.alt-contact{margin:0 0 18px;color:#8fa1b3;font-size:.95rem}
+.honey{position:absolute;left:-5000px;opacity:0}
 
 /* ---------- FOOTER ---------- */
 footer{background:#0b141d;color:#8fa1b3;padding:44px 0;font-size:.86rem}
@@ -700,9 +718,41 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
 <section class="final-cta" id="contacto">
   <div class="wrap">
     <h2><span lang="es">¿Le damos una vuelta a tu factura?</span><span lang="ca">Li donem una volta a la teva factura?</span></h2>
-    <p><span lang="es">Cuéntanos tu caso en un correo. Te respondemos rápido, te decimos con franqueza si tiene sentido y, si lo tiene, arrancamos la auditoría gratuita.</span><span lang="ca">Explica'ns el teu cas en un correu. Et responem ràpid, et diem amb franquesa si té sentit i, si en té, engeguem l'auditoria gratuïta.</span></p>
+    <p><span lang="es">Cuéntanos tu caso en un minuto. Te respondemos rápido, te decimos con franqueza si tiene sentido y, si lo tiene, arrancamos la auditoría gratuita.</span><span lang="ca">Explica'ns el teu cas en un minut. Et responem ràpid, et diem amb franquesa si té sentit i, si en té, engeguem l'auditoria gratuïta.</span></p>
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/ajax/vestaenergias@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nueva solicitud desde la web Vesta Energia">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name"><span lang="es">Nombre</span><span lang="ca">Nom</span></label>
+          <input id="f-name" name="nombre" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-company"><span lang="es">Empresa</span><span lang="ca">Empresa</span></label>
+          <input id="f-company" name="empresa" type="text" required autocomplete="organization">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-phone"><span lang="es">Teléfono (opcional)</span><span lang="ca">Telèfon (opcional)</span></label>
+          <input id="f-phone" name="telefono" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-msg"><span lang="es">Cuéntanos tu caso</span><span lang="ca">Explica'ns el teu cas</span></label>
+        <textarea id="f-msg" name="mensaje" required data-ph-es="Sector, factura eléctrica mensual aproximada y qué te preocupa (picos, cortes, precios...)" data-ph-ca="Sector, factura elèctrica mensual aproximada i què et preocupa (pics, talls, preus...)"></textarea>
+      </div>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      <button class="btn btn-flame" type="submit" id="form-send"><span lang="es">Enviar solicitud</span><span lang="ca">Envia la sol·licitud</span></button>
+    </form>
+    <p class="alt-contact"><span lang="es">O si lo prefieres, escríbenos directo:</span><span lang="ca">O si ho prefereixes, escriu-nos directe:</span></p>
     <div class="cta-buttons">
-      <a class="btn btn-flame" href="mailto:jlsernag@gmail.com?subject=Auditor%C3%ADa%20energ%C3%A9tica%20gratuita%20%E2%80%94%20Vesta%20Energia"><span lang="es">✉️ Escríbenos: jlsernag@gmail.com</span><span lang="ca">✉️ Escriu-nos: jlsernag@gmail.com</span></a>
+      <a class="btn btn-linkedin" href="mailto:vestaenergias@gmail.com?subject=Auditor%C3%ADa%20energ%C3%A9tica%20gratuita%20%E2%80%94%20Vesta%20Energia">✉️ vestaenergias@gmail.com</a>
       <a class="btn btn-linkedin" href="https://www.linkedin.com/in/juan-luis-serna-garc%C3%ADa-15474b148/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
         LinkedIn
@@ -733,7 +783,36 @@ function setLang(l){
   document.documentElement.lang = l;
   document.getElementById('btn-es').classList.toggle('active', l==='es');
   document.getElementById('btn-ca').classList.toggle('active', l==='ca');
+  document.querySelectorAll('[data-ph-es]').forEach(function(el){
+    el.placeholder = l==='ca' ? el.dataset.phCa : el.dataset.phEs;
+  });
   try{localStorage.setItem('vesta-lang', l);}catch(e){}
+}
+document.querySelectorAll('[data-ph-es]').forEach(function(el){ el.placeholder = el.dataset.phEs; });
+
+/* contact form (FormSubmit AJAX) */
+var cform = document.getElementById('contact-form');
+if(cform){
+  cform.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('form-send'), st = document.getElementById('form-status');
+    st.className = 'form-status'; st.innerHTML = '';
+    var old = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span lang="es">Enviando…</span><span lang="ca">Enviant…</span>';
+    fetch(cform.action, {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(cform)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        st.className = 'form-status ok';
+        st.innerHTML = '<span lang="es">¡Recibido! Te responderemos muy pronto.</span><span lang="ca">Rebut! Et respondrem molt aviat.</span>';
+        cform.reset();
+      })
+      .catch(function(){
+        st.className = 'form-status err';
+        st.innerHTML = '<span lang="es">No se pudo enviar. Escríbenos directo a vestaenergias@gmail.com.</span><span lang="ca">No s\'ha pogut enviar. Escriu-nos directe a vestaenergias@gmail.com.</span>';
+      })
+      .finally(function(){ btn.disabled = false; btn.innerHTML = old; });
+  });
 }
 try{
   var saved = localStorage.getItem('vesta-lang');
