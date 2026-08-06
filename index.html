@@ -44,6 +44,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
 <style>
 :root{
   --ink:#16222f;
@@ -135,6 +136,26 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.88);backdrop-f
 .energy-status .st{display:none}
 .energy-status.is-dis .st-dis{display:inline}
 .energy-status.is-chg .st-chg{display:inline}
+
+/* hero visual 3D: instalación isométrica con ciclo día/noche */
+.energy3d{position:relative;width:min(430px,100%);aspect-ratio:43/40;border-radius:var(--radius);overflow:hidden;box-shadow:0 18px 44px rgba(22,34,47,.16);border:1px solid rgba(22,34,47,.08);background:var(--cream)}
+.energy3d canvas{display:block;width:100%;height:100%}
+.energy3d::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+/* ancho fijo y las cuatro frases apiladas en la misma celda: así el cuadro
+   mide siempre lo mismo y el cambio de fase no mueve la escena de sitio */
+.energy-status.s3d{width:min(430px,100%);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:nowrap;text-align:left;transition:border-color .5s}
+.s3d-line{display:grid;flex:1 1 auto;min-width:0}
+.s3d .ph{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .45s}
+.s3d[data-phase="valle"] .ph-valle,
+.s3d[data-phase="sol"]   .ph-sol,
+.s3d[data-phase="punta"] .ph-punta,
+.s3d[data-phase="noche"] .ph-noche{opacity:1;visibility:visible}
+.s3d-bat{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--font-head);font-weight:800;font-size:.95rem;color:var(--ink);background:var(--cream);border-radius:99px;padding:4px 12px;flex:none;min-width:80px;font-variant-numeric:tabular-nums}
+.s3d-dot{width:9px;height:9px;border-radius:50%;background:var(--flame);box-shadow:0 0 0 3px rgba(255,122,26,.18)}
+.s3d[data-phase="punta"]{border-color:rgba(255,122,26,.55)}
+.s3d[data-phase="sol"]{border-color:rgba(255,181,46,.6)}
+.s3d[data-phase="valle"],.s3d[data-phase="noche"]{border-color:rgba(46,107,176,.4)}
+.s3d[data-phase="valle"] .s3d-dot,.s3d[data-phase="noche"] .s3d-dot{background:#2e6bb0;box-shadow:0 0 0 3px rgba(46,107,176,.18)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.energy-col{margin-top:10px}}
 
 /* ---------- INTRO: enchufa tu negocio ---------- */
@@ -447,6 +468,9 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
       </div>
     </div>
     <div class="energy-col">
+      <div class="energy3d" id="energy3dWrap" hidden>
+        <canvas id="energy3d" aria-hidden="true"></canvas>
+      </div>
       <div class="energy" id="energySys" aria-hidden="true">
         <svg class="flows" viewBox="0 0 430 400" preserveAspectRatio="xMidYMid meet">
           <path class="flow chg" d="M96 96 C 130 140, 155 155, 182 168"/>
@@ -477,6 +501,15 @@ try{if(sessionStorage.getItem('vesta-on')==='1'){document.getElementById('intro'
       <div class="energy-status is-dis" id="energyStatus">
         <span class="st st-dis">⚡ <span lang="es">Descargando: alimentando tu negocio</span><span lang="ca">Descarregant: alimentant el teu negoci</span></span>
         <span class="st st-chg">🌙 <span lang="es">Recargando con sol y red en horas baratas</span><span lang="ca">Recarregant amb sol i xarxa en hores barates</span></span>
+      </div>
+      <div class="energy-status s3d" id="energyStatus3d" data-phase="valle" hidden>
+        <span class="s3d-line">
+          <span class="ph ph-valle">🌙 <span lang="es">Horas valle: la batería se carga con energía barata</span><span lang="ca">Hores vall: la bateria es carrega amb energia barata</span></span>
+          <span class="ph ph-sol">☀️ <span lang="es">De día: se carga con tu propia energía solar</span><span lang="ca">De dia: es carrega amb la teva pròpia energia solar</span></span>
+          <span class="ph ph-punta">⚡ <span lang="es">Hora punta: descarga y recorta el pico de tu factura</span><span lang="ca">Hora punta: descarrega i retalla el pic de la teva factura</span></span>
+          <span class="ph ph-noche">🏭 <span lang="es">De noche: respaldo, tu negocio no se para</span><span lang="ca">De nit: suport, el teu negoci no s'atura</span></span>
+        </span>
+        <span class="s3d-bat"><span class="s3d-dot"></span><span id="bat3dPct">25%</span></span>
       </div>
     </div>
   </div>
@@ -973,9 +1006,77 @@ document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
       status.classList.toggle('is-dis', !chg);
     }
     sys.classList.toggle('low', lvl < 35);
+    if(window.__vesta3dOn) return;   /* la escena 3D ha tomado el relevo */
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+/* ============ HERO 3D: instalación isométrica con ciclo día/noche ============ */
+(function(){
+  var wrap = document.getElementById('energy3dWrap');
+  var canvas = document.getElementById('energy3d');
+  var status3d = document.getElementById('energyStatus3d');
+  if(!wrap || !canvas || !status3d) return;
+
+  /* si no hay WebGL, se queda la animación 2D de siempre */
+  function hasWebGL(){
+    try{
+      var c = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+    }catch(e){ return false; }
+  }
+  if(!hasWebGL()) return;
+  if(!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pct = document.getElementById('bat3dPct');
+  var scene = null, started = false;
+
+  function takeOver(){
+    window.__vesta3dOn = true;
+    document.getElementById('energySys').hidden = true;
+    document.getElementById('energyStatus').hidden = true;
+    wrap.hidden = false;
+    status3d.hidden = false;
+  }
+
+  function boot(){
+    if(started) return;
+    started = true;
+    import('./vesta-3d.js').then(function(mod){
+      takeOver();
+      scene = mod.initVesta3D(canvas, {
+        reducedMotion: reduced,
+        onPhase: function(phase, level){
+          status3d.dataset.phase = phase;
+          pct.textContent = level + '%';
+        }
+      });
+      scene.renderOnce();
+      if(!reduced && visible) scene.start();
+    }).catch(function(){
+      /* cualquier fallo deja la animación 2D intacta */
+      window.__vesta3dOn = false;
+    });
+  }
+
+  /* solo se monta y se anima cuando el hero está a la vista */
+  var visible = true;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      visible = e.isIntersecting;
+      if(visible){ boot(); if(scene && !reduced) scene.start(); }
+      else if(scene){ scene.stop(); }
+    });
+  },{threshold:.05});
+  io.observe(wrap.parentNode);
+
+  document.addEventListener('visibilitychange', function(){
+    if(!scene || reduced) return;
+    if(document.hidden) scene.stop();
+    else if(visible) scene.start();
+  });
 })();
 
 /* ============ GRÁFICA: peak shaving y arbitraje ============ */
