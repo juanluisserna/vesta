@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://juanluisserna.github.io/vesta/sitemap.xml
+Sitemap: https://vestaenergia.com/sitemap.xml
