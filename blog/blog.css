@@ -263,3 +263,7 @@ footer a{color:#c2d0de}
   .la-batt,.la-stepg .la-lit,.la-stepg text{transition:none}
   .s5-ring.r1{opacity:.5;transform:scale(1.2)}
 }
+
+.ladder .rung-kind{background:transparent;border:1px solid currentColor;opacity:.8}
+.article-body .sources{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+.article-body .sources li{margin-bottom:6px}
