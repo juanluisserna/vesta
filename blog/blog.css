@@ -119,3 +119,27 @@ footer{background:var(--navy);color:#93a5b8;padding:38px 0;font-size:.88rem;marg
 .foot-logo{display:flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:700;color:#fff}
 .foot-logo svg{width:22px;height:22px}
 footer a{color:#c2d0de}
+
+/* ---------- escalera (de lo seguro a lo posible) ---------- */
+.article-body .ladder{list-style:none;margin:26px 0 10px;padding:0;display:grid;gap:10px}
+.article-body .ladder li{--step:0;margin:0;display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;padding:16px 18px;border-radius:14px;margin-left:calc(var(--step) * 12px)}
+.ladder .rung-n{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-family:var(--font-head);font-weight:700;font-size:.95rem}
+.ladder .rung-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.ladder .rung-tag{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:99px}
+.article-body .ladder p{margin:5px 0 0;font-size:.93rem;line-height:1.55}
+.ladder .is-sure{background:var(--slate);color:#fff}
+.article-body .ladder .is-sure strong{color:#fff}
+.ladder .is-sure .rung-n{background:var(--flame);color:#fff}
+.ladder .is-sure .rung-tag{background:rgba(255,255,255,.18)}
+.ladder .is-depends{background:var(--white);border:1.5px solid var(--slate)}
+.ladder .is-depends .rung-n{border:1.5px solid var(--slate);color:var(--slate)}
+.ladder .is-depends .rung-tag{background:var(--cream);color:var(--ink-soft)}
+.ladder .is-later{border:1.5px dashed var(--neutral);color:var(--ink-soft)}
+.ladder .is-later .rung-n{border:1.5px dashed var(--neutral);color:var(--ink-soft)}
+.ladder .is-later .rung-tag{border:1px dashed var(--neutral)}
+.ladder-key{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.83rem;color:var(--ink-soft);margin:0 0 24px}
+.ladder-key span{display:flex;align-items:center;gap:7px}
+.ladder-key i{width:14px;height:14px;border-radius:4px;display:inline-block}
+.note ol{margin:10px 0 0 20px}
+.note ol li{margin-bottom:8px}
+@media(max-width:520px){.article-body .ladder li{margin-left:calc(var(--step) * 6px);padding:14px}}
