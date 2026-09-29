@@ -143,3 +143,123 @@ footer a{color:#c2d0de}
 .note ol{margin:10px 0 0 20px}
 .note ol li{margin-bottom:8px}
 @media(max-width:520px){.article-body .ladder li{margin-left:calc(var(--step) * 6px);padding:14px}}
+
+/* ---------- escalera animada ---------- */
+.ladder-anim .la-stage{background:var(--navy);border-radius:var(--radius);padding:16px}
+.la-view{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.la-view{grid-template-columns:1fr 1fr;align-items:center;gap:18px}}
+.la-stairs,.la-scenes svg{display:block;width:100%;height:auto}
+.la-scenes .la-scene{display:none;animation:la-in .5s ease both}
+.ladder-anim[data-step="1"] .la-scene.s1,.ladder-anim[data-step="2"] .la-scene.s2,.ladder-anim[data-step="3"] .la-scene.s3,.ladder-anim[data-step="4"] .la-scene.s4,.ladder-anim[data-step="5"] .la-scene.s5{display:block}
+@keyframes la-in{from{opacity:0}to{opacity:1}}
+.la-scene text{font-family:var(--font-body);font-size:11px;fill:#b9c6d4}
+.la-scene .hl{fill:#ffb52e;font-weight:600}
+.la-scene .hl2{fill:#b9c6d4}
+.la-scene .hl3{fill:#ff9a4d;font-weight:600}
+.la-scene .ax{fill:#8fa1b3;font-size:10px}
+.la-scene .coin{font-family:var(--font-head);font-size:24px;font-weight:700;fill:#aab6c3}
+
+/* peldaños y batería */
+.la-stepg .la-base{fill:#1a2b3d;stroke:#3d566f;stroke-width:2}
+.la-stepg .la-lit{fill:url(#laFlame);stroke:#ffb52e;stroke-width:2;opacity:0;transition:opacity .6s ease,filter .6s ease}
+.la-stepg.is-lit .la-lit{opacity:1;filter:drop-shadow(0 0 8px rgba(255,150,40,.7))}
+.la-stepg.st5.is-lit .la-lit{fill-opacity:.32;filter:drop-shadow(0 0 6px rgba(255,181,46,.35))}
+.la-stepg text{font-family:var(--font-head);font-weight:700;font-size:16px;fill:#8fa1b3;transition:fill .5s ease}
+.la-stepg.is-lit text{fill:#16222f}
+.la-stepg.st5.is-lit text{fill:#ffe2a8}
+.la-batt{transform:translate(27px,113px);transition:transform .85s cubic-bezier(.34,1.5,.64,1)}
+.ladder-anim[data-step="2"] .la-batt{transform:translate(91px,88px)}
+.ladder-anim[data-step="3"] .la-batt{transform:translate(155px,63px)}
+.ladder-anim[data-step="4"] .la-batt{transform:translate(219px,38px)}
+.ladder-anim[data-step="5"] .la-batt{transform:translate(283px,13px)}
+.la-batt-body{fill:#fffcf5;stroke:#16222f;stroke-width:2}
+.la-batt-cap{fill:#fffcf5;stroke:#16222f;stroke-width:1.5}
+.la-batt-fill{fill:#ff7a1a;transform-box:fill-box;transform-origin:50% 100%;animation:la-pulse 2.4s ease-in-out infinite}
+.la-batt-bolt{fill:#16222f}
+@keyframes la-pulse{0%,100%{transform:scaleY(.6)}50%{transform:scaleY(1)}}
+
+/* flujo de energía */
+.la-scene .flow{stroke:#ffb52e;stroke-dasharray:3 9;stroke-linecap:round;animation:la-flow .7s linear infinite}
+@keyframes la-flow{to{stroke-dashoffset:-12}}
+
+/* escena 1: picos (6 s) */
+.s1-over{transform-box:fill-box;transform-origin:50% 100%;opacity:0;transform:scaleY(0);animation:la-shave 6s ease-in-out infinite}
+@keyframes la-shave{0%,22%{opacity:1;transform:scaleY(1)}42%,95%{opacity:0;transform:scaleY(0)}100%{opacity:1;transform:scaleY(1)}}
+.s1-orig{opacity:.35;animation:la-orig 6s ease-in-out infinite}
+@keyframes la-orig{0%,36%{opacity:1}46%,94%{opacity:.35}100%{opacity:1}}
+.s1-clip{opacity:1;animation:la-clip 6s ease-in-out infinite}
+@keyframes la-clip{0%,30%{opacity:0}42%,94%{opacity:1}100%{opacity:0}}
+.s1-t1{opacity:0;animation:la-t1 6s ease-in-out infinite}
+@keyframes la-t1{0%,32%{opacity:1}40%,100%{opacity:0}}
+.s1-t2{opacity:1;animation:la-t2 6s ease-in-out infinite}
+@keyframes la-t2{0%,40%{opacity:0}50%,94%{opacity:1}100%{opacity:0}}
+
+/* escena 2: luz barata (6 s, datos reales) */
+.la-scene .b-mid{fill:#3d566f}
+.la-scene .b-valley{fill:#ffb52e}
+.la-scene .b-peak{fill:#ff7a1a}
+.s2-head{opacity:0;animation:la-head 6s linear infinite}
+@keyframes la-head{0%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(300px)}}
+.s2-meter{transform-box:fill-box;transform-origin:0 50%;transform:scaleX(1);animation:la-meter 6s linear infinite}
+@keyframes la-meter{0%,44%{transform:scaleX(.12)}71%,83%{transform:scaleX(1)}100%{transform:scaleX(.12)}}
+
+/* escena 3: el frío no se para (6 s) */
+.s3-a,.s3-c1{stroke:#ffb52e;opacity:.2;animation:la-s3a 6s ease-in-out infinite}
+@keyframes la-s3a{0%,28%{opacity:1}33%,94%{opacity:.2}100%{opacity:1}}
+.s3-c2{stroke:#ffb52e;opacity:1}
+.s3-d{stroke:#ffb52e;opacity:1;animation:la-s3d 6s ease-in-out infinite}
+@keyframes la-s3d{0%,28%{opacity:.15}34%,94%{opacity:1}100%{opacity:.15}}
+.s3-spark{opacity:0;animation:la-spark 6s ease-out infinite}
+@keyframes la-spark{0%,28%{opacity:0}30%{opacity:1}37%,100%{opacity:0}}
+.s3-cell{transform-box:fill-box;transform-origin:0 50%;animation:la-cell 6s linear infinite}
+@keyframes la-cell{0%,30%{transform:scaleX(1)}94%{transform:scaleX(.72)}100%{transform:scaleX(1)}}
+.s3-snow{animation:la-snow 2.4s ease-in-out infinite alternate}
+@keyframes la-snow{from{opacity:.7}to{opacity:1}}
+.s3-t0{opacity:0;animation:la-s3t0 6s ease-in-out infinite}
+@keyframes la-s3t0{0%,26%{opacity:1}32%,100%{opacity:0}}
+.s3-t1{opacity:1;animation:la-s3t1 6s ease-in-out infinite}
+@keyframes la-s3t1{0%,32%{opacity:0}40%,94%{opacity:1}100%{opacity:0}}
+
+/* escena 4: el tejado (6 s) */
+.s4-sun{animation:la-sun 6s ease-in-out infinite}
+@keyframes la-sun{0%,45%{opacity:1}60%,94%{opacity:.12}100%{opacity:1}}
+.s4-panels{animation:la-panels 6s ease-in-out infinite}
+@keyframes la-panels{0%,45%{opacity:1}60%,94%{opacity:.45}100%{opacity:1}}
+.s4-in{opacity:1;animation:la-s4in 6s ease-in-out infinite}
+@keyframes la-s4in{0%,48%{opacity:1}54%,96%{opacity:0}100%{opacity:1}}
+.s4-out{opacity:0;animation:la-s4out 6s ease-in-out infinite}
+@keyframes la-s4out{0%,54%{opacity:0}60%,94%{opacity:1}100%{opacity:0}}
+.s4-meter{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(.6);animation:la-s4m 6s ease-in-out infinite}
+@keyframes la-s4m{0%{transform:scaleY(.12)}48%,56%{transform:scaleY(1)}94%{transform:scaleY(.15)}100%{transform:scaleY(.12)}}
+.s4-t1{opacity:1;animation:la-s4t1 6s ease-in-out infinite}
+@keyframes la-s4t1{0%,46%{opacity:1}52%,100%{opacity:0}}
+.s4-t2{opacity:0;animation:la-s4t2 6s ease-in-out infinite}
+@keyframes la-s4t2{0%,54%{opacity:0}62%,94%{opacity:1}100%{opacity:0}}
+
+/* escena 5: todavia no (3 s) */
+.s5-ring{transform-box:fill-box;transform-origin:50% 50%;opacity:0;animation:la-ring 3s ease-out infinite}
+.s5-ring.r2{animation-delay:1.5s}
+@keyframes la-ring{0%{transform:scale(.55);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.s5-coin{opacity:.7;animation:la-coin 3s ease-in-out infinite alternate}
+@keyframes la-coin{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+
+/* controles */
+.la-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.la-controls button{font-family:var(--font-body);cursor:pointer;color:#dbe4ee;background:transparent;border:1.5px solid #3d566f;transition:border-color .15s,background .15s}
+.la-controls button:hover{border-color:#ffb52e}
+.la-controls button:focus-visible{outline:3px solid #ffb52e;outline-offset:2px}
+.la-play{font-weight:600;font-size:.84rem;padding:8px 16px;border-radius:99px;min-height:36px}
+.la-dots{display:flex;gap:8px}
+.la-dots button{width:36px;height:36px;border-radius:50%;font-family:var(--font-head);font-weight:700;font-size:.9rem}
+.la-dots button[aria-current="true"]{background:linear-gradient(#ffb52e,#ff7a1a);border-color:#ffb52e;color:#16222f}
+
+/* la escalera de texto: sin JS se ven los cinco; con JS solo el peldaño activo */
+.article-body .ladder-anim .ladder{margin-top:16px}
+.article-body .ladder-anim.js .ladder li{display:none}
+.article-body .ladder-anim.js .ladder li.is-active{display:grid;margin-left:0}
+.ladder-anim .ladder-key{margin:14px 0 0}
+@media(prefers-reduced-motion:reduce){
+  .la-scene,.la-scene *,.la-batt-fill{animation:none!important}
+  .la-batt,.la-stepg .la-lit,.la-stepg text{transition:none}
+  .s5-ring.r1{opacity:.5;transform:scale(1.2)}
+}
