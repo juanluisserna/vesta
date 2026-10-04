@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analiza tu factura de la luz gratis — Vesta Energia</title>
+<meta name="description" content="Sube tu factura de la luz o tus datos de Datadis y descubre en dos minutos cuándo consumes, cuánto pagas de más y cómo ahorrar sin renunciar a nada.">
+<link rel="canonical" href="https://vestaenergia.com/hogar/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#101c29">
+<meta property="og:title" content="Analiza tu factura de la luz gratis — Vesta Energia">
+<meta property="og:description" content="Sube tu factura o tus datos de Datadis y descubre cómo ahorrar en casa sin renunciar a nada. Gratis y sin que tus datos salgan de tu navegador.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vestaenergia.com/hogar/">
+<meta property="og:site_name" content="Vesta Energia">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://vestaenergia.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/hogar/hogar.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Analizador de la factura de la luz para hogares",
+  "url":"https://vestaenergia.com/hogar/",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Cualquiera (navegador web)",
+  "inLanguage":"es-ES",
+  "isAccessibleForFree":true,
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+  "description":"Sube tu factura de la luz o tus datos horarios de Datadis y obtén en dos minutos un resumen de tu consumo y consejos para ahorrar sin renunciar a nada.",
+  "publisher":{"@type":"Organization","name":"Vesta Energia","url":"https://vestaenergia.com/"}
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">
+      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg)" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="url(#lg)" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="url(#lg)" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#fff" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
+      Vesta<span style="color:var(--flame)">.</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-item" href="/#solucion">Solución</a>
+      <a class="nav-item" href="/#sectores">Sectores</a>
+      <a class="nav-item" href="/hogar/" aria-current="page">Para tu casa</a>
+      <a class="nav-item" href="/blog/">Blog</a>
+      <a class="btn btn-flame btn-sm" href="/#contacto">Auditoría gratuita</a>
+    </div>
+  </div>
+</nav>
+
+<header class="blog-head h-head">
+  <div class="wrap">
+    <span class="eyebrow">Herramienta gratuita · Hogares</span>
+    <h1>Entiende tu factura de la luz en dos minutos</h1>
+    <p>Sube tu factura o tus datos de Datadis y te decimos cuándo consumes, qué parte de lo que pagas se puede recortar y cómo hacerlo <strong>sin pasar frío, sin apagar nada que uses y sin cambiar tu vida</strong>. Casi siempre se ahorra pagando la misma luz a otra hora, no gastando menos.</p>
+    <p class="h-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 14-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6Z"/></svg>Tu factura y tus datos se leen en tu navegador. No se suben a ningún servidor.</p>
+  </div>
+</header>
+
+<main class="wrap h-main">
+
+  <!-- ============ ENTRADA DE DATOS ============ -->
+  <section class="h-tool" aria-labelledby="h-tool-title">
+    <h2 id="h-tool-title" class="h-sr">Elige cómo nos das tus datos</h2>
+    <div class="h-tabs" role="tablist" aria-label="Cómo nos das tus datos">
+      <button role="tab" id="tab-bill" aria-controls="panel-bill" aria-selected="true">
+        <b>Tengo mi factura</b><small>PDF de tu comercializadora</small>
+      </button>
+      <button role="tab" id="tab-csv" aria-controls="panel-csv" aria-selected="false" tabindex="-1">
+        <b>Tengo mis datos de Datadis</b><small>Consumo hora a hora · el más completo</small>
+      </button>
+      <button role="tab" id="tab-cups" aria-controls="panel-cups" aria-selected="false" tabindex="-1">
+        <b>Solo tengo mi CUPS</b><small>Lo consultamos nosotros en Datadis</small>
+      </button>
+    </div>
+
+    <!-- factura -->
+    <div class="h-panel" role="tabpanel" id="panel-bill" aria-labelledby="tab-bill">
+      <label class="h-drop" id="drop-bill">
+        <input type="file" id="file-bill" accept="application/pdf,.pdf">
+        <span class="h-drop-icon" aria-hidden="true">📄</span>
+        <span class="h-drop-main"><b>Arrastra aquí tu factura en PDF</b> o pulsa para elegirla</span>
+        <span class="h-drop-sub">La leemos en tu navegador. Funciona con las facturas digitales de casi todas las comercializadoras; si es una foto o un escaneo, rellena los datos a mano.</span>
+      </label>
+      <div class="h-status" id="bill-status" role="status" aria-live="polite"></div>
+
+      <form id="bill-form" class="h-form" novalidate>
+        <p class="h-form-intro" id="bill-form-intro">¿No tienes el PDF a mano? Copia estos datos de tu factura. Solo los marcados con * son imprescindibles.</p>
+        <div class="h-grid">
+          <div class="field"><label for="b-kwh">Consumo del periodo (kWh) *</label><input id="b-kwh" name="kwh" inputmode="decimal" required></div>
+          <div class="field"><label for="b-days">Días facturados *</label><input id="b-days" name="days" inputmode="numeric" required></div>
+          <div class="field"><label for="b-power">Potencia contratada (kW)</label><input id="b-power" name="power" inputmode="decimal" placeholder="p. ej. 4,6"></div>
+          <div class="field"><label for="b-total">Total de la factura (€)</label><input id="b-total" name="total" inputmode="decimal"></div>
+        </div>
+        <fieldset class="h-periods">
+          <legend>Consumo por periodos (si tu factura lo trae)</legend>
+          <div class="h-grid h-grid-3">
+            <div class="field"><label for="b-p1"><i class="dot p1"></i>Punta / P1 (kWh)</label><input id="b-p1" name="p1" inputmode="decimal"></div>
+            <div class="field"><label for="b-p2"><i class="dot p2"></i>Llano / P2 (kWh)</label><input id="b-p2" name="p2" inputmode="decimal"></div>
+            <div class="field"><label for="b-p3"><i class="dot p3"></i>Valle / P3 (kWh)</label><input id="b-p3" name="p3" inputmode="decimal"></div>
+          </div>
+        </fieldset>
+        <div class="field h-cups-field"><label for="b-cups">CUPS (opcional)</label><input id="b-cups" name="cups" autocomplete="off" spellcheck="false" placeholder="ES0000…"></div>
+        <div class="h-form-error" id="bill-error" role="alert"></div>
+        <button class="btn btn-flame" type="submit">Ver mi análisis</button>
+      </form>
+    </div>
+
+    <!-- csv datadis -->
+    <div class="h-panel" role="tabpanel" id="panel-csv" aria-labelledby="tab-csv" hidden>
+      <label class="h-drop" id="drop-csv">
+        <input type="file" id="file-csv" accept=".csv,text/csv,text/plain">
+        <span class="h-drop-icon" aria-hidden="true">📈</span>
+        <span class="h-drop-main"><b>Arrastra aquí el CSV de consumos de Datadis</b> o pulsa para elegirlo</span>
+        <span class="h-drop-sub">Con tu consumo hora a hora vemos exactamente cuándo gastas y cuánto podrías mover a horas baratas.</span>
+      </label>
+      <div class="h-status" id="csv-status" role="status" aria-live="polite"></div>
+      <details class="h-howto">
+        <summary>¿Cómo descargo ese CSV? (3 minutos, gratis)</summary>
+        <ol>
+          <li>Entra en <a href="https://datadis.es" target="_blank" rel="noopener">datadis.es</a>, la plataforma oficial de las distribuidoras, y regístrate con tu DNI como persona física (solo la primera vez).</li>
+          <li>En tu área privada, abre la consulta de <b>consumos</b> y elige tu suministro.</li>
+          <li>Selecciona los <b>últimos 12 meses</b> con detalle <b>horario</b> y pulsa descargar en <b>CSV</b>.</li>
+          <li>Arrastra el archivo aquí. No hace falta abrirlo ni tocarlo.</li>
+        </ol>
+        <p>También sirven los CSV horarios que descargas desde la web de tu distribuidora (e-distribución, i-DE, UFD…), siempre que tengan fecha, hora y consumo en kWh.</p>
+      </details>
+    </div>
+
+    <!-- cups -->
+    <div class="h-panel" role="tabpanel" id="panel-cups" aria-labelledby="tab-cups" hidden>
+      <form id="cups-form" class="h-form" novalidate>
+        <p class="h-form-intro">El CUPS es el código de 20 o 22 caracteres que identifica tu punto de luz. Empieza por <b>ES</b> y aparece en la primera o segunda página de cualquier factura.</p>
+        <div class="h-grid">
+          <div class="field"><label for="c-cups">Tu CUPS *</label><input id="c-cups" name="cups" required autocomplete="off" spellcheck="false" placeholder="ES0031…"><span class="h-hint" id="cups-hint" aria-live="polite"></span></div>
+          <div class="field" id="c-nif-field" hidden><label for="c-nif">DNI/NIE del titular *</label><input id="c-nif" name="nif" autocomplete="off" spellcheck="false"></div>
+          <div class="field" data-lead><label for="c-name">Nombre *</label><input id="c-name" name="nombre" autocomplete="name"></div>
+          <div class="field" data-lead><label for="c-email">Email *</label><input id="c-email" name="email" type="email" autocomplete="email"></div>
+        </div>
+        <div class="note h-auth">
+          <strong>Antes, un paso que solo puedes dar tú</strong>
+          Datadis protege tus datos: solo podemos verlos si el titular del contrato nos autoriza. Entra en <a href="https://datadis.es" target="_blank" rel="noopener">datadis.es</a>, ve a <b>Autorizaciones</b> y da acceso a Vesta Energia <span id="vesta-nif-text">(te enviamos por correo el NIF que debes indicar)</span>. Puedes retirar la autorización cuando quieras desde el mismo sitio.
+        </div>
+        <label class="h-check"><input type="checkbox" id="c-consent" required> Soy el titular (o tengo su permiso) y acepto que Vesta Energia consulte mis datos de consumo en Datadis solo para hacer este análisis.</label>
+        <div class="h-form-error" id="cups-error" role="alert"></div>
+        <div class="h-status" id="cups-status" role="status" aria-live="polite"></div>
+        <button class="btn btn-flame" type="submit" id="cups-send">Pedir mi análisis</button>
+      </form>
+    </div>
+
+    <p class="h-demo">¿Solo quieres curiosear? <button type="button" class="h-link" id="demo-btn">Ver un ejemplo con datos inventados</button></p>
+  </section>
+
+  <!-- ============ RESULTADOS ============ -->
+  <section class="h-results" id="results" hidden aria-labelledby="r-title" tabindex="-1">
+    <div class="h-results-head">
+      <div>
+        <span class="eyebrow" id="r-source">Tu análisis</span>
+        <h2 id="r-title">Lo que dicen tus datos</h2>
+        <p class="h-sub" id="r-range"></p>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm" id="reset-btn">Analizar otra factura</button>
+    </div>
+    <div class="h-demo-flag" id="demo-flag" hidden>Ejemplo con datos inventados. Sube tu factura o tu CSV para ver los tuyos.</div>
+
+    <div class="h-tiles" id="r-tiles"></div>
+
+    <div class="h-block" id="r-verdict"></div>
+
+    <div class="h-block">
+      <h3>Cuánto se puede recortar, de lo más fácil a lo menos</h3>
+      <p class="h-sub">Ordenado por ahorro estimado al año, impuestos incluidos. Ninguna de estas medidas te pide consumir menos.</p>
+      <ol class="h-tips" id="r-tips"></ol>
+    </div>
+
+    <div class="h-block" id="r-charts"></div>
+
+    <details class="h-block h-prices">
+      <summary>Ajustar los precios que usamos para calcular</summary>
+      <p class="h-sub">Por defecto usamos precios orientativos de mercado sin impuestos. Si pones los de tu contrato (vienen en la factura), los ahorros serán más exactos.</p>
+      <form id="price-form" class="h-form">
+        <div class="h-grid h-grid-3">
+          <div class="field"><label for="pr-p1"><i class="dot p1"></i>Punta (€/kWh)</label><input id="pr-p1" inputmode="decimal"></div>
+          <div class="field"><label for="pr-p2"><i class="dot p2"></i>Llano (€/kWh)</label><input id="pr-p2" inputmode="decimal"></div>
+          <div class="field"><label for="pr-p3"><i class="dot p3"></i>Valle (€/kWh)</label><input id="pr-p3" inputmode="decimal"></div>
+          <div class="field"><label for="pr-flat">Precio único (€/kWh)</label><input id="pr-flat" inputmode="decimal"></div>
+          <div class="field"><label for="pr-power">Potencia (€/kW al año)</label><input id="pr-power" inputmode="decimal"></div>
+          <div class="field"><label for="pr-type">Tu tarifa actual</label>
+            <select id="pr-type">
+              <option value="flat">Precio único todo el día</option>
+              <option value="tou">Precio distinto por horas (o PVPC)</option>
+              <option value="unknown">No lo sé</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-sm" type="submit">Recalcular</button>
+      </form>
+    </details>
+
+    <p class="h-fine" id="r-fine"></p>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="h-explain article-body">
+    <h2>Por qué se puede ahorrar sin consumir menos</h2>
+    <p>Desde 2021, casi todos los hogares en España pagan la luz con la tarifa de acceso <strong>2.0TD</strong>, que divide el día en tres periodos. Lo que paga tu comercializadora a la red cambia mucho según la hora, y muchas tarifas te lo trasladan:</p>
+    <div class="h-periods-key" aria-label="Horario de los tres periodos, de lunes a viernes">
+      <div aria-hidden="true"><div class="h-day"></div><div class="h-day-axis"><span>0 h</span><span>6 h</span><span>12 h</span><span>18 h</span><span>24 h</span></div></div>
+      <ul>
+        <li><i class="dot p1"></i><b>Punta</b> · de 10 a 14 h y de 18 a 22 h, de lunes a viernes. La hora cara.</li>
+        <li><i class="dot p2"></i><b>Llano</b> · de 8 a 10 h, de 14 a 18 h y de 22 a 24 h, de lunes a viernes.</li>
+        <li><i class="dot p3"></i><b>Valle</b> · de 0 a 8 h, y <b>todo el fin de semana y los festivos nacionales</b>. La hora barata.</li>
+      </ul>
+    </div>
+    <p>Poner la lavadora el sábado en vez del martes por la tarde no te quita nada, y con una tarifa por horas cuesta más o menos la mitad. Lo mismo pasa con la potencia: muchas casas pagan cada mes por una potencia que no llegan a usar nunca.</p>
+    <p>Esta herramienta calcula estimaciones con precios orientativos. Para una cifra exacta necesitamos tus precios y tu curva real, y para eso está el último paso: si quieres, la revisamos contigo.</p>
+  </section>
+
+  <div class="cta h-cta">
+    <h3>¿Tienes un negocio, una nave o una comunidad?</h3>
+    <p>Lo que esta página hace con una casa lo hacemos a fondo con empresas: auditoría con tu curva oficial de Datadis, baterías y autoconsumo dimensionados con números que puedes comprobar.</p>
+    <a class="btn btn-flame" href="/#contacto">Pedir auditoría gratuita</a>
+  </div>
+</main>
+
+<div class="tip" id="h-tip" role="presentation"></div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-logo">
+      <svg viewBox="0 0 100 100"><path fill="#ffb52e" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="#ffb52e" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="#ffb52e" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#0b141d" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
+      Vesta Energia
+    </div>
+    <div>Barcelona · <a href="/">vestaenergia.com</a> · <a href="/blog/">Blog</a></div>
+    <div>© 2026 Vesta Energia</div>
+  </div>
+</footer>
+
+<script src="/hogar/hogar.js" defer></script>
+</body>
+</html>
