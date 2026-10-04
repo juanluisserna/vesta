@@ -270,3 +270,12 @@ footer a{color:#c2d0de}
 
 /* ---------- graficos de lineas: textos legibles en movil ---------- */
 @media(max-width:640px){.chart svg .k{font-size:21px}.chart svg .k.side{display:none}.chart svg .ax{font-size:16px}}
+
+/* ---------- barras de reparto (mezcla de generacion) ---------- */
+.mixbars{display:grid;gap:12px}
+.mb-row{display:grid;grid-template-columns:minmax(0,11.5rem) minmax(0,1fr) 4.2rem;align-items:center;gap:12px;font-size:.93rem}
+.mb-name{color:var(--ink)}
+.mb-track{height:26px;background:rgba(22,34,47,.05);border-radius:6px;overflow:hidden}
+.mb-track i{display:block;height:100%;border-radius:6px}
+.mb-row b{font-family:var(--font-head);font-size:.93rem;text-align:right;font-variant-numeric:tabular-nums}
+@media(max-width:520px){.mb-row{grid-template-columns:minmax(0,1fr) 4rem;row-gap:4px}.mb-name{grid-column:1/-1}}
