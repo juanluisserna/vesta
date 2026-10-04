@@ -267,3 +267,6 @@ footer a{color:#c2d0de}
 .ladder .rung-kind{background:transparent;border:1px solid currentColor;opacity:.8}
 .article-body .sources{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
 .article-body .sources li{margin-bottom:6px}
+
+/* ---------- graficos de lineas: textos legibles en movil ---------- */
+@media(max-width:640px){.chart svg .k{font-size:21px}.chart svg .k.side{display:none}.chart svg .ax{font-size:16px}}
