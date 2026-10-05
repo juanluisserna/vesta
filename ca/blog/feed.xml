@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog de Vesta Energia</title>
+  <link>https://vestaenergia.com/ca/blog/</link>
+  <description>El cost elèctric de la indústria, analitzat amb dades públiques de Red Eléctrica.</description>
+  <language>ca-ES</language>
+  <atom:link href="https://vestaenergia.com/ca/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Com el clima canvia la producció energètica</title>
+    <link>https://vestaenergia.com/ca/blog/com-el-clima-canvia-la-produccio-energetica/</link>
+    <guid isPermaLink="true">https://vestaenergia.com/ca/blog/com-el-clima-canvia-la-produccio-energetica/</guid>
+    <pubDate>Mon, 05 Oct 2026 09:00:00 +0200</pubDate>
+    <description>Amb el cel cobert, la solar produeix menys i entra el gas. Com canvia el preu de la llum (el migdia del 4 d'octubre va costar 85 €/MWh davant de 0 el diumenge anterior), per què un embassament funciona com una bateria i què poden i què no poden fer les bateries per dependre menys del gas.</description>
+  </item>
+  <item>
+    <title>Què guanya un magatzem frigorífic amb una bateria, del segur al possible</title>
+    <link>https://vestaenergia.com/ca/blog/bateria-magatzem-frigorific/</link>
+    <guid isPermaLink="true">https://vestaenergia.com/ca/blog/bateria-magatzem-frigorific/</guid>
+    <pubDate>Wed, 30 Sep 2026 09:00:00 +0200</pubDate>
+    <description>L'electricitat és al voltant del 40 % del que costa explotar un magatzem frigorífic. Cinc coses que pot fer una bateria, de la més segura a la que encara no existeix: retallar pics, comprar llum barata, mantenir el fred si falla la xarxa, aprofitar la teulada i cobrar per estar disponible.</description>
+  </item>
+  <item>
+    <title>Una bateria a la teva empresa podrà cobrar per estar disponible, però gairebé mai sola</title>
+    <link>https://vestaenergia.com/ca/blog/mercat-de-capacitat-empreses/</link>
+    <guid isPermaLink="true">https://vestaenergia.com/ca/blog/mercat-de-capacitat-empreses/</guid>
+    <pubDate>Mon, 28 Sep 2026 18:00:00 +0200</pubDate>
+    <description>L'Ordre TED/966/2026 crea el mercat de capacitat. El paguen tots els consumidors per cada kWh, i per cobrar-ne cal 1 MW de potència ferma: una bateria d'1 MW no hi arriba. Per què gairebé totes les bateries d'empresa entraran via agregador.</description>
+  </item>
+  <item>
+    <title>Espanya té menys bateries de les que et penses: el 0,76 % del que consumeix el seu dia més carregat</title>
+    <link>https://vestaenergia.com/ca/blog/quant-emmagatzematge-hi-ha-a-espanya/</link>
+    <guid isPermaLink="true">https://vestaenergia.com/ca/blog/quant-emmagatzematge-hi-ha-a-espanya/</guid>
+    <pubDate>Tue, 01 Sep 2026 09:00:00 +0200</pubDate>
+    <description>Espanya té 260,8 MW d'emmagatzematge en bateries, el 0,76 % del que consumeix de mitjana cada hora en el seu dia més carregat d'agost. Amb els terminis de construcció actuals, aquest desequilibri dura anys.</description>
+  </item>
+  <item>
+    <title>El mercat elèctric va estar a 0 €/MWh cinc hores: què significa per a la teva fàbrica</title>
+    <link>https://vestaenergia.com/ca/blog/mercat-electric-zero-euros-industria/</link>
+    <guid isPermaLink="true">https://vestaenergia.com/ca/blog/mercat-electric-zero-euros-industria/</guid>
+    <pubDate>Thu, 27 Aug 2026 08:00:00 +0200</pubDate>
+    <description>El 26 d'agost de 2026 el mercat majorista espanyol va passar cinc hores seguides per sota de 0,40 €/MWh i va arribar a 183 €/MWh aquella mateixa nit. Què implica aquesta corba per al cost elèctric d'una indústria.</description>
+  </item>
+</channel>
+</rss>

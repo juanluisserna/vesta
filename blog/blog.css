@@ -279,3 +279,10 @@ footer a{color:#c2d0de}
 .mb-track i{display:block;height:100%;border-radius:6px}
 .mb-row b{font-family:var(--font-head);font-size:.93rem;text-align:right;font-variant-numeric:tabular-nums}
 @media(max-width:520px){.mb-row{grid-template-columns:minmax(0,1fr) 4rem;row-gap:4px}.mb-name{grid-column:1/-1}}
+
+/* ---------- selector de idioma (ES / CA) ---------- */
+.lang-switch{display:flex;border:1.5px solid rgba(22,34,47,.15);border-radius:99px;overflow:hidden;font-size:.8rem;font-weight:600;line-height:1}
+.nav-links .lang-switch a{padding:6px 11px;color:var(--ink-soft);text-decoration:none;display:block}
+.nav-links .lang-switch a:hover{color:var(--flame)}
+.nav-links .lang-switch a.active{background:var(--ink);color:var(--paper)}
+@media(max-width:420px){.xs-hide{display:none}.nav-links{gap:10px}.nav-inner{gap:10px}.logo{flex-shrink:0}}
