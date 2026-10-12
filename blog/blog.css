@@ -286,3 +286,7 @@ footer a{color:#c2d0de}
 .nav-links .lang-switch a:hover{color:var(--flame)}
 .nav-links .lang-switch a.active{background:var(--ink);color:var(--paper)}
 @media(max-width:420px){.xs-hide{display:none}.nav-links{gap:10px}.nav-inner{gap:10px}.logo{flex-shrink:0}}
+
+/* ---------- barras comparadas por zona (vivienda y red) ---------- */
+.pb-title{font-family:var(--font-head);font-weight:700;font-size:.95rem;margin:14px 0 2px;line-height:1.35}
+.pb-note{display:block;color:var(--flame-deep);font-size:.84rem;font-weight:600;margin-top:2px}

@@ -114,4 +114,22 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/com-el-clima-canvia-la-produccio-energetica/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/como-el-clima-cambia-la-produccion-energetica/"/>
   </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/falta-energia-per-construir-habitatge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/falta-energia-per-construir-habitatge/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/falta-energia-per-construir-habitatge/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
+  </url>
 </urlset>
