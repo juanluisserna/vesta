@@ -290,3 +290,13 @@ footer a{color:#c2d0de}
 /* ---------- barras comparadas por zona (vivienda y red) ---------- */
 .pb-title{font-family:var(--font-head);font-weight:700;font-size:.95rem;margin:14px 0 2px;line-height:1.35}
 .pb-note{display:block;color:var(--flame-deep);font-size:.84rem;font-weight:600;margin-top:2px}
+
+/* ---------- resumen y glosario (artículo de calefacción) ---------- */
+.article-body .keys{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:0 0 34px}
+.keys .k-title{display:block;font-family:var(--font-head);font-size:1rem;margin-bottom:8px}
+.article-body .keys ul{margin:0 0 0 20px}
+.article-body .keys li{margin-bottom:6px}
+.article-body .glossary{display:grid;grid-template-columns:minmax(0,10.5rem) minmax(0,1fr);gap:12px 18px;margin:0 0 24px}
+.glossary dt{font-family:var(--font-head);font-weight:700;font-size:.97rem}
+.glossary dd{margin:0;color:var(--ink-soft)}
+@media(max-width:520px){.article-body .glossary{grid-template-columns:minmax(0,1fr);gap:2px}.glossary dd{margin-bottom:12px}}
