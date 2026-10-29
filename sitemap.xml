@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://vestaenergia.com/blog/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://vestaenergia.com/ca/blog/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/"/>
@@ -137,5 +137,23 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/falta-energia-per-construir-habitatge/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/falta-energia-para-construir-vivienda/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/calefaccio-electrica-negoci-bateries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/calefaccio-electrica-negoci-bateries/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/calefaccio-electrica-negoci-bateries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
   </url>
 </urlset>
