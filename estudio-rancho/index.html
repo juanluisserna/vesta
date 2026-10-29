@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudio de ahorro eléctrico en un rancho | Vesta Energia</title>
+<meta name="description" content="Cuánto paga de luz un rancho con placas solares y qué ahorraría con una batería, un contrato variable y menos potencia contratada. Estimaciones con datos reales de consumo.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://vestaenergia.com/estudio-rancho/">
+<meta name="theme-color" content="#101c29">
+<meta property="og:title" content="Estudio de ahorro eléctrico en un rancho | Vesta Energia">
+<meta property="og:description" content="Lo que paga de luz un rancho con placas solares y lo que podría ahorrar con una batería. Estimaciones con datos reales.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vestaenergia.com/estudio-rancho/">
+<meta property="og:site_name" content="Vesta Energia">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://vestaenergia.com/og-image.png">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16222f;--ink-soft:#44566b;--ink-mute:#6b7c8f;--paper:#fffcf5;--cream:#fff6e6;--flame:#ff7a1a;--flame-deep:#e35d00;--ember:#ffb52e;--navy:#101c29;--navy-2:#1a2b3d;--line:rgba(22,34,47,.10);
+  --font-head:'Sora',system-ui,-apple-system,sans-serif;--font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-anthropic-sans:var(--font-body);--font-anthropic-serif:var(--font-head);
+  --color-fg:var(--ink);--color-fg-muted:var(--ink-soft);--color-panel:#fff;--color-border-line:var(--line);--color-ok:#1a7f4b;--color-bad:#b8341f;
+  --cds-gap-xs:6px;--cds-gap-sm:10px;--cds-gap-md:18px;--cds-gap-lg:26px;--cds-gap-xl:46px;
+  --cds-pad-xs:6px;--cds-pad-sm:10px;--cds-pad-md:16px;--cds-pad-lg:24px;--cds-radius:18px;
+  --cds-font-size-caption:.84rem;--cds-font-size-body:1rem;--cds-font-size-heading:1.1rem;--cds-font-size-title:1.6rem;--cds-font-weight-medium:600;
+  --cds-chart-muted:#aab6c3;--cds-chart-grid:rgba(22,34,47,.10);--cds-chart-reference:rgba(22,34,47,.35);--cds-chart-status-critical:#c0392b;
+  --cds-surface-popover:#101c29;--cds-border:#101c29;--cds-text-secondary:#c2d0de;--cds-shadow-popover:0 6px 20px rgba(0,0,0,.24);
+  --cds-dur-slow:.25s;--cds-ease-out:ease-out;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,252,245,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:800;font-size:1.22rem;text-decoration:none;color:var(--ink)}
+.logo svg{width:26px;height:26px}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:.94rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--flame)}
+.btn{display:inline-block;padding:13px 26px;border-radius:99px;font-weight:600;text-decoration:none;font-size:.98rem;font-family:var(--font-body);transition:transform .15s,box-shadow .15s}
+.btn-flame{background:linear-gradient(135deg,var(--flame),var(--ember));color:#fff!important;box-shadow:0 6px 18px rgba(255,122,26,.32)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,122,26,.42)}
+.btn-sm{padding:9px 18px;font-size:.9rem}
+@media(max-width:860px){.nav-links a.nav-item{display:none}}
+.hero-top{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:56px 0 50px}
+.hero-top .eyebrow{font-family:var(--font-head);font-weight:700;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ember)}
+.hero-top h1{font-family:var(--font-head);font-weight:800;font-size:clamp(2rem,4.8vw,3.1rem);letter-spacing:-.02em;line-height:1.12;margin:12px 0 14px}
+.hero-top p{color:#c2d0de;font-size:1.06rem;max-width:60ch}
+main.page{padding:44px 0 10px}
+.cta{background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:20px;padding:38px 34px;margin:50px 0 10px;color:#fff}
+.cta h2{font-family:var(--font-head);font-size:1.4rem;font-weight:700;margin-bottom:10px;color:#fff}
+.cta p{color:#c2d0de;margin-bottom:20px;font-size:1rem;max-width:60ch}
+footer{background:var(--navy);color:#93a5b8;padding:38px 0;font-size:.88rem;margin-top:60px}
+.foot-inner{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.foot-logo{display:flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:700;color:#fff}
+.foot-logo svg{width:22px;height:22px}
+footer a{color:#c2d0de}
+
+
+.dn{max-width:62rem;margin-inline:auto;display:flex;flex-direction:column;gap:var(--cds-gap-xl);font-family:var(--font-anthropic-sans);color:var(--color-fg)}
+.dn *{box-sizing:border-box}
+.dn h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:clamp(1.8rem,5.5vw,2.5rem);line-height:1.12;margin:0;text-wrap:balance}
+.dn h2{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);line-height:1.2;margin:0;text-wrap:balance}
+.dn h3{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.dn p{margin:0;line-height:1.5}
+.dn .lead{font-size:1.1rem;max-width:46rem}
+.dn .lead span,.dn .lead strong{font-variant-numeric:tabular-nums}
+.dn strong,.dn .num{font-weight:600;font-variant-numeric:tabular-nums}
+.dn .sec{display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.dn .card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0;display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.dn .grid{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.dn .grid2{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.dn .big{font-family:var(--font-anthropic-serif);font-weight:400;font-size:2.4rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.dn .hero .big{font-size:clamp(2.6rem,9vw,3.6rem)}
+.dn .hero{gap:var(--cds-gap-sm)}
+.dn .unit{color:var(--color-fg-muted);font-size:var(--cds-font-size-body)}
+.dn .mut{color:var(--color-fg-muted)}
+.dn .small{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.dn .ok{color:var(--color-ok)}
+.dn .bad{color:var(--color-bad)}
+.dn .delta{font-size:var(--cds-font-size-body);font-weight:500}
+.dn .sce .big{margin-top:var(--cds-gap-xs)}
+.dn .chart{position:relative;display:block;width:100%}
+.dn .c-a{min-height:112px}
+.dn .c-b{min-height:290px}
+.dn .c-c{min-height:224px}
+.dn .c-d{min-height:310px}
+.dn .c-e{min-height:168px}
+.dn .c-f{min-height:150px}
+.dn .c-g{min-height:280px}
+.dn .legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-xs) var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-bottom:var(--cds-gap-xs)}
+.dn .legend span{display:inline-flex;align-items:center;gap:6px}
+.dn .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.dn svg{display:block;overflow:visible}
+.dn svg text{fill:var(--color-fg-muted);font-size:var(--cds-font-size-caption);font-family:var(--font-anthropic-sans)}
+.dn svg text.lab{fill:var(--color-fg)}
+.dn svg text.val{fill:var(--color-fg);font-weight:600;font-variant-numeric:tabular-nums}
+.dn .tip{position:absolute;z-index:3;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);min-width:9rem}
+.dn .tip .tt{color:var(--cds-text-secondary);margin-bottom:2px}
+.dn .tip .tr{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.dn .tip .tr i{width:8px;height:8px;border-radius:2px;display:inline-block;flex:none}
+.dn .tip .tr em{font-style:normal;margin-left:auto;padding-left:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.dn .tw{overflow-x:auto}
+.dn table{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-body)}
+.dn th{text-align:left;font-weight:500;color:var(--color-fg-muted);padding:8px 12px 8px 0;border-bottom:1px solid var(--color-border-line);vertical-align:bottom}
+.dn td{padding:10px 12px 10px 0;border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.dn td .mut{display:block;font-size:var(--cds-font-size-caption)}
+.dn tr:last-child td{border-bottom:0}
+.dn ul{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.dn li{line-height:1.5}
+.dn .foot{padding-top:var(--cds-pad-md);border-top:1px solid var(--color-border-line)}
+@media (prefers-reduced-motion:no-preference){.dn .tip{transition:opacity var(--cds-dur-slow) var(--cds-ease-out)}}
+
+.dn .tip{color:#fff}
+.dn h1,.dn h2,.dn h3,.dn .big{font-family:var(--font-head)}
+.dn h1{font-weight:800}
+.dn h2{font-weight:700;letter-spacing:-.01em}
+.dn .big{font-weight:800;letter-spacing:-.02em}
+.dn .hero .big{font-weight:800}
+.dn .card{box-shadow:none}
+.cta{max-width:62rem;margin-inline:auto}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">
+      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg)" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="url(#lg)" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="url(#lg)" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#fff" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
+      Vesta<span style="color:var(--flame)">.</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-item" href="/#solucion">Solución</a>
+      <a class="nav-item" href="/#como">Cómo funciona</a>
+      <a class="nav-item" href="/blog/">Blog</a>
+      <a class="btn btn-flame btn-sm" href="/#contacto">Auditoría gratuita</a>
+    </div>
+  </div>
+</nav>
+<header class="hero-top">
+  <div class="wrap">
+    <span class="eyebrow">Estudio de ahorro eléctrico</span>
+    <h1>La factura de luz de un rancho con placas solares</h1>
+    <p>Cuánto paga hoy, cuánto ahorran sus placas y qué pasaría con una batería, un contrato de precio variable y menos potencia contratada. Todo en euros.</p>
+  </div>
+</header>
+<main class="page">
+<div class="wrap">
+<div class="dn">
+
+<header class="sec">
+  
+  <p class="lead">Hoy el contador con placas solares paga unos <strong data-draw="eur" data-source="escenarios" data-field="euros_anio" data-where="escenario=hoy">…</strong> al año de luz. Sin sus placas pagaría unos <strong data-draw="eur" data-source="escenarios" data-field="euros_anio" data-where="escenario=sin_placas">…</strong>. Con una batería, en el mejor de los casos, la factura bajaría a unos <strong data-draw="eur" data-source="escenarios" data-field="euros_anio" data-where="escenario=bateria">…</strong> al año, o a unos <strong data-draw="eur" data-source="escenarios" data-field="euros_anio" data-where="escenario=bateria_variable">…</strong> si además cambia a un contrato de precio variable.</p>
+  <p class="small"><strong>Los puntos 1 a 4 son solo del contador que tiene las placas.</strong> El punto 5 analiza el otro contador y el 6 suma los dos. Las cifras son lo que se paga en la factura, con IVA e impuesto eléctrico, durante un año (<span data-draw="periodo" data-source="meses">…</span>).</p>
+</header>
+
+<section class="sec" id="placas">
+  <h2>1. Lo que ya ahorran las placas solares</h2>
+  <div class="card hero">
+    <p class="unit">Las placas ahorran al rancho, cada año, unos</p>
+    <div class="big"><span data-draw="eur" data-source="ahorro_placas" data-field="ahorro_anio" data-where="caso=central">…</span></div>
+    <p>Son unos <strong data-draw="eur" data-source="ahorro_placas" data-field="ahorro_mes" data-where="caso=central">…</strong> menos cada mes en la factura. Es una estimación: según cuánta energía de las placas se use en el momento, el ahorro estaría entre <strong data-draw="eur" data-source="ahorro_placas" data-field="ahorro_anio" data-where="caso=bajo">…</strong> y <strong data-draw="eur" data-source="ahorro_placas" data-field="ahorro_anio" data-where="caso=alto">…</strong> al año.</p>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Lo que pagarían en el año</h3>
+      <p class="small">Con y sin placas solares.</p>
+      <div class="chart c-a" data-draw="placasBarras" data-source="escenarios"></div>
+    </div>
+    <div class="card">
+      <h3>Mes por mes</h3>
+      <p class="small">Euros de factura al mes. La parte clara de cada barra es lo que ahorran las placas: se nota más en primavera y menos en invierno.</p>
+      <div class="chart c-b" data-draw="placasMeses" data-source="placas_meses"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="escenarios">
+  <h2>2. ¿Y si agregan una batería?</h2>
+  <p>La batería guarda la energía sobrante de las placas para usarla después, cuando se necesita. Aquí se comparan cuatro situaciones para el mismo contador y el mismo año. En las dos que llevan batería, el cálculo usa una batería mediana de <strong data-draw="kwh" data-source="bateria" data-field="bateria_kwh">…</strong>; en el punto 4 se ven otros tamaños.</p>
+  <div class="grid">
+    <div class="card sce">
+      <h3>Como está hoy</h3>
+      <p class="small">Placas solares y contrato de precio fijo.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras" data-field="euros_anio" data-where="escenario=hoy">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras" data-field="euros_mes" data-where="escenario=hoy">…</span> al mes</p>
+    </div>
+    <div class="card sce">
+      <h3>Con una batería</h3>
+      <p class="small">Siguen con su contrato de precio fijo.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras" data-field="euros_anio" data-where="escenario=bateria">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras" data-field="euros_mes" data-where="escenario=bateria">…</span> al mes</p>
+      <p class="delta ok">Ahorrarían hasta <span data-draw="eur" data-source="cifras" data-field="ahorro_anio" data-where="escenario=bateria">…</span> al año</p>
+    </div>
+    <div class="card sce">
+      <h3>Batería y contrato variable</h3>
+      <p class="small">El precio de la luz cambia cada hora y la batería aprovecha las horas baratas.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras" data-field="euros_anio" data-where="escenario=bateria_variable">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras" data-field="euros_mes" data-where="escenario=bateria_variable">…</span> al mes</p>
+      <p class="delta ok">Ahorrarían hasta <span data-draw="eur" data-source="cifras" data-field="ahorro_anio" data-where="escenario=bateria_variable">…</span> al año</p>
+    </div>
+    <div class="card sce">
+      <h3>Solo contrato variable</h3>
+      <p class="small">Sin batería no se pueden aprovechar las horas baratas.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras" data-field="euros_anio" data-where="escenario=variable">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras" data-field="euros_mes" data-where="escenario=variable">…</span> al mes</p>
+      <p class="delta bad">Pagarían <span data-draw="eur" data-source="cifras" data-field="extra_anio" data-where="escenario=variable">…</span> más al año</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Cuánto pagarían al año en cada situación</h3>
+    <div class="chart c-c" data-draw="escBarras" data-source="cifras"></div>
+  </div>
+  <p class="mut">Además del ahorro, una batería puede mantener funcionando lo esencial conectado a este contador si hay un corte de luz.</p>
+</section>
+
+<section class="sec" id="meses">
+  <h2>3. Mes por mes</h2>
+  <div class="card">
+    <h3>Factura mensual en tres situaciones</h3>
+    <p class="small">Euros al mes. El contrato variable tiende a rendir más en otoño e invierno y menos en verano, por eso conviene mirar el año completo.</p>
+    <div class="chart c-d" data-draw="mesesLineas" data-source="meses"></div>
+  </div>
+</section>
+
+<section class="sec" id="tamanos">
+  <h2>4. ¿Y con una batería más grande o más pequeña?</h2>
+  <div class="card">
+    <p class="small">Lo que pagarían al año y lo que ahorrarían frente a hoy. La batería de las comparaciones anteriores es la mediana.</p>
+    <div class="tw">
+      <table data-source="ahorro_tamanos" data-row-key="bateria_kwh">
+        <thead><tr><th data-field="bateria_kwh">Tamaño de la batería</th><th data-field="ahorro_actual">Con su contrato actual</th><th data-field="ahorro_variable">Con contrato variable</th></tr></thead>
+        <tbody data-draw="tam"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sinplacas">
+  <h2>5. El otro contador, el que no tiene placas</h2>
+  <p>Este contador tiene <strong data-draw="kw" data-source="cups3_potencias" data-field="kw" data-where="concepto=contratada">…</strong> de potencia contratada y no tiene placas solares. La mayor parte de su factura no es la luz que gasta, sino la potencia que tiene contratada. Su factura es una estimación con los mismos precios del contador con placas, porque no tenemos una factura de este contador.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>En qué se va la factura</h3>
+      <p class="small">Euros al año, con impuestos.</p>
+      <div class="chart c-e" data-draw="desglose3" data-source="cups3_desglose"></div>
+    </div>
+    <div class="card hero">
+      <h3>Pagan por una potencia que no usan</h3>
+      <p>En todo el año, lo máximo que usaron fue <strong data-draw="kw" data-source="cups3_potencias" data-field="kw" data-where="concepto=maxima_demandada">…</strong> y tienen contratados <strong data-draw="kw" data-source="cups3_potencias" data-field="kw" data-where="concepto=contratada">…</strong>. Bajar a <strong data-draw="kw" data-source="cups3_potencias" data-field="kw" data-where="concepto=propuesta">…</strong> les ahorraría unos</p>
+      <div class="big"><span data-draw="eur" data-source="cifras3" data-field="ahorro_anio" data-where="escenario=potencia">…</span></div>
+      <p class="unit">al año, sin comprar nada.</p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card sce">
+      <h3>Como está hoy</h3>
+      <p class="small">Contrato de precio fijo.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras3" data-field="euros_anio" data-where="escenario=hoy">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras3" data-field="euros_mes" data-where="escenario=hoy">…</span> al mes</p>
+    </div>
+    <div class="card sce">
+      <h3>Bajar la potencia contratada</h3>
+      <p class="small">Sin batería y sin cambiar de contrato.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras3" data-field="euros_anio" data-where="escenario=potencia">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras3" data-field="euros_mes" data-where="escenario=potencia">…</span> al mes</p>
+      <p class="delta ok">Ahorrarían unos <span data-draw="eur" data-source="cifras3" data-field="ahorro_anio" data-where="escenario=potencia">…</span> al año</p>
+    </div>
+    <div class="card sce">
+      <h3>Contrato variable y batería</h3>
+      <p class="small">Con la misma potencia de hoy y una batería mediana.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras3" data-field="euros_anio" data-where="escenario=bateria_variable">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras3" data-field="euros_mes" data-where="escenario=bateria_variable">…</span> al mes</p>
+      <p class="delta ok">Ahorrarían hasta <span data-draw="eur" data-source="cifras3" data-field="ahorro_anio" data-where="escenario=bateria_variable">…</span> al año</p>
+    </div>
+    <div class="card sce">
+      <h3>Todo junto</h3>
+      <p class="small">Contrato variable, batería mediana y menos potencia.</p>
+      <div class="big"><span data-draw="eur" data-source="cifras3" data-field="euros_anio" data-where="escenario=todo">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="cifras3" data-field="euros_mes" data-where="escenario=todo">…</span> al mes</p>
+      <p class="delta ok">Ahorrarían hasta <span data-draw="eur" data-source="cifras3" data-field="ahorro_anio" data-where="escenario=todo">…</span> al año</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Cuánto pagarían al año en cada situación</h3>
+    <div class="chart c-g" data-draw="escBarras3" data-source="cifras3"></div>
+  </div>
+  <p class="mut">Con precio fijo, una batería sola no ahorraría nada en este contador: la luz cuesta lo mismo a cualquier hora y, sin placas, no hay energía sobrante que guardar. La batería solo rinde junto al contrato variable.</p>
+</section>
+
+<section class="sec" id="total">
+  <h2>6. Los dos contadores juntos</h2>
+  <p>Suma de los dos contadores que tienen datos. El mejor caso es la mejor combinación probada en cada uno: batería mediana, contrato variable y, en el contador sin placas, menos potencia contratada.</p>
+  <div class="grid">
+    <div class="card sce">
+      <h3>Hoy</h3>
+      <div class="big"><span data-draw="eur" data-source="resumen_total" data-field="hoy_total" data-where="fila=total">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="resumen_total" data-field="hoy_mes" data-where="fila=total">…</span> al mes</p>
+      <p class="small">Con placas <span data-draw="eur" data-source="resumen_total" data-field="hoy_c1" data-where="fila=total">…</span>, sin placas <span data-draw="eur" data-source="resumen_total" data-field="hoy_c3" data-where="fila=total">…</span></p>
+    </div>
+    <div class="card sce">
+      <h3>En el mejor caso</h3>
+      <div class="big"><span data-draw="eur" data-source="resumen_total" data-field="mejor_total" data-where="fila=total">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="resumen_total" data-field="mejor_mes" data-where="fila=total">…</span> al mes</p>
+      <p class="small">Con placas <span data-draw="eur" data-source="resumen_total" data-field="mejor_c1" data-where="fila=total">…</span>, sin placas <span data-draw="eur" data-source="resumen_total" data-field="mejor_c3" data-where="fila=total">…</span></p>
+    </div>
+    <div class="card sce hero">
+      <h3>Posible ahorro</h3>
+      <div class="big ok"><span data-draw="eur" data-source="resumen_total" data-field="ahorro_anio" data-where="fila=total">…</span></div>
+      <p class="small">al año, unos <span data-draw="eur" data-source="resumen_total" data-field="ahorro_mes" data-where="fila=total">…</span> al mes. Es un máximo y no incluye el precio de las baterías.</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Cuánto pagarían al año los dos contadores</h3>
+    <div class="chart c-f" data-draw="totalBarras" data-source="resumen_total"></div>
+  </div>
+</section>
+
+<section class="sec foot" id="aviso">
+  <h2>Antes de decidir</h2>
+  <ul>
+    <li><strong>Son estimaciones del mejor caso.</strong> Se calculó como si la batería supiera de antemano el consumo y los precios de cada hora. En la práctica el ahorro sería algo menor.</li>
+    <li><strong>No incluyen el precio de la batería</strong> ni su instalación. Falta calcular en cuántos años se recuperaría esa inversión.</li>
+    <li><strong>El contrato variable solo conviene con batería.</strong> Sin ella sale más caro, y el precio de la luz puede subir o bajar de un año a otro.</li>
+    <li><strong>El ahorro de las placas es una estimación.</strong> La compañía eléctrica informa cuánta energía compra el rancho y cuánta envía a la red, pero no cuánta de las placas se usa en el momento. Ese dato se estimó con las facturas de marzo y mayo, donde Iberdrola lo indica.</li>
+    <li><strong>Se analizaron dos de los tres contadores del rancho.</strong> El tercero no registra consumo y no está en estas cifras.</li>
+    <li><strong>La factura del contador sin placas es una estimación.</strong> No tenemos una factura de ese contador, así que se calculó con los mismos precios que el contador con placas. Bajar la potencia contratada hay que confirmarlo con el rancho y con la compañía antes de pedirlo, por si algún equipo necesita esa potencia al arrancar.</li>
+    <li>El estudio gratuito con los datos reales del contador (Datadis) es lo que determina el ahorro de cada caso.</li>
+  </ul>
+</section>
+
+</div>
+<div class="cta">
+  <h2>¿Quieres un análisis así para tu empresa?</h2>
+  <p>Con tu autorización descargamos tu consumo real de Datadis y te decimos qué resultado es realista, con números. El primer paso es gratuito y sin compromiso.</p>
+  <a class="btn btn-flame" href="/#contacto">Pedir auditoría gratuita</a>
+</div>
+</div>
+</main>
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-logo">
+      <svg viewBox="0 0 100 100"><defs><linearGradient id="lg2" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffb52e"/><stop offset="1" stop-color="#ffb52e"/></linearGradient></defs><path fill="url(#lg2)" d="M50 4a30 30 0 0 0-17 54.6c3.4 2.4 5.5 6.3 5.5 10.4v2h23v-2c0-4.1 2.1-8 5.5-10.4A30 30 0 0 0 50 4Z"/><rect fill="url(#lg2)" x="39" y="76" width="22" height="7" rx="3.5"/><rect fill="url(#lg2)" x="42" y="88" width="16" height="7" rx="3.5"/><path fill="#fff" d="M55 20 40 44h9l-5 20 16-26h-9l4-18z"/></svg>
+      Vesta Energia
+    </div>
+    <div>Barcelona · <a href="/">vestaenergia.com</a> · <a href="/blog/">Blog</a></div>
+    <div>© 2026 Vesta Energia</div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+
+const DATA = {"escenarios": [{"escenario": "sin_placas", "euros_anio": "3518.3"}, {"escenario": "sin_placas_bajo", "euros_anio": "3340.5"}, {"escenario": "sin_placas_alto", "euros_anio": "3695.9"}, {"escenario": "hoy", "euros_anio": "1503.8"}, {"escenario": "bateria", "euros_anio": "1283.6"}, {"escenario": "variable", "euros_anio": "1973.3"}, {"escenario": "bateria_variable", "euros_anio": "1240.9"}], "tamanos": [{"bateria_kwh": "5", "hoy": "1503.8", "mismo_contrato": "1370.5", "contrato_variable": "1507.8"}, {"bateria_kwh": "10", "hoy": "1503.8", "mismo_contrato": "1283.6", "contrato_variable": "1240.9"}, {"bateria_kwh": "15", "hoy": "1503.8", "mismo_contrato": "1242.8", "contrato_variable": "1076.6"}, {"bateria_kwh": "20", "hoy": "1503.8", "mismo_contrato": "1232.8", "contrato_variable": "979.3"}], "meses": [{"mes": "2025-10", "hoy": "152.5", "bateria": "135.0", "bateria_variable": "116.5"}, {"mes": "2025-11", "hoy": "111.9", "bateria": "92.0", "bateria_variable": "79.4"}, {"mes": "2025-12", "hoy": "153.9", "bateria": "143.8", "bateria_variable": "121.6"}, {"mes": "2026-01", "hoy": "141.7", "bateria": "128.0", "bateria_variable": "99.7"}, {"mes": "2026-02", "hoy": "114.4", "bateria": "94.6", "bateria_variable": "71.8"}, {"mes": "2026-03", "hoy": "57.3", "bateria": "39.4", "bateria_variable": "50.5"}, {"mes": "2026-04", "hoy": "123.7", "bateria": "99.0", "bateria_variable": "92.6"}, {"mes": "2026-05", "hoy": "49.2", "bateria": "39.4", "bateria_variable": "53.8"}, {"mes": "2026-06", "hoy": "173.5", "bateria": "153.3", "bateria_variable": "135.1"}, {"mes": "2026-07", "hoy": "198.4", "bateria": "176.6", "bateria_variable": "197.3"}, {"mes": "2026-08", "hoy": "96.5", "bateria": "73.4", "bateria_variable": "90.8"}, {"mes": "2026-09", "hoy": "130.6", "bateria": "109.1", "bateria_variable": "131.7"}], "placas_meses": [{"mes": "2025-10", "con_placas": "152.5", "sin_placas": "281.3", "sin_placas_bajo": "269.9", "sin_placas_alto": "292.6"}, {"mes": "2025-11", "con_placas": "111.9", "sin_placas": "255.6", "sin_placas_bajo": "242.9", "sin_placas_alto": "268.2"}, {"mes": "2025-12", "con_placas": "153.9", "sin_placas": "213.1", "sin_placas_bajo": "207.9", "sin_placas_alto": "218.3"}, {"mes": "2026-01", "con_placas": "141.7", "sin_placas": "230.4", "sin_placas_bajo": "222.6", "sin_placas_alto": "238.3"}, {"mes": "2026-02", "con_placas": "114.4", "sin_placas": "253.2", "sin_placas_bajo": "240.9", "sin_placas_alto": "265.4"}, {"mes": "2026-03", "con_placas": "57.3", "sin_placas": "310.6", "sin_placas_bajo": "288.2", "sin_placas_alto": "332.9"}, {"mes": "2026-04", "con_placas": "123.7", "sin_placas": "334.6", "sin_placas_bajo": "316.0", "sin_placas_alto": "353.2"}, {"mes": "2026-05", "con_placas": "49.2", "sin_placas": "352.5", "sin_placas_bajo": "325.8", "sin_placas_alto": "379.3"}, {"mes": "2026-06", "con_placas": "173.5", "sin_placas": "301.1", "sin_placas_bajo": "289.8", "sin_placas_alto": "312.4"}, {"mes": "2026-07", "con_placas": "198.4", "sin_placas": "350.4", "sin_placas_bajo": "337.0", "sin_placas_alto": "363.8"}, {"mes": "2026-08", "con_placas": "96.5", "sin_placas": "329.6", "sin_placas_bajo": "309.1", "sin_placas_alto": "350.2"}, {"mes": "2026-09", "con_placas": "130.6", "sin_placas": "305.9", "sin_placas_bajo": "290.4", "sin_placas_alto": "321.3"}], "bateria": [{"bateria_kwh": "10", "potencia_kw": "5"}], "cups3": [{"escenario": "hoy", "euros_anio": "1281.8"}, {"escenario": "potencia", "euros_anio": "1029.4"}, {"escenario": "variable", "euros_anio": "1224.2"}, {"escenario": "bateria_variable", "euros_anio": "1045.2"}, {"escenario": "todo", "euros_anio": "792.8"}], "cups3_desglose": [{"parte": "energia", "euros_anio": "565.0"}, {"parte": "potencia", "euros_anio": "673.1"}, {"parte": "otros", "euros_anio": "43.7"}], "cups3_potencias": [{"concepto": "contratada", "kw": "8.8"}, {"concepto": "propuesta", "kw": "5.5"}, {"concepto": "maxima_demandada", "kw": "5.02"}]};
+const dash = (function () {
+  const store = {}, draws = [];
+  Object.keys(DATA).forEach(function (k) { store[k] = { status: 'ok', data: DATA[k] }; });
+  function run() {
+    draws.forEach(function (d) {
+      document.querySelectorAll('[data-draw="' + d[0] + '"]').forEach(function (el) { d[1](el); });
+    });
+  }
+  let t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(run, 120); });
+  return {
+    colors: ['#ff7a1a', '#2f4258', '#1f8a8a', '#d9a000', '#7a5c99', '#c24b4b', '#5a8f3d', '#8b97a5'],
+    data: function (id) { return store[id] || { status: 'missing', data: [] }; },
+    calc: function (id, o) { store[id] = { status: 'ok', data: o.fn.apply(null, o.inputs.map(function (i) { return store[i].data; })) }; },
+    draw: function (name, fn) { draws.push([name, fn]); },
+    run: run
+  };
+})();
+
+const NUM = new Intl.NumberFormat('es-ES', {maximumFractionDigits: 0, useGrouping: 'always'});
+const eur = (n) => NUM.format(Math.round(Math.abs(Number(n)))) + ' €';
+const MC = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+const ML = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const get = (id) => { const g = dash.data(id); return g.status === 'ok' ? g.data : null; };
+
+dash.calc('cifras', {
+  inputs: ['escenarios'],
+  title: 'Pago por situación',
+  description: 'Euros por año y por mes de cada situación, y la diferencia con lo que se paga hoy.',
+  fn: (escenarios) => {
+    const v = {};
+    escenarios.forEach((r) => { v[r.escenario] = Number(r.euros_anio); });
+    return ['hoy', 'bateria', 'bateria_variable', 'variable'].map((k) => ({
+      escenario: k,
+      euros_anio: v[k],
+      euros_mes: v[k] / 12,
+      ahorro_anio: v.hoy - v[k],
+      ahorro_mes: (v.hoy - v[k]) / 12,
+      extra_anio: v[k] - v.hoy,
+      extra_mes: (v[k] - v.hoy) / 12
+    }));
+  }
+});
+
+dash.calc('ahorro_placas', {
+  inputs: ['escenarios'],
+  title: 'Ahorro de las placas',
+  description: 'Lo que pagarían sin placas menos lo que pagan hoy, con el rango de la estimación.',
+  fn: (escenarios) => {
+    const v = {};
+    escenarios.forEach((r) => { v[r.escenario] = Number(r.euros_anio); });
+    return [['central', 'sin_placas'], ['bajo', 'sin_placas_bajo'], ['alto', 'sin_placas_alto']].map((p) => ({
+      caso: p[0],
+      ahorro_anio: v[p[1]] - v.hoy,
+      ahorro_mes: (v[p[1]] - v.hoy) / 12
+    }));
+  }
+});
+
+dash.calc('ahorro_tamanos', {
+  inputs: ['tamanos'],
+  title: 'Ahorro por tamaño',
+  description: 'Lo que se paga y se ahorra al año con cada tamaño de batería, frente a hoy.',
+  fn: (tamanos) => tamanos.map((r) => ({
+    bateria_kwh: Number(r.bateria_kwh),
+    paga_actual: Number(r.mismo_contrato),
+    ahorro_actual: Number(r.hoy) - Number(r.mismo_contrato),
+    paga_variable: Number(r.contrato_variable),
+    ahorro_variable: Number(r.hoy) - Number(r.contrato_variable)
+  }))
+});
+
+
+dash.calc('cifras3', {
+  inputs: ['cups3'],
+  title: 'Pago del contador sin placas',
+  description: 'Euros por año y por mes de cada situación del contador sin placas, y la diferencia con lo que paga hoy.',
+  fn: (cups3) => {
+    const v = {};
+    cups3.forEach((r) => { v[r.escenario] = Number(r.euros_anio); });
+    return ['hoy', 'potencia', 'variable', 'bateria_variable', 'todo'].map((k) => ({
+      escenario: k,
+      euros_anio: v[k],
+      euros_mes: v[k] / 12,
+      ahorro_anio: v.hoy - v[k],
+      ahorro_mes: (v.hoy - v[k]) / 12
+    }));
+  }
+});
+
+dash.calc('resumen_total', {
+  inputs: ['escenarios', 'cups3'],
+  title: 'Suma de los dos contadores',
+  description: 'Lo que pagan hoy y en el mejor caso los dos contadores juntos, y la diferencia.',
+  fn: (escenarios, cups3) => {
+    const a = {};
+    escenarios.forEach((r) => { a[r.escenario] = Number(r.euros_anio); });
+    const b = {};
+    cups3.forEach((r) => { b[r.escenario] = Number(r.euros_anio); });
+    const hoy = a.hoy + b.hoy;
+    const mejor = a.bateria_variable + b.todo;
+    return [{
+      fila: 'total',
+      hoy_c1: a.hoy, hoy_c3: b.hoy, hoy_total: hoy, hoy_mes: hoy / 12,
+      mejor_c1: a.bateria_variable, mejor_c3: b.todo, mejor_total: mejor, mejor_mes: mejor / 12,
+      ahorro_anio: hoy - mejor, ahorro_mes: (hoy - mejor) / 12
+    }];
+  }
+});
+
+const COL = () => ({
+  hoy: 'var(--cds-chart-muted)',
+  bateria: dash.colors[0],
+  bateria_variable: dash.colors[1],
+  variable: 'var(--cds-chart-status-critical)'
+});
+
+function legend(el, items) {
+  const lg = d3.select(el).append('div').attr('class', 'legend');
+  items.forEach((it) => {
+    const s = lg.append('span');
+    s.append('i').style('background', it.c);
+    s.append('span').text(it.t);
+  });
+}
+function newSvg(el, w, h) {
+  return d3.select(el).append('svg').attr('width', '100%').attr('viewBox', '0 0 ' + w + ' ' + h);
+}
+function measure(svg, s) {
+  const t = svg.append('text').text(s);
+  const n = t.node().getComputedTextLength();
+  t.remove();
+  return n;
+}
+function makeTip(el) {
+  const t = d3.select(el).append('div').attr('class', 'tip').style('display', 'none');
+  return {
+    show(ev, title, lines) {
+      t.selectAll('*').remove();
+      t.append('div').attr('class', 'tt').text(title);
+      lines.forEach((l) => {
+        const r = t.append('div').attr('class', 'tr');
+        r.append('i').style('background', l.c);
+        r.append('span').text(l.n);
+        r.append('em').text(l.v);
+      });
+      t.style('display', 'block');
+      const p = d3.pointer(ev, el);
+      const tw = t.node().offsetWidth;
+      let left = p[0] + 14;
+      if (left + tw > el.clientWidth) left = p[0] - tw - 14;
+      t.style('left', Math.max(0, left) + 'px').style('top', Math.max(0, p[1] - 12) + 'px');
+    },
+    hide() { t.style('display', 'none'); }
+  };
+}
+
+dash.draw('eur', (el) => {
+  const d = get(el.dataset.source);
+  const w = (el.dataset.where || '').split('=');
+  const r = d && d.find((x) => String(x[w[0]]) === w[1]);
+  el.textContent = r && r[el.dataset.field] != null ? eur(r[el.dataset.field]) : '…';
+});
+
+dash.draw('kwh', (el) => {
+  const d = get('bateria');
+  el.textContent = d && d.length ? d[0].bateria_kwh + ' kWh' : '…';
+});
+
+
+const KW = new Intl.NumberFormat('es-ES', {maximumFractionDigits: 2});
+dash.draw('kw', (el) => {
+  const d = get(el.dataset.source);
+  const w = (el.dataset.where || '').split('=');
+  const r = d && d.find((x) => String(x[w[0]]) === w[1]);
+  el.textContent = r && r[el.dataset.field] != null ? KW.format(Number(r[el.dataset.field])) + ' kW' : '…';
+});
+
+dash.draw('desglose3', (el) => {
+  el.replaceChildren();
+  const d = get('cups3_desglose');
+  if (!d) return;
+  const names = { energia: 'La luz que gastan', potencia: 'La potencia contratada', otros: 'Otros cargos fijos' };
+  const cols = { energia: dash.colors[0], potencia: dash.colors[1], otros: 'var(--cds-chart-muted)' };
+  hbars(el, d.map((r) => ({ label: names[r.parte] || r.parte, value: Number(r.euros_anio), color: cols[r.parte] || 'var(--cds-chart-muted)' })));
+});
+
+dash.draw('escBarras3', (el) => {
+  el.replaceChildren();
+  const d = get('cifras3');
+  if (!d) return;
+  const names = { hoy: 'Como hoy', potencia: 'Solo bajar la potencia', variable: 'Solo contrato variable', bateria_variable: 'Contrato variable y batería', todo: 'Todo junto' };
+  const cols = { hoy: 'var(--cds-chart-muted)', potencia: dash.colors[0], variable: dash.colors[3], bateria_variable: dash.colors[1], todo: dash.colors[2] };
+  hbars(el, d.map((r) => ({ label: names[r.escenario], value: Number(r.euros_anio), color: cols[r.escenario] })));
+});
+
+dash.draw('totalBarras', (el) => {
+  el.replaceChildren();
+  const d = get('resumen_total');
+  if (!d || !d.length) return;
+  const r = d[0];
+  const c1 = dash.colors[0], c2 = dash.colors[2];
+  legend(el, [{ c: c1, t: 'Contador con placas' }, { c: c2, t: 'Contador sin placas' }]);
+  const rows = [{ label: 'Hoy', a: Number(r.hoy_c1), b: Number(r.hoy_c3) }, { label: 'En el mejor caso', a: Number(r.mejor_c1), b: Number(r.mejor_c3) }];
+  const w = Math.max(260, el.clientWidth), rowH = 56, h = rows.length * rowH, bw = w - 92;
+  const svg = newSvg(el, w, h);
+  const x = d3.scaleLinear([0, d3.max(rows, (q) => q.a + q.b)], [0, bw]);
+  const tip = makeTip(el);
+  rows.forEach((q, i) => {
+    const y = i * rowH;
+    svg.append('text').attr('class', 'lab').attr('x', 0).attr('y', y + 14).text(q.label);
+    const segs = [[0, q.a, c1, 'Contador con placas'], [q.a, q.b, c2, 'Contador sin placas']];
+    segs.forEach((s, j) => {
+      svg.append('rect').attr('x', x(s[0]) + (j ? 1 : 0)).attr('y', y + 22).attr('height', 24).attr('width', Math.max(2, x(s[1]) - 1)).attr('rx', 4).style('fill', s[2])
+        .on('mousemove', (ev) => tip.show(ev, q.label, [{ c: c1, n: 'Contador con placas', v: eur(q.a) }, { c: c2, n: 'Contador sin placas', v: eur(q.b) }]))
+        .on('mouseleave', () => tip.hide());
+    });
+    svg.append('text').attr('class', 'val').attr('x', x(q.a + q.b) + 8).attr('y', y + 39).text(eur(q.a + q.b));
+  });
+});
+
+dash.draw('periodo', (el) => {
+  const d = get('meses');
+  if (!d || !d.length) { el.textContent = '…'; return; }
+  const f = (s) => ML[Number(String(s).slice(5, 7)) - 1] + ' de ' + String(s).slice(0, 4);
+  el.textContent = 'de ' + f(d[0].mes) + ' a ' + f(d[d.length - 1].mes);
+});
+
+function hbars(el, items) {
+  const w = Math.max(260, el.clientWidth), rowH = 56, h = items.length * rowH;
+  const svg = newSvg(el, w, h);
+  const bw = w - 92;
+  const x = d3.scaleLinear([0, d3.max(items, (d) => d.value)], [0, bw]);
+  items.forEach((d, i) => {
+    const y = i * rowH;
+    svg.append('text').attr('class', 'lab').attr('x', 0).attr('y', y + 14).text(d.label);
+    svg.append('rect').attr('x', 0).attr('y', y + 22).attr('height', 24).attr('width', Math.max(2, x(d.value))).attr('rx', 4).style('fill', d.color);
+    svg.append('text').attr('class', 'val').attr('x', Math.max(2, x(d.value)) + 8).attr('y', y + 39).text(eur(d.value));
+  });
+}
+
+dash.draw('placasBarras', (el) => {
+  el.replaceChildren();
+  const d = get('escenarios');
+  if (!d) return;
+  const v = {};
+  d.forEach((r) => { v[r.escenario] = Number(r.euros_anio); });
+  const c = COL();
+  hbars(el, [
+    { label: 'Sin placas (estimado)', value: v.sin_placas, color: 'var(--cds-chart-muted)' },
+    { label: 'Con placas (hoy)', value: v.hoy, color: dash.colors[0] }
+  ]);
+});
+
+dash.draw('escBarras', (el) => {
+  el.replaceChildren();
+  const d = get('cifras');
+  if (!d) return;
+  const c = COL();
+  const names = { hoy: 'Como hoy', bateria: 'Con una batería', bateria_variable: 'Batería y contrato variable', variable: 'Solo contrato variable' };
+  hbars(el, d.map((r) => ({ label: names[r.escenario], value: Number(r.euros_anio), color: c[r.escenario] })));
+});
+
+dash.draw('placasMeses', (el) => {
+  el.replaceChildren();
+  const d = get('placas_meses');
+  if (!d) return;
+  const rows = d.map((r) => ({ mes: r.mes, con: Number(r.con_placas), sin: Number(r.sin_placas) }));
+  legend(el, [{ c: 'var(--cds-chart-muted)', t: 'Sin placas (estimado)' }, { c: dash.colors[0], t: 'Con placas (hoy)' }]);
+  const w = Math.max(260, el.clientWidth), h = 240, t = 8, b = 24, r = 4;
+  const svg = newSvg(el, w, h);
+  const y = d3.scaleLinear([0, d3.max(rows, (q) => q.sin)], [h - b, t]).nice();
+  const ticks = y.ticks(4);
+  const l = Math.ceil(d3.max(ticks, (k) => measure(svg, NUM.format(k)))) + 10;
+  const x = d3.scaleBand(rows.map((q) => q.mes), [l, w - r]).padding(0.22);
+  ticks.forEach((k) => {
+    svg.append('line').attr('x1', l).attr('x2', w - r).attr('y1', y(k)).attr('y2', y(k)).style('stroke', 'var(--cds-chart-grid)').attr('stroke-width', 1);
+    svg.append('text').attr('x', l - 6).attr('y', y(k) + 4).attr('text-anchor', 'end').text(NUM.format(k));
+  });
+  svg.selectAll('.bs').data(rows).join('rect').attr('x', (q) => x(q.mes)).attr('width', x.bandwidth()).attr('y', (q) => y(q.sin)).attr('height', (q) => y(0) - y(q.sin)).attr('rx', 3).style('fill', 'var(--cds-chart-muted)').attr('opacity', 0.55);
+  svg.selectAll('.bc').data(rows).join('rect').attr('x', (q) => x(q.mes)).attr('width', x.bandwidth()).attr('y', (q) => y(q.con)).attr('height', (q) => y(0) - y(q.con)).attr('rx', 3).style('fill', dash.colors[0]);
+  svg.selectAll('.ml').data(rows.filter((q, i) => i % (x.step() < 34 ? 2 : 1) === 0)).join('text').attr('x', (q) => x(q.mes) + x.bandwidth() / 2).attr('y', h - 6).attr('text-anchor', 'middle').text((q) => MC[Number(q.mes.slice(5, 7)) - 1]);
+  const tip = makeTip(el);
+  svg.selectAll('.hv').data(rows).join('rect').attr('x', (q) => x(q.mes) - 2).attr('width', x.bandwidth() + 4).attr('y', t).attr('height', h - b - t).style('fill', 'transparent')
+    .on('mousemove', (ev, q) => tip.show(ev, ML[Number(q.mes.slice(5, 7)) - 1], [
+      { c: 'var(--cds-chart-muted)', n: 'Sin placas', v: eur(q.sin) },
+      { c: dash.colors[0], n: 'Con placas', v: eur(q.con) },
+      { c: 'transparent', n: 'Ahorran las placas', v: eur(q.sin - q.con) }
+    ]))
+    .on('mouseleave', () => tip.hide());
+});
+
+dash.draw('mesesLineas', (el) => {
+  el.replaceChildren();
+  const d = get('meses');
+  if (!d) return;
+  const c = COL();
+  const rows = d.map((r) => ({ mes: r.mes, hoy: Number(r.hoy), bateria: Number(r.bateria), bateria_variable: Number(r.bateria_variable) }));
+  const keys = [['hoy', 'Como hoy'], ['bateria', 'Con batería'], ['bateria_variable', 'Batería y contrato variable']];
+  legend(el, keys.map((k) => ({ c: c[k[0]], t: k[1] })));
+  const w = Math.max(260, el.clientWidth), h = 250, t = 8, b = 24, r = 8;
+  const svg = newSvg(el, w, h);
+  const y = d3.scaleLinear([0, d3.max(rows, (q) => Math.max(q.hoy, q.bateria, q.bateria_variable))], [h - b, t]).nice();
+  const ticks = y.ticks(4);
+  const l = Math.ceil(d3.max(ticks, (k) => measure(svg, NUM.format(k)))) + 10;
+  const x = d3.scalePoint(rows.map((q) => q.mes), [l + 10, w - r - 10]);
+  ticks.forEach((k) => {
+    svg.append('line').attr('x1', l).attr('x2', w - r).attr('y1', y(k)).attr('y2', y(k)).style('stroke', 'var(--cds-chart-grid)').attr('stroke-width', 1);
+    svg.append('text').attr('x', l - 6).attr('y', y(k) + 4).attr('text-anchor', 'end').text(NUM.format(k));
+  });
+  svg.selectAll('.ml').data(rows.filter((q, i) => i % (x.step() < 34 ? 2 : 1) === 0)).join('text').attr('x', (q) => x(q.mes)).attr('y', h - 6).attr('text-anchor', 'middle').text((q) => MC[Number(q.mes.slice(5, 7)) - 1]);
+  keys.forEach((k) => {
+    svg.append('path').datum(rows).attr('fill', 'none').attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round').style('stroke', c[k[0]])
+      .attr('d', d3.line().x((q) => x(q.mes)).y((q) => y(q[k[0]])));
+  });
+  const rule = svg.append('line').attr('y1', t).attr('y2', h - b).style('stroke', 'var(--cds-chart-reference)').attr('stroke-width', 1).style('display', 'none');
+  const dots = keys.map((k) => svg.append('circle').attr('r', 4).style('fill', c[k[0]]).style('display', 'none'));
+  const tip = makeTip(el);
+  svg.append('rect').attr('x', l).attr('y', t).attr('width', w - l - r).attr('height', h - b - t).style('fill', 'transparent')
+    .on('mousemove', (ev) => {
+      const px = d3.pointer(ev, svg.node())[0];
+      let best = rows[0];
+      rows.forEach((q) => { if (Math.abs(x(q.mes) - px) < Math.abs(x(best.mes) - px)) best = q; });
+      rule.style('display', null).attr('x1', x(best.mes)).attr('x2', x(best.mes));
+      keys.forEach((k, i) => dots[i].style('display', null).attr('cx', x(best.mes)).attr('cy', y(best[k[0]])));
+      tip.show(ev, ML[Number(best.mes.slice(5, 7)) - 1], keys.map((k) => ({ c: c[k[0]], n: k[1], v: eur(best[k[0]]) })));
+    })
+    .on('mouseleave', () => { rule.style('display', 'none'); dots.forEach((q) => q.style('display', 'none')); tip.hide(); });
+});
+
+dash.draw('tam', (tb) => {
+  tb.replaceChildren();
+  const d = get('ahorro_tamanos');
+  if (!d) return;
+  const nombres = { 5: 'Pequeña', 10: 'Mediana', 15: 'Grande', 20: 'Muy grande' };
+  const celda = (tr, ahorro, paga) => {
+    const td = document.createElement('td');
+    const a = document.createElement('strong');
+    if (ahorro >= 1) { a.className = 'ok'; a.textContent = 'Ahorran ' + eur(ahorro); } else { a.textContent = 'Sin ahorro'; }
+    const p = document.createElement('span');
+    p.className = 'mut';
+    p.textContent = 'Pagarían ' + eur(paga) + ' al año';
+    td.append(a, p);
+    tr.append(td);
+  };
+  d.forEach((r) => {
+    const tr = document.createElement('tr');
+    tr.dataset.key = r.bateria_kwh;
+    const td0 = document.createElement('td');
+    const n = document.createElement('strong');
+    n.textContent = nombres[r.bateria_kwh] || 'Batería';
+    const k = document.createElement('span');
+    k.className = 'mut';
+    k.textContent = r.bateria_kwh + ' kWh';
+    td0.append(n, k);
+    tr.append(td0);
+    celda(tr, r.ahorro_actual, r.paga_actual);
+    celda(tr, r.ahorro_variable, r.paga_variable);
+    tb.append(tr);
+  });
+});
+
+dash.run();
+requestAnimationFrame(dash.run);
+
+</script>
+</body>
+</html>
