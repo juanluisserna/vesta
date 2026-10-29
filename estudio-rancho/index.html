@@ -319,6 +319,17 @@ footer a{color:#c2d0de}
     <h3>Cuánto pagarían al año los dos contadores</h3>
     <div class="chart c-f" data-draw="totalBarras" data-source="resumen_total"></div>
   </div>
+  <div class="card">
+    <h3>Tamaño de las baterías del mejor caso</h3>
+    <p class="small">Para pedir a BioEsol el precio del sistema. Capacidad en kWh y potencia en kW de cada batería.</p>
+    <div class="tw">
+      <table data-source="sistema_total" data-row-key="contador">
+        <thead><tr><th data-field="contador">Contador</th><th data-field="bateria_kwh">Capacidad de la batería</th><th data-field="potencia_kw">Potencia de la batería</th></tr></thead>
+        <tbody data-draw="sist"></tbody>
+      </table>
+    </div>
+    <p class="small">En el contador sin placas una batería más pequeña da casi el mismo ahorro, así que conviene pedir precio de las dos opciones. En el contador con placas, el punto 4 muestra cómo cambia el ahorro con otros tamaños.</p>
+  </div>
 </section>
 
 <section class="sec foot" id="aviso">
@@ -355,7 +366,7 @@ footer a{color:#c2d0de}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 
-const DATA = {"escenarios": [{"escenario": "sin_placas", "euros_anio": "3518.3"}, {"escenario": "sin_placas_bajo", "euros_anio": "3340.5"}, {"escenario": "sin_placas_alto", "euros_anio": "3695.9"}, {"escenario": "hoy", "euros_anio": "1503.8"}, {"escenario": "bateria", "euros_anio": "1283.6"}, {"escenario": "variable", "euros_anio": "1973.3"}, {"escenario": "bateria_variable", "euros_anio": "1240.9"}], "tamanos": [{"bateria_kwh": "5", "hoy": "1503.8", "mismo_contrato": "1370.5", "contrato_variable": "1507.8"}, {"bateria_kwh": "10", "hoy": "1503.8", "mismo_contrato": "1283.6", "contrato_variable": "1240.9"}, {"bateria_kwh": "15", "hoy": "1503.8", "mismo_contrato": "1242.8", "contrato_variable": "1076.6"}, {"bateria_kwh": "20", "hoy": "1503.8", "mismo_contrato": "1232.8", "contrato_variable": "979.3"}], "meses": [{"mes": "2025-10", "hoy": "152.5", "bateria": "135.0", "bateria_variable": "116.5"}, {"mes": "2025-11", "hoy": "111.9", "bateria": "92.0", "bateria_variable": "79.4"}, {"mes": "2025-12", "hoy": "153.9", "bateria": "143.8", "bateria_variable": "121.6"}, {"mes": "2026-01", "hoy": "141.7", "bateria": "128.0", "bateria_variable": "99.7"}, {"mes": "2026-02", "hoy": "114.4", "bateria": "94.6", "bateria_variable": "71.8"}, {"mes": "2026-03", "hoy": "57.3", "bateria": "39.4", "bateria_variable": "50.5"}, {"mes": "2026-04", "hoy": "123.7", "bateria": "99.0", "bateria_variable": "92.6"}, {"mes": "2026-05", "hoy": "49.2", "bateria": "39.4", "bateria_variable": "53.8"}, {"mes": "2026-06", "hoy": "173.5", "bateria": "153.3", "bateria_variable": "135.1"}, {"mes": "2026-07", "hoy": "198.4", "bateria": "176.6", "bateria_variable": "197.3"}, {"mes": "2026-08", "hoy": "96.5", "bateria": "73.4", "bateria_variable": "90.8"}, {"mes": "2026-09", "hoy": "130.6", "bateria": "109.1", "bateria_variable": "131.7"}], "placas_meses": [{"mes": "2025-10", "con_placas": "152.5", "sin_placas": "281.3", "sin_placas_bajo": "269.9", "sin_placas_alto": "292.6"}, {"mes": "2025-11", "con_placas": "111.9", "sin_placas": "255.6", "sin_placas_bajo": "242.9", "sin_placas_alto": "268.2"}, {"mes": "2025-12", "con_placas": "153.9", "sin_placas": "213.1", "sin_placas_bajo": "207.9", "sin_placas_alto": "218.3"}, {"mes": "2026-01", "con_placas": "141.7", "sin_placas": "230.4", "sin_placas_bajo": "222.6", "sin_placas_alto": "238.3"}, {"mes": "2026-02", "con_placas": "114.4", "sin_placas": "253.2", "sin_placas_bajo": "240.9", "sin_placas_alto": "265.4"}, {"mes": "2026-03", "con_placas": "57.3", "sin_placas": "310.6", "sin_placas_bajo": "288.2", "sin_placas_alto": "332.9"}, {"mes": "2026-04", "con_placas": "123.7", "sin_placas": "334.6", "sin_placas_bajo": "316.0", "sin_placas_alto": "353.2"}, {"mes": "2026-05", "con_placas": "49.2", "sin_placas": "352.5", "sin_placas_bajo": "325.8", "sin_placas_alto": "379.3"}, {"mes": "2026-06", "con_placas": "173.5", "sin_placas": "301.1", "sin_placas_bajo": "289.8", "sin_placas_alto": "312.4"}, {"mes": "2026-07", "con_placas": "198.4", "sin_placas": "350.4", "sin_placas_bajo": "337.0", "sin_placas_alto": "363.8"}, {"mes": "2026-08", "con_placas": "96.5", "sin_placas": "329.6", "sin_placas_bajo": "309.1", "sin_placas_alto": "350.2"}, {"mes": "2026-09", "con_placas": "130.6", "sin_placas": "305.9", "sin_placas_bajo": "290.4", "sin_placas_alto": "321.3"}], "bateria": [{"bateria_kwh": "10", "potencia_kw": "5"}], "cups3": [{"escenario": "hoy", "euros_anio": "1281.8"}, {"escenario": "potencia", "euros_anio": "1029.4"}, {"escenario": "variable", "euros_anio": "1224.2"}, {"escenario": "bateria_variable", "euros_anio": "1045.2"}, {"escenario": "todo", "euros_anio": "792.8"}], "cups3_desglose": [{"parte": "energia", "euros_anio": "565.0"}, {"parte": "potencia", "euros_anio": "673.1"}, {"parte": "otros", "euros_anio": "43.7"}], "cups3_potencias": [{"concepto": "contratada", "kw": "8.8"}, {"concepto": "propuesta", "kw": "5.5"}, {"concepto": "maxima_demandada", "kw": "5.02"}]};
+const DATA = {"escenarios": [{"escenario": "sin_placas", "euros_anio": "3518.3"}, {"escenario": "sin_placas_bajo", "euros_anio": "3340.5"}, {"escenario": "sin_placas_alto", "euros_anio": "3695.9"}, {"escenario": "hoy", "euros_anio": "1503.8"}, {"escenario": "bateria", "euros_anio": "1283.6"}, {"escenario": "variable", "euros_anio": "1973.3"}, {"escenario": "bateria_variable", "euros_anio": "1240.9"}], "tamanos": [{"bateria_kwh": "5", "hoy": "1503.8", "mismo_contrato": "1370.5", "contrato_variable": "1507.8"}, {"bateria_kwh": "10", "hoy": "1503.8", "mismo_contrato": "1283.6", "contrato_variable": "1240.9"}, {"bateria_kwh": "15", "hoy": "1503.8", "mismo_contrato": "1242.8", "contrato_variable": "1076.6"}, {"bateria_kwh": "20", "hoy": "1503.8", "mismo_contrato": "1232.8", "contrato_variable": "979.3"}], "meses": [{"mes": "2025-10", "hoy": "152.5", "bateria": "135.0", "bateria_variable": "116.5"}, {"mes": "2025-11", "hoy": "111.9", "bateria": "92.0", "bateria_variable": "79.4"}, {"mes": "2025-12", "hoy": "153.9", "bateria": "143.8", "bateria_variable": "121.6"}, {"mes": "2026-01", "hoy": "141.7", "bateria": "128.0", "bateria_variable": "99.7"}, {"mes": "2026-02", "hoy": "114.4", "bateria": "94.6", "bateria_variable": "71.8"}, {"mes": "2026-03", "hoy": "57.3", "bateria": "39.4", "bateria_variable": "50.5"}, {"mes": "2026-04", "hoy": "123.7", "bateria": "99.0", "bateria_variable": "92.6"}, {"mes": "2026-05", "hoy": "49.2", "bateria": "39.4", "bateria_variable": "53.8"}, {"mes": "2026-06", "hoy": "173.5", "bateria": "153.3", "bateria_variable": "135.1"}, {"mes": "2026-07", "hoy": "198.4", "bateria": "176.6", "bateria_variable": "197.3"}, {"mes": "2026-08", "hoy": "96.5", "bateria": "73.4", "bateria_variable": "90.8"}, {"mes": "2026-09", "hoy": "130.6", "bateria": "109.1", "bateria_variable": "131.7"}], "placas_meses": [{"mes": "2025-10", "con_placas": "152.5", "sin_placas": "281.3", "sin_placas_bajo": "269.9", "sin_placas_alto": "292.6"}, {"mes": "2025-11", "con_placas": "111.9", "sin_placas": "255.6", "sin_placas_bajo": "242.9", "sin_placas_alto": "268.2"}, {"mes": "2025-12", "con_placas": "153.9", "sin_placas": "213.1", "sin_placas_bajo": "207.9", "sin_placas_alto": "218.3"}, {"mes": "2026-01", "con_placas": "141.7", "sin_placas": "230.4", "sin_placas_bajo": "222.6", "sin_placas_alto": "238.3"}, {"mes": "2026-02", "con_placas": "114.4", "sin_placas": "253.2", "sin_placas_bajo": "240.9", "sin_placas_alto": "265.4"}, {"mes": "2026-03", "con_placas": "57.3", "sin_placas": "310.6", "sin_placas_bajo": "288.2", "sin_placas_alto": "332.9"}, {"mes": "2026-04", "con_placas": "123.7", "sin_placas": "334.6", "sin_placas_bajo": "316.0", "sin_placas_alto": "353.2"}, {"mes": "2026-05", "con_placas": "49.2", "sin_placas": "352.5", "sin_placas_bajo": "325.8", "sin_placas_alto": "379.3"}, {"mes": "2026-06", "con_placas": "173.5", "sin_placas": "301.1", "sin_placas_bajo": "289.8", "sin_placas_alto": "312.4"}, {"mes": "2026-07", "con_placas": "198.4", "sin_placas": "350.4", "sin_placas_bajo": "337.0", "sin_placas_alto": "363.8"}, {"mes": "2026-08", "con_placas": "96.5", "sin_placas": "329.6", "sin_placas_bajo": "309.1", "sin_placas_alto": "350.2"}, {"mes": "2026-09", "con_placas": "130.6", "sin_placas": "305.9", "sin_placas_bajo": "290.4", "sin_placas_alto": "321.3"}], "bateria": [{"bateria_kwh": "10", "potencia_kw": "5"}], "cups3": [{"escenario": "hoy", "euros_anio": "1281.8"}, {"escenario": "potencia", "euros_anio": "1029.4"}, {"escenario": "variable", "euros_anio": "1224.2"}, {"escenario": "bateria_variable", "euros_anio": "1045.2"}, {"escenario": "todo", "euros_anio": "792.8"}], "cups3_desglose": [{"parte": "energia", "euros_anio": "565.0"}, {"parte": "potencia", "euros_anio": "673.1"}, {"parte": "otros", "euros_anio": "43.7"}], "cups3_potencias": [{"concepto": "contratada", "kw": "8.8"}, {"concepto": "propuesta", "kw": "5.5"}, {"concepto": "maxima_demandada", "kw": "5.02"}], "sistema": [{"contador": "con_placas", "bateria_kwh": "10", "potencia_kw": "5"}, {"contador": "sin_placas", "bateria_kwh": "10", "potencia_kw": "5"}]};
 const dash = (function () {
   const store = {}, draws = [];
   Object.keys(DATA).forEach(function (k) { store[k] = { status: 'ok', data: DATA[k] }; });
@@ -463,6 +474,16 @@ dash.calc('resumen_total', {
       mejor_c1: a.bateria_variable, mejor_c3: b.todo, mejor_total: mejor, mejor_mes: mejor / 12,
       ahorro_anio: hoy - mejor, ahorro_mes: (hoy - mejor) / 12
     }];
+  }
+});
+
+dash.calc('sistema_total', {
+  inputs: ['sistema'],
+  title: 'Baterías del mejor caso',
+  description: 'Capacidad y potencia de la batería de cada contador y la suma de los dos.',
+  fn: (sistema) => {
+    const f = sistema.map((r) => ({ contador: r.contador, bateria_kwh: Number(r.bateria_kwh), potencia_kw: Number(r.potencia_kw) }));
+    return f.concat([{ contador: 'total', bateria_kwh: f.reduce((a, r) => a + r.bateria_kwh, 0), potencia_kw: f.reduce((a, r) => a + r.potencia_kw, 0) }]);
   }
 });
 
@@ -574,6 +595,23 @@ dash.draw('totalBarras', (el) => {
         .on('mouseleave', () => tip.hide());
     });
     svg.append('text').attr('class', 'val').attr('x', x(q.a + q.b) + 8).attr('y', y + 39).text(eur(q.a + q.b));
+  });
+});
+
+dash.draw('sist', (tb) => {
+  tb.replaceChildren();
+  const d = get('sistema_total');
+  if (!d) return;
+  const nombres = { con_placas: 'Contador con placas', sin_placas: 'Contador sin placas', total: 'Total de los dos' };
+  d.forEach((r) => {
+    const tr = document.createElement('tr');
+    tr.dataset.key = r.contador;
+    [nombres[r.contador] || r.contador, r.bateria_kwh + ' kWh', r.potencia_kw + ' kW'].forEach((t) => {
+      const td = document.createElement('td');
+      if (r.contador === 'total') { const s = document.createElement('strong'); s.textContent = t; td.append(s); } else { td.textContent = t; }
+      tr.append(td);
+    });
+    tb.append(tr);
   });
 });
 
