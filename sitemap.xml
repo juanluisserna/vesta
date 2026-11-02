@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://vestaenergia.com/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://vestaenergia.com/ca/blog/</loc>
-    <lastmod>2026-10-29</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/"/>
@@ -155,5 +155,23 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/calefaccio-electrica-negoci-bateries/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/calefaccion-electrica-negocio-baterias/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/apagada-la-palma-novembre-2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/apagada-la-palma-novembre-2026/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/apagada-la-palma-novembre-2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/"/>
   </url>
 </urlset>
