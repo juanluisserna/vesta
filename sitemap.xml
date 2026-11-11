@@ -168,4 +168,22 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/apagada-la-palma-novembre-2026/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/apagon-la-palma-noviembre-2026/"/>
   </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/srad-servei-resposta-activa-demanda-industria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/srad-servei-resposta-activa-demanda-industria/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/srad-servei-resposta-activa-demanda-industria/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/"/>
+  </url>
 </urlset>
