@@ -186,4 +186,22 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/srad-servei-resposta-activa-demanda-industria/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/srad-servicio-respuesta-activa-demanda-industria/"/>
   </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/preu-llum-novembre-2026-contracte-indexat-fix/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/preu-llum-novembre-2026-contracte-indexat-fix/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/preu-llum-novembre-2026-contracte-indexat-fix/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/"/>
+  </url>
 </urlset>
