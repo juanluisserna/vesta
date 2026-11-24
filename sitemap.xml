@@ -204,4 +204,22 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/preu-llum-novembre-2026-contracte-indexat-fix/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/precio-luz-noviembre-2026-contrato-indexado-fijo/"/>
   </url>
+  <url>
+    <loc>https://vestaenergia.com/blog/luz-triplica-precio-espana-alemania-contrato-indexado/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/luz-triplica-precio-espana-alemania-contrato-indexado/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/llum-triplica-preu-espanya-alemanya-contracte-indexat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/luz-triplica-precio-espana-alemania-contrato-indexado/"/>
+  </url>
+  <url>
+    <loc>https://vestaenergia.com/ca/blog/llum-triplica-preu-espanya-alemanya-contracte-indexat/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vestaenergia.com/blog/luz-triplica-precio-espana-alemania-contrato-indexado/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://vestaenergia.com/ca/blog/llum-triplica-preu-espanya-alemanya-contracte-indexat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vestaenergia.com/blog/luz-triplica-precio-espana-alemania-contrato-indexado/"/>
+  </url>
 </urlset>
